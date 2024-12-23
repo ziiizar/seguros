@@ -2,6 +2,7 @@ import Header from "@/components/global/Header/Header";
 import Hero from "@/components/Landing/Hero";
 import Footer from "@/components/global/Footer/Footer";
 import Section2 from "@/components/Landing/Section2";
+import Testimonials from "@/components/Landing/Testimonials";
 
 
 
@@ -15,6 +16,7 @@ export default async function Home() {
         <Hero></Hero>
 
         <Section2></Section2>
+        <Testimonials></Testimonials>
       </main>
       <Footer></Footer>
     </>
