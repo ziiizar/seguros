@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Testimonial } from "./Testimonials";
+import Image from "next/image";
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
     <motion.div 
@@ -18,7 +19,8 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
       </p>
       <div className="flex items-center gap-4">
         <div className="w-12 h-12 rounded-full bg-turquoise-blue-200 overflow-hidden">
-          <img 
+          <Image 
+            layout="fill"
             src={testimonial.author.image} 
             alt={testimonial.author.name}
             className="w-full h-full object-cover"

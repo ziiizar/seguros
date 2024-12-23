@@ -1,9 +1,16 @@
 import localFont from "next/font/local";
 import {Literata } from 'next/font/google'
 
-export const literata = Literata({
-  subsets: ['latin'],
-  display: 'swap',
+export const literata = localFont({
+  // subsets: ['latin'],
+  // display: 'swap',
+
+  src: [{
+    path: "../public/font/Literata-VariableFont_opsz,wght.ttf",
+    style: 'normal'
+  }],
+ 
+variable: '--font-literata'
 })
 
 export const chillax = localFont({
