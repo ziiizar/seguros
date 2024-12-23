@@ -1,0 +1,7 @@
+export const {
+  GOOGLE_CLIENT_ID,
+  GOOGLE_CLIENT_SECRET,
+  AUTH_SECRET,
+  NODE_ENV,
+  RESEND_API_KEY,
+} = process.env;
