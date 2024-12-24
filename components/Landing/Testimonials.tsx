@@ -59,7 +59,7 @@ const testimonials: Testimonial[] = [
 
 export default function Testimonials() {
   return (
-    <section className="py-20 bg-turquoise-blue-50">
+    <section className="py-20 ">
       <div className="container mx-auto px-8">
         <div className="text-center mb-16">
           <motion.h2
@@ -77,7 +77,7 @@ export default function Testimonials() {
             transition={{ delay: 0.2 }}
             className="text-granny-smith-600 max-w-2xl mx-auto"
           >
-            Descubre por qué las empresas confían en nosotros para sus necesidades de seguros
+            Descubre por qué las personas confían en nosotros para sus necesidades de seguros
           </motion.p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

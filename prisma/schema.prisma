@@ -82,7 +82,8 @@ model Lead {
   email     String?
   age       Int?
   zipCode   Int?
-  status    ClientStatus
+  status    ClientStatus @default(NEW)
+  request   InsuranceRequested @default(GENERAL)
 }
 
 enum UserRole {
@@ -94,4 +95,10 @@ enum ClientStatus {
   NEW
   CONTACTED
   REJECTED
+}
+
+enum InsuranceRequested {
+  HEALTH
+  LIFE
+  GENERAL
 }

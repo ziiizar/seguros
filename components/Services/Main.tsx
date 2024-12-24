@@ -8,6 +8,7 @@ import Hospital from '@/public/Hospital.png';
 import House from '@/public/House.png';
 import ServiceAside from "./ServiceAside";
 import { AnimatePresence, motion } from "framer-motion";
+import { forms } from '../../constants/forms';
 
 
 export type ServiceCardType = {
@@ -16,6 +17,7 @@ export type ServiceCardType = {
   image: string;
   bgImage: string;
   color: string
+  id: string
 };
 
 const services: Record<'health' | 'life', ServiceCardType> = {
@@ -25,6 +27,7 @@ const services: Record<'health' | 'life', ServiceCardType> = {
     image: Doctor.src,
     bgImage: Hospital.src,
     color: "blue",
+    id: forms.HEALTH
   },
   life: {
     title: "Life Insurance",
@@ -32,6 +35,8 @@ const services: Record<'health' | 'life', ServiceCardType> = {
     image: Dad.src,
     bgImage: House.src,
     color: "orange",
+    id: forms.LIFE
+
   },
 };
 

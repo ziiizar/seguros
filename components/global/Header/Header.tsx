@@ -2,7 +2,7 @@ import Link from "next/link";
 import { routes } from "@/constants/routes";
 const Header = async () => {
   return (
-    <header className="justify-between flex place-content-center items-center py-4 px-8 h-[10dvh] backdrop-blur-sm ">
+    <header className="justify-between flex place-content-center items-center py-4 px-8 h-[10dvh]  ">
       <picture>
         {/* Logo can go here */}
       </picture>

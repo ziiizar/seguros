@@ -6,10 +6,12 @@ import { literata } from "@/styles/fonts";
 import Image from "next/image";
 import {UpRightArrow, House, Insurance}  from "@/Icons/Hero";
 import Button from "../ui/Button";
+import Peacefull from '@/public/Woman Against Blue Sky.jpeg'
 
 const Hero = () => {
   return (
-    <section className="w-full  flex flex-col h-[90dvh] pb-8 pt-4 gap-4">
+    <section className="w-full  flex flex-col h-[90vh] pb-8 pt-4 gap-4 ">
+      {/* <div className="absolute inset-0 z-50"><Image className="" alt="happy family" src={Peacefull}></Image></div> */}
       <div className="flex flex-col gap-4 place-content-center items-center">
         <h3 className="text-3xl font-bold">
           Peace of mind starts here, secure your future with us.

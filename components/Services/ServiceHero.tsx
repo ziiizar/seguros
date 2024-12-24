@@ -5,6 +5,8 @@ import { literata } from "@/styles/fonts";
 import Button from "@/components/ui/Button";
 import Image from "next/image";
 import { ServiceCardType } from "./Main";
+import { routes } from "@/constants/routes";
+import Link from "next/link";
 
 const ServiceHero = ({ currentService }: {currentService: ServiceCardType}) => {
   const gradientColor = currentService.color === "blue" ? "bg-turquoise-blue-500" : "bg-rajah-300";
@@ -28,7 +30,9 @@ const ServiceHero = ({ currentService }: {currentService: ServiceCardType}) => {
           <h2 className="text-4xl font-bold mb-4">{currentService.title}</h2>
           <p className={cn("mb-6", literata.className)}>{currentService.description}</p>
           <Button className="hover:scale-105 transition-transform duration-300 ease-in-out">
-            Get Service
+    <Link href={`${routes.services}/${currentService.id}`}>Get Service</Link>
+
+            
           </Button>
         </div>
         <div className="w-1/2 relative">
