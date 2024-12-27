@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { routes } from "@/constants/routes";
-import Button from "../ui/Button";
+import {Button} from "../ui/Button";
 
 const LoginForm = () => {
  

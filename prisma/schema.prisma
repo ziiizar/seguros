@@ -83,7 +83,7 @@ model Lead {
   age       Int?
   zipCode   Int?
   status    ClientStatus @default(NEW)
-  request   InsuranceRequested @default(GENERAL)
+  insuranceRequested   InsuranceRequested @default(GENERAL)
 }
 
 enum UserRole {

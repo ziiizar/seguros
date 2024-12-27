@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { routes } from "@/constants/routes";
-const Header = async () => {
+import { cn } from "@/lib/utils";
+
+const Header = async ({className}: {className?:string}) => {
   return (
-    <header className="justify-between flex place-content-center items-center py-4 px-8 h-[10dvh]  ">
+    <header className={cn("justify-between flex place-content-center items-center py-4 px-8 h-[10dvh]  ", className)}>
       <picture>
         {/* Logo can go here */}
       </picture>
@@ -12,7 +14,7 @@ const Header = async () => {
           <li>
             <Link 
               href={routes.home}
-              className="relative text-lg font-medium text-black hover:text-salmon-600 transition-colors duration-200
+              className="relative text-lg font-medium  hover:text-salmon-600 transition-colors duration-200
                 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 
                 after:bottom-0 after:left-0 after:bg-salmon-600 after:origin-bottom-right 
                 after:transition-transform after:duration-300 hover:after:scale-x-100 
@@ -24,7 +26,7 @@ const Header = async () => {
           <li>
             <Link 
               href={routes.services}
-              className="relative text-lg font-medium text-black hover:text-salmon-600 transition-colors duration-200
+              className="relative text-lg font-medium  hover:text-salmon-600 transition-colors duration-200
                 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 
                 after:bottom-0 after:left-0 after:bg-salmon-600 after:origin-bottom-right 
                 after:transition-transform after:duration-300 hover:after:scale-x-100 
@@ -36,7 +38,7 @@ const Header = async () => {
           <li>
             <Link 
               href={routes.aboutUs}
-              className="relative text-lg font-medium text-black hover:text-salmon-600 transition-colors duration-200
+              className="relative text-lg font-medium  hover:text-salmon-600 transition-colors duration-200
                 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 
                 after:bottom-0 after:left-0 after:bg-salmon-600 after:origin-bottom-right 
                 after:transition-transform after:duration-300 hover:after:scale-x-100 

@@ -207,5 +207,7 @@ type Attachment = {
   
   export type FormFields = {
     fields: Field[];
+    title: string,
+    description: string,
   };
   

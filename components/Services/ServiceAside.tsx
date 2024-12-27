@@ -18,7 +18,6 @@ const ServiceAside = ({
         color="blue"
         image={HealthInsurance.src}
         name="Health Insurance"
-        id={forms.HEALTH}
         onClick={() => setSelectedService('health')}
         
       />
@@ -26,7 +25,6 @@ const ServiceAside = ({
         color="orange"
         image={LifeInsurance.src}
         name="Life Insurance"
-        id={forms.HEALTH}
         onClick={() => setSelectedService('life')}
       />
     </section>

@@ -8,10 +8,8 @@ const layout = ({
     children: React.ReactNode;
   }) => {
   return (
-    <div className=" adminLayoutGrid  overflow-y-auto overflow-x-hidden z-20 pb-5 gap-2">
-      <div className="[grid-area:header]">
-        <Header></Header>
-      </div>
+    <div className=" adminLayoutGrid  overflow-y-auto overflow-x-hidden z-20 p-5 gap-5">
+      
       
         <Aside ></Aside>
         {children}

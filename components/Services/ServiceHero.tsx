@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { literata } from "@/styles/fonts";
-import Button from "@/components/ui/Button";
+import {Button} from "@/components/ui/Button";
 import Image from "next/image";
 import { ServiceCardType } from "./Main";
 import { routes } from "@/constants/routes";
@@ -29,7 +29,7 @@ const ServiceHero = ({ currentService }: {currentService: ServiceCardType}) => {
         <div className="w-1/2 flex flex-col justify-center p-8">
           <h2 className="text-4xl font-bold mb-4">{currentService.title}</h2>
           <p className={cn("mb-6", literata.className)}>{currentService.description}</p>
-          <Button className="hover:scale-105 transition-transform duration-300 ease-in-out">
+          <Button className="hover:scale-105  transition-transform duration-300 ease-in-out">
     <Link href={`${routes.services}/${currentService.id}`}>Get Service</Link>
 
             

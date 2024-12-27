@@ -11,7 +11,7 @@ export default async function Home() {
   
   return (
     <>
-      <Header></Header>
+      <Header className="absolute inset-0 z-50 text-white"></Header>
       <main className="flex min-h-screen flex-col items-center px-8">
         <Hero></Hero>
 

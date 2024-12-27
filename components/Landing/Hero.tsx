@@ -5,22 +5,35 @@ import Health from "@/public/Health.png";
 import { literata } from "@/styles/fonts";
 import Image from "next/image";
 import {UpRightArrow, House, Insurance}  from "@/Icons/Hero";
-import Button from "../ui/Button";
-import Peacefull from '@/public/Woman Against Blue Sky.jpeg'
+import {Button} from "../ui/Button";
+import HeroBG from '@/public/HeroBG.avif'
 
 const Hero = () => {
   return (
-    <section className="w-full  flex flex-col h-[90vh] pb-8 pt-4 gap-4 ">
-      {/* <div className="absolute inset-0 z-50"><Image className="" alt="happy family" src={Peacefull}></Image></div> */}
-      <div className="flex flex-col gap-4 place-content-center items-center">
-        <h3 className="text-3xl font-bold">
-          Peace of mind starts here, secure your future with us.
+    <section className="w-full  flex flex-col h-screen pb-8 pt-4 gap-4 place-content-center items-center text-white">
+       <div className="absolute inset-0">
+            <Image
+                src={HeroBG}
+                alt="Contrat"
+                layout="fill"
+                objectFit="cover"
+                priority
+               
+                
+              />
+             <div className={cn("absolute inset-0 opacity-30 transition-opacity duration-500 bg-black", )} />
+            </div>
+      <div className="flex flex-col gap-1 place-content-center items-center z-10">
+        <h3 className="text-7xl font-bold">
+          Peace of mind starts here 
         </h3>
-        <h5 className={cn("", literata.className)}>
+        <h3 className="text-4xl font-bold">Secure your future with us.</h3>
+        {/* <h5 className={cn("", literata.className)}>
           Explore our comprehensive insurance solutions and secure your future.
-        </h5>
+        </h5> */}
+        <Button className="w-40">See Service</Button>
       </div>
-      <div className=" grid grid-cols-6 grid-rows-6 w-full h-full flex-1 gap-2">
+      {/* <div className=" grid grid-cols-6 grid-rows-6 w-full h-full flex-1 gap-2">
         <div className="col-span-1 row-span-5 bg-turquoise-blue-800 rounded-3xl col-start-1 place-content-end p-2">
           <Image alt="life" src={Life}></Image>
           <Button>Life Insurance</Button>
@@ -61,7 +74,7 @@ const Hero = () => {
         <Insurance></Insurance>
         <p className="text-white font-semibold">Life is better with insurance</p>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };

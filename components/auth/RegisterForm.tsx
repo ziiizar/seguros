@@ -1,6 +1,6 @@
 "use client";
 import { routes } from "@/constants/routes";
-import Button from "../ui/Button";
+import {Button} from "../ui/Button";
 import Link from "next/link";
 
 const RegisterForm = () => {

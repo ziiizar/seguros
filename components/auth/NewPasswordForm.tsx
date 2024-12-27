@@ -1,5 +1,5 @@
 "use client";
-import Button from "../ui/Button";
+import {Button} from "../ui/Button";
 import Link from "next/link";
 import { routes } from "@/constants/routes";
 
