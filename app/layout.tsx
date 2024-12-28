@@ -21,7 +21,7 @@ export default function RootLayout({
         className={cn(
           chillax.variable,
           "font-sans", // This assumes you want to use Chillax as your sans-serif font
-          "bg-radial text-black min-h-screen w-full "
+          "bg-radial text-black min-h-screen w-full transition-colors duration-500 "
         )}
       >
         {children}

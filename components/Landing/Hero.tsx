@@ -1,17 +1,13 @@
 import { cn } from "@/lib/utils";
-import Family from "@/public/FamilyHeroSection.png";
-import Life from "@/public/Life.png";
-import Health from "@/public/Health.png";
-import { literata } from "@/styles/fonts";
 import Image from "next/image";
-import {UpRightArrow, House, Insurance}  from "@/Icons/Hero";
 import {Button} from "../ui/Button";
 import HeroBG from '@/public/HeroBG.avif'
+import { HeroText } from "./HeroText";
 
 const Hero = () => {
   return (
-    <section className="w-full  flex flex-col h-screen pb-8 pt-4 gap-4 place-content-center items-center text-white">
-       <div className="absolute inset-0">
+    <section className="w-full  flex flex-col h-screen pb-8 pt-4 gap-4 place-content-center items-center text-white relative">
+       <div className={cn("absolute inset-0 opacity-20 transition-opacity duration-500 bg-black")} >
             <Image
                 src={HeroBG}
                 alt="Contrat"
@@ -23,16 +19,7 @@ const Hero = () => {
               />
              <div className={cn("absolute inset-0 opacity-30 transition-opacity duration-500 bg-black", )} />
             </div>
-      <div className="flex flex-col gap-1 place-content-center items-center z-10">
-        <h3 className="text-7xl font-bold">
-          Peace of mind starts here 
-        </h3>
-        <h3 className="text-4xl font-bold">Secure your future with us.</h3>
-        {/* <h5 className={cn("", literata.className)}>
-          Explore our comprehensive insurance solutions and secure your future.
-        </h5> */}
-        <Button className="w-40">See Service</Button>
-      </div>
+      <HeroText></HeroText>
       {/* <div className=" grid grid-cols-6 grid-rows-6 w-full h-full flex-1 gap-2">
         <div className="col-span-1 row-span-5 bg-turquoise-blue-800 rounded-3xl col-start-1 place-content-end p-2">
           <Image alt="life" src={Life}></Image>

@@ -1,24 +1,24 @@
+import BackgroundController from "@/components/BackgroundController";
 import Header from "@/components/global/Header/Header";
 import Hero from "@/components/Landing/Hero";
 import Footer from "@/components/global/Footer/Footer";
-import Section2 from "@/components/Landing/Section2";
+import ValueProposition from "@/components/Landing/ValueProposition";
+import HowItWorks from "@/components/Landing/HowItWorks";
+import Stats from "@/components/Landing/Stats";
 import Testimonials from "@/components/Landing/Testimonials";
 
-
-
-export default async function Home() {
-
-  
+export default function Home() {
   return (
-    <>
-      <Header className="absolute inset-0 z-50 text-white"></Header>
-      <main className="flex min-h-screen flex-col items-center px-8">
-        <Hero></Hero>
-
-        <Section2></Section2>
-        <Testimonials></Testimonials>
+    <BackgroundController>
+      <Header className="absolute inset-x-0 top-0 z-50" />
+      <main className="flex min-h-screen flex-col items-center ">
+        <Hero />
+        <ValueProposition />
+        <HowItWorks />
+        <Stats />
+        <Testimonials />
       </main>
-      <Footer></Footer>
-    </>
+      <Footer />
+    </BackgroundController>
   );
 }
