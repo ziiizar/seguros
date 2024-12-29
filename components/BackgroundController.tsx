@@ -48,7 +48,7 @@ export default function BackgroundController({ children }: BackgroundControllerP
   const textColorClass = isDarkSection ? "text-white" : "text-section-dark";
 
   return (
-    <div className={`w-full min-h-screen transition-colors bg-  duration-300 ${backgroundColor} ${textColorClass}`}>
+    <div className={`w-screen min-h-screen transition-colors   duration-300 ${backgroundColor} ${textColorClass}`}>
       <div className="relative">
         {children}
       </div>

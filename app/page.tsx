@@ -11,10 +11,10 @@ export default function Home() {
   return (
     <BackgroundController>
       <Header className="absolute inset-x-0 top-0 z-50" />
-      <main className="flex min-h-screen flex-col items-center ">
+      <main className="flex min-h-screen w-screen flex-col items-center ">
         <Hero />
-        <ValueProposition />
         <HowItWorks />
+        <ValueProposition />
         <Stats />
         <Testimonials />
       </main>

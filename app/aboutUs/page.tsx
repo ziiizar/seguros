@@ -33,7 +33,7 @@ const page = () => {
 
           <div className="place-content-center flex flex-wrap">
             <div className="w-1/2 flex place-content-end items-start px-10 py-10 h-72 border-e-[2px] border-black">
-              <article className="bg-turquoise-blue-950 py-3 px-8 rounded-lg text-white h-52 relative">
+              <article className="bg-zinc-800 py-3 px-8 rounded-lg text-white/90 h-52 relative">
                 <div className="bg-rajah-500 rounded-full size-12 flex place-content-center items-center absolute -top-4 -right-4 shadowOrange">
                   <Mission className={""}></Mission>
                 </div>
@@ -50,7 +50,7 @@ const page = () => {
             <div className="w-1/2 h-72 border-e-[2px] border-black"></div>
 
             <div className="w-1/2 flex place-content-start items-start h-72 px-10 py-10">
-              <article className="bg-turquoise-blue-950 py-3 px-8 rounded-lg h-52 text-white relative">
+              <article className="bg-zinc-800 py-3 px-8 rounded-lg h-52 text-white/90 relative">
                 <div className="bg-rajah-500 rounded-full size-12 flex place-content-center items-center absolute -top-4 -left-4 shadowOrange">
                   <Vision></Vision>
                 </div>
@@ -87,7 +87,7 @@ const page = () => {
           </div>
           <div className="flex gap-8 ">
             <div className="flex place-content-center items-center w-1/2">
-              <article className="bg-turquoise-blue-950 rounded-lg p-8 gap-2 flex flex-col text-white">
+              <article className="bg-zinc-800 rounded-lg p-8 gap-2 flex flex-col text-white/90">
                 <h4 className="text-2xl font-semibold">Info</h4>
                 <ul className="flex flex-col gap-4">
                   <li>support@gpfservices.com</li>

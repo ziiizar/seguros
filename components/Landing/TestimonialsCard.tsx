@@ -4,11 +4,8 @@ import Image from "next/image";
 import { User } from "lucide-react";
 
 const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
-    <motion.div 
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
+    <div 
+     
       className="bg-zinc-700/40 rounded-2xl p-8 shadow-sm "
     >
       <p className="text-white text-lg mb-4">
@@ -34,7 +31,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
           </p>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 
   export default TestimonialCard

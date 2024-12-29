@@ -41,11 +41,8 @@ export default function Stats() {
     <section className="min-h-[120vh] w-screen  relative overflow-hidden flex">
       <div className="relative w-1/2 mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
         <div className="max-w-2xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+          <div
+            
           >
             <h2 className="text-6xl font-bold mb-16 leading-tight">
               Trust Indicators
@@ -59,7 +56,7 @@ export default function Stats() {
         <StatItem key={index} {...stat} delay={0.2 * (index + 1)} />
       ))}
     </div>
-          </motion.div>
+          </div>
         </div>
       </div>
 

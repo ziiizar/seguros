@@ -4,7 +4,7 @@ import { Facebook, Instagram, Twitter } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="relative bg-turquoise-blue-950 text-white py-16 px-8">
+    <footer className="relative bg-zinc-800 text-white py-16 px-8">
       {/* Get your insurance button */}
       <div className="absolute left-1/2 -translate-x-1/2 -top-8">
         <Link href="/get-insurance" className="bg-salmon-600 text-white px-8 py-4 rounded-full text-xl font-semibold flex items-center">
