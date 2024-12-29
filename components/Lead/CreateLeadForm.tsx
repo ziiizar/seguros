@@ -23,12 +23,12 @@ const CreateLeadForm = () => {
       };
     
 
-      const { register, handleSubmit, reset } = useForm<TSCreateLeadSchema>();
+      const { register, handleSubmit } = useForm<TSCreateLeadSchema>();
 
   return (
     <div className="space-y-6">
                         <h3 className="text-2xl font-medium text-turquoise-blue-700">
-                          Great! You're a potential fit.
+                          Great! You are a potential fit.
                         </h3>
                         <p className="text-lg text-granny-smith-600">
                           Please provide your contact information so we can get in touch with you.
@@ -48,7 +48,7 @@ const CreateLeadForm = () => {
                             className="text-lg py-6 border-turquoise-blue-200 focus:border-turquoise-blue-400 transition-colors"
                           />
 
-                          <Button type='submit'>Finish</Button>
+                          <Button disabled={isLoading} type='submit'>Finish</Button>
                         </form>
                       </div>
   )

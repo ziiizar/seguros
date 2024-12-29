@@ -1,5 +1,4 @@
 import Aside from "@/components/Admin/Aside"
-import Header from "@/components/global/Header/Header"
 
 
 const layout = ({

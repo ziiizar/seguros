@@ -54,14 +54,11 @@ const features = [
 
 export default function ValueProposition() {
   return (
-    <section className="py-24 overflow-hidden">
+    <section className="py-12 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+          <div
+           
             className="relative drop-shadow-md"
           >
             <div className="aspect-square rounded-full overflow-hidden">
@@ -74,7 +71,7 @@ export default function ValueProposition() {
               />
             </div>
             <div className="absolute inset-0 bg-gradient-to-tr from-[#ED3E09]/20 to-transparent rounded-full" />
-          </motion.div>
+          </div>
 
           <div className="space-y-12">
       {features.map((feature, index) => (

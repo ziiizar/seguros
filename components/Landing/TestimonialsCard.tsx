@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Testimonial } from "./Testimonials";
 import Image from "next/image";
 import { User } from "lucide-react";

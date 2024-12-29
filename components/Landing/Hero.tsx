@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import {Button} from "../ui/Button";
 import HeroBG from '@/public/HeroBG.avif'
 import { HeroText } from "./HeroText";
 
@@ -17,7 +16,7 @@ const Hero = () => {
                
                 
               />
-             <div className={cn("absolute inset-0 opacity-30 transition-opacity duration-500 bg-black", )} />
+             <div className={cn("absolute inset-0 opacity-10 transition-opacity duration-500 bg-black", )} />
             </div>
       <HeroText></HeroText>
       {/* <div className=" grid grid-cols-6 grid-rows-6 w-full h-full flex-1 gap-2">

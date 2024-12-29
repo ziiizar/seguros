@@ -40,7 +40,7 @@ export default function BackgroundController({ children }: BackgroundControllerP
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [sectionRefs]);
 
   // Calculate background color based on current section
   const isDarkSection = Math.floor(currentSection / 2) % 2 === 0;

@@ -32,7 +32,7 @@ export const HeroText = () => {
       </h3>
       <h3 className="text-4xl font-bold text-center">
         Secure your future{" "}
-        <span className="text-salmon-600">with us</span>.
+        <span className="text-salmon-600">with us</span>
       </h3>
       {/* Comenta o descomenta esta sección si es necesario */}
       {/* <h5 className={cn("", literata.className)}>

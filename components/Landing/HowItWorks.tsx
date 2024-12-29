@@ -109,7 +109,7 @@ const HowItWorks = () => {
       number: "02",
       title: "Get Instant Quotes",
       description:
-        "Our AI analyzes multiple providers to find your best matches",
+        "Our experts analyzes multiple providers to find your best matches",
     },
     {
       number: "03",
@@ -129,7 +129,7 @@ const HowItWorks = () => {
   // ];
 
   return (
-    <section className="relative py-8 overflow-hidden">
+    <section className="relative py-8 mt-5 overflow-hidden">
       {/* Background Scratches */}
       {/* <div className="absolute inset-0 opacity-5">
         {scratches.map((scratch, index) => (
@@ -146,8 +146,8 @@ const HowItWorks = () => {
       </div> */}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-        <div className="flex flex-col items-center max-w-2xl mb-20 mx-auto">
-          <span className="text-salmon-600 text-sm font-medium tracking-wider uppercase mb-4">
+        <div className="flex flex-col items-center max-w-2xl mb-10 mx-auto">
+          <span className="text-salmon-600 text-5xl font-medium tracking-wider uppercase mb-4">
             HOW IT WORKS
           </span>
           <h2 className="text-5xl font-bold mb-6">
@@ -161,7 +161,7 @@ const HowItWorks = () => {
         <div className="relative">
           {steps.map((step, index) => (
             <React.Fragment key={index}>
-              <div className="flex flex-col items-center text-center mb-16 last:mb-0 relative group">
+              <div className="flex flex-col items-center text-center mb-8 last:mb-0 relative group">
                 <div className="w-24 h-24 flex items-center justify-center mb-4">
                   <span className="text-4xl font-bold text-salmon-600 opacity-40 group-hover:opacity-100 transition-opacity">
                     {step.number}
