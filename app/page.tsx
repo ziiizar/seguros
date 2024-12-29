@@ -10,7 +10,7 @@ import Testimonials from "@/components/Landing/Testimonials";
 export default function Home() {
   return (
     <BackgroundController>
-      <Header className="absolute inset-x-0 top-0 z-50" />
+      <Header className="absolute inset-x-0 top-0 z-20" />
       <main className="flex min-h-screen w-screen flex-col items-center ">
         <Hero />
         <HowItWorks />

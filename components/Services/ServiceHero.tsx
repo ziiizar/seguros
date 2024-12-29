@@ -30,7 +30,7 @@ const ServiceHero = ({ currentService }: {currentService: ServiceCardType}) => {
           <h2 className="text-4xl font-bold mb-4">{currentService.title}</h2>
           <p className={cn("mb-6", literata.className)}>{currentService.description}</p>
           <Button className="hover:scale-105  transition-transform duration-300 ease-in-out">
-    <Link href={`${routes.services}/${currentService.id}`}>Get Service</Link>
+    <Link href={`${routes.services}/survey`}>Get Service</Link>
 
             
           </Button>

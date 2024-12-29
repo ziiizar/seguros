@@ -161,8 +161,8 @@ const HowItWorks = () => {
         <div className="relative">
           {steps.map((step, index) => (
             <React.Fragment key={index}>
-              <div className="flex flex-col items-center text-center mb-8 last:mb-0 relative group">
-                <div className="w-24 h-24 flex items-center justify-center mb-4">
+              <div className="flex flex-col items-center text-center mb-4 last:mb-0 relative group">
+                <div className="w-24 h-12 flex items-center justify-center mb-4">
                   <span className="text-4xl font-bold text-salmon-600 opacity-40 group-hover:opacity-100 transition-opacity">
                     {step.number}
                   </span>
@@ -178,7 +178,7 @@ const HowItWorks = () => {
                 </div>
               </div>
               {index < steps.length - 1 && (
-                <div className="w-1 h-16 bg-salmon-600 mx-auto mb-8" />
+                <div className="w-1 h-16 bg-salmon-600 mx-auto mb-2 " />
               )}
             </React.Fragment>
           ))}

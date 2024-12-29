@@ -1,76 +1,109 @@
-import React from 'react';
-import Link from 'next/link';
-import { Facebook, Instagram, Twitter } from 'lucide-react';
-
-const Footer: React.FC = () => {
+import { Input } from "@/components/ui/Input"
+import { Button } from "@/components/ui/Button"
+import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin } from 'lucide-react'
+import Link from "next/link"
+export default function Footer() {
   return (
-    <footer className="relative bg-zinc-800 text-white py-16 px-8">
-      {/* Get your insurance button */}
-      <div className="absolute left-1/2 -translate-x-1/2 -top-8">
-        <Link href="/get-insurance" className="bg-salmon-600 text-white px-8 py-4 rounded-full text-xl font-semibold flex items-center">
+    <footer className="bg-zinc-800 text-white py-24 relative ">
+      {/* Get Insurance Button - Positioned above footer */}
+      <div className="absolute left-1/2 -translate-x-1/2 -top-8 z-[100]">
+        <Link 
+          href="/get-insurance" 
+          className="bg-salmon-600 hover:bg-salmon-700 transition-colors text-white px-8 py-4 rounded-full text-xl font-semibold flex items-center shadow-lg hover:shadow-xl"
+        >
           Get your insurance
           <svg className="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </Link>
       </div>
-
-      <div className="container mx-auto px-4">
-        <div className="flex flex-wrap justify-between">
-          {/* GPF Services LLC */}
-          <div className="w-full md:w-1/3 mb-8 md:mb-0">
-            <h2 className="text-2xl font-bold mb-4">GPF Services LLC</h2>
-            <p className="mb-4">The time to repair the roof is when the sun is shining.</p>
-            <p className="text-sm">John F. Kennedy</p>
-          </div>
-
-          {/* Website */}
-          <div className="w-full md:w-1/3 mb-8 md:mb-0">
-            <h2 className="text-2xl font-bold mb-4">Website</h2>
-            <ul>
-              {['Pagina1', 'Pagina2', 'Pagina3', 'Pagina4', 'Pagina5'].map((page, index) => (
-                <li key={index} className="mb-2">
-                  <Link href={`/${page.toLowerCase()}`} className="hover:underline">
-                    {page}
-                  </Link>
-                </li>
+      {/* Border Top */}
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-salmon-600"></div>
+      {/* Background Pattern */}
+      <div className="absolute inset-0 overflow-hidden">
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute h-[1px] w-[100px] bg-gradient-to-r from-salmon-600 opacity-35 to-transparent"
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              transform: `rotate(${Math.random() * 360}deg)`,
+            }}
+          />
+        ))}
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col ">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="space-y-12 place-content-end items-end">
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3 text-gray-300">
+                  <Phone className="w-5 h-5 text-salmon-600" />
+                  <span>(555) 123-4567</span>
+                </div>
+                <div className="flex items-center space-x-3 text-gray-300">
+                  <Mail className="w-5 h-5 text-salmon-600" />
+                  <span>contact@gpfservice.com</span>
+                </div>
+                <div className="flex items-center space-x-3 text-gray-300">
+                  <MapPin className="w-5 h-5 text-salmon-600" />
+                  <span>123 Insurance Ave, New York, NY 10001</span>
+                </div>
+              </div>
+            </div>
+            {/* Social Links */}
+            <div className="flex space-x-4">
+              {[
+                { Icon: Facebook, href: "#facebook" },
+                { Icon: Twitter, href: "#twitter" },
+                { Icon: Linkedin, href: "#linkedin" }
+              ].map(({ Icon, href }, index) => (
+                <Link
+                  key={index}
+                  href={href}
+                  className="p-3 rounded-full bg-white/10 hover:bg-salmon-600 transition-colors"
+                >
+                  <Icon className="w-5 h-5" />
+                </Link>
               ))}
-            </ul>
+            </div>
           </div>
-
-          {/* Social Media */}
-          <div className="w-full md:w-1/3">
-            <h2 className="text-2xl font-bold mb-4">Social Media</h2>
-            <ul>
-              <li className="mb-2">
-                <Link href="https://facebook.com" className="flex items-center hover:underline">
-                  <Facebook className="w-6 h-6 mr-2" />
-                  Facebook
-                </Link>
-              </li>
-              <li className="mb-2">
-                <Link href="https://instagram.com" className="flex items-center hover:underline">
-                  <Instagram className="w-6 h-6 mr-2" />
-                  Instagram
-                </Link>
-              </li>
-              <li className="mb-2">
-                <Link href="https://x.com" className="flex items-center hover:underline">
-                  <Twitter className="w-6 h-6 mr-2" />
-                  X.com
-                </Link>
-              </li>
-            </ul>
+          {/* Contact Form */}
+          <div className="space-y-8">
+            <form className="space-y-4 ">
+              <div className="grid grid-cols-2 gap-4 ">
+                <Input
+                  placeholder="Name"
+                  className="bg-white/10 border-0 text-white placeholder:text-gray-400"
+                />
+                <Input
+                  type="email"
+                  placeholder="Email"
+                  className="bg-white/10 border-0 text-white placeholder:text-gray-400"
+                />
+              </div>
+              {/* <Textarea
+                placeholder="Message"
+                className="bg-white/10 border-0 text-white placeholder:text-gray-400 min-h-[120px]"
+              /> */}
+              <Button className="w-full bg-salmon-600 hover:bg-salmon-600/90 rounded-sm">
+                Send Message
+              </Button>
+            </form>
+            <h3 className="text-6xl">Contact Us</h3>
           </div>
+          {/* Company Info */}
+          
         </div>
-
-        {/* Copyright */}
-        <div className="mt-16 pt-8 border-t border-granny-smith-900 text-center">
-          <p>&copy; 2024. All rights reserved.</p>
+        {/* Bottom Bar */}
+        <div className="mt-16 pt-8 border-t border-white/10 text-center text-gray-400 flex  place-content-center items-center">
+          <h2 className="text-[180px] font-bold leading-none bg-gradient-to-r from-salmon-600 to-white bg-clip-text text-transparent flex ">
+            GPF
+            <span className="block text-[180px] text-white">SERVICE</span>
+          </h2>
         </div>
       </div>
     </footer>
-  );
-};
-
-export default Footer;
+  )
+}

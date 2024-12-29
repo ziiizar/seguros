@@ -1,7 +1,6 @@
 'use client'
 
 import React from "react";
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button"; // Ajusta la importación según tu estructura
 
 export const HeroText = () => {
@@ -11,7 +10,7 @@ export const HeroText = () => {
         Peace of mind starts{" "}
         <span className="relative">
           here
-          <svg
+          {/* <svg
             viewBox="0 0 286 173"
             fill="none"
             className="absolute -left-2 -right-2 -top-2 bottom-0 translate-y-1"
@@ -27,7 +26,7 @@ export const HeroText = () => {
               stroke="#ed3e09"
               strokeWidth="3"
             />
-          </svg>
+          </svg> */}
         </span>
       </h3>
       <h3 className="text-4xl font-bold text-center">
@@ -38,7 +37,7 @@ export const HeroText = () => {
       {/* <h5 className={cn("", literata.className)}>
         Explore our comprehensive insurance solutions and secure your future.
       </h5> */}
-      <Button className="w-40">Start today</Button>
+      <Button className="w-60 mt-4 text-lg">Start today</Button>
     </div>
   );
 };
