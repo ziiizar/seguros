@@ -1,29 +1,39 @@
-import React from 'react'
-import { Input } from '../ui/Input'
-// import { createLead } from '@/actions/lead/createLead/action';
+import { Input } from '@/components/ui/Input'
+import { createLead } from '@/actions/lead/createLead/action';
 import { TSCreateLeadSchema } from '@/actions/lead/createLead/schema';
 import { useForm } from "react-hook-form";
-// import { useAction } from '@/hooks/use-action';
-// import { toast } from 'sonner';
-import { Button } from '../ui/Button';
+import { useAction } from '@/hooks/use-action';
+import { toast } from 'sonner';
+import { Button } from '@/components/ui/Button';
+import { Dispatch, SetStateAction } from 'react';
 
-const CreateLeadForm = () => {
+const CreateLeadForm = ({setShowThanks}:{setShowThanks: Dispatch<SetStateAction<boolean>>}) => {
 
-    // const { execute, isLoading } = useAction(createLead, {
-    //     onSuccess: (data, message) => {
-    //       toast.success(message);
-    //     },
-    //     onError: (error) => {
-    //       toast.error(error);
-    //     },
-    //   });
+    
+  const handleFinalSubmit = () => {
+    console.log('Form submitted:')
+    setShowThanks(true)
+  }
 
-      // const onSubmit = async (data: TSCreateLeadSchema) => {
-      //   await execute(data);
-      // };
+    const { execute, isLoading  } = useAction(createLead, {
+        onSuccess: (data, message) => {
+          toast.success(message);
+        handleFinalSubmit()
+
+        },
+        onError: (error) => {
+          toast.error(error);
+        },
+      });
+
+      const onSubmit = async (data: TSCreateLeadSchema) => {
+        await execute(data);
+      };
     
 
-      const { register } = useForm<TSCreateLeadSchema>();
+      const { register, handleSubmit, setValue } = useForm<TSCreateLeadSchema>();
+
+      setValue('insuranceRequested','HEALTH')
 
   return (
     <div className="space-y-6">
@@ -34,7 +44,7 @@ const CreateLeadForm = () => {
                           Please provide your contact information so we can get in touch with you.
                         </p>
                         <form 
-                        // onSubmit={handleSubmit(onSubmit)} 
+                        onSubmit={handleSubmit(onSubmit)} 
                         className="space-y-4">
                           <Input
                             type="text"
@@ -51,7 +61,7 @@ const CreateLeadForm = () => {
                           />
 
                           <Button 
-                          // disabled={isLoading} 
+                          disabled={isLoading} 
                           type='submit'>Finish</Button>
                         </form>
                       </div>

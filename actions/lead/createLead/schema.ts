@@ -9,7 +9,7 @@ export const createLeadSchema = z.object({
   email: z.string().email().optional(),
   age: z.number().optional(),
   zipCode: z.number().optional(),
-  insuranceRequested: z.nativeEnum(InsuranceRequested)
+  insuranceRequested: z.nativeEnum(InsuranceRequested).default("GENERAL").optional()
 })
 
 

@@ -1,7 +1,6 @@
-import { Input } from "@/components/ui/Input"
-import { Button } from "@/components/ui/Button"
 import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin } from 'lucide-react'
 import Link from "next/link"
+import ContactForm from "./ContactForm"
 export default function Footer() {
   return (
     <footer className="bg-zinc-800 text-white py-24 relative ">
@@ -71,26 +70,7 @@ export default function Footer() {
           </div>
           {/* Contact Form */}
           <div className="space-y-8">
-            <form className="space-y-4 ">
-              <div className="grid grid-cols-2 gap-4 ">
-                <Input
-                  placeholder="Name"
-                  className="bg-white/10 border-0 text-white placeholder:text-gray-400"
-                />
-                <Input
-                  type="email"
-                  placeholder="Email"
-                  className="bg-white/10 border-0 text-white placeholder:text-gray-400"
-                />
-              </div>
-              {/* <Textarea
-                placeholder="Message"
-                className="bg-white/10 border-0 text-white placeholder:text-gray-400 min-h-[120px]"
-              /> */}
-              <Button className="w-full bg-salmon-600 hover:bg-salmon-600/90 rounded-sm">
-                Send Message
-              </Button>
-            </form>
+            <ContactForm></ContactForm>
             <h3 className="text-6xl">Contact Us</h3>
           </div>
           {/* Company Info */}

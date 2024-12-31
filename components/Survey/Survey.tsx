@@ -11,12 +11,13 @@ import { Loader2 } from 'lucide-react'
 import { Progress } from '@/components/ui/progress'
 import { FormFields, Field } from "@/types/form"
 import CreateLeadForm from '@/components/Lead/CreateLeadForm'
+import Link from 'next/link'
+import { routes } from '@/constants/routes'
 interface SurveyFormProps {
   form: FormFields
 }
 const SurveyForm: React.FC<SurveyFormProps> = ({ form }) => {
 
-  console.log(form)
 
   const [step, setStep] = useState(1)
   const [isLoadingStep, setIsLoadingStep] = useState(false)
@@ -50,10 +51,7 @@ const SurveyForm: React.FC<SurveyFormProps> = ({ form }) => {
       setIsLoadingStep(false)
     }, 1000)
   }
-  const handleFinalSubmit = () => {
-    console.log('Form submitted:', answers)
-    setShowThanks(true)
-  }
+
   const [[page, direction], setPage] = useState([0, 0])
   const paginate = (newDirection: number) => {
     if (step + newDirection > 0 && step + newDirection <= form.fields.length + 2) {
@@ -61,6 +59,8 @@ const SurveyForm: React.FC<SurveyFormProps> = ({ form }) => {
       setStep(step + newDirection)
     }
   }
+  console.log(step) 
+
   const renderField = (field: Field) => {
     switch (field.type) {
       case 'short_text':
@@ -168,7 +168,10 @@ const SurveyForm: React.FC<SurveyFormProps> = ({ form }) => {
                     </div>
                   </motion.div>
                 )}
-                {step === form.fields.length + 1 && (
+               
+              </AnimatePresence>
+            </form>
+            {step === form.fields.length + 1 && showThanks === false && (
                   <motion.div
                     key="step4"
                     variants={slideVariants}
@@ -186,11 +189,11 @@ const SurveyForm: React.FC<SurveyFormProps> = ({ form }) => {
                         <Loader2 className="w-8 h-8 animate-spin text-salmon-600" />
                       </div>
                     ) : (
-                      <CreateLeadForm></CreateLeadForm>
+                      <CreateLeadForm  setShowThanks={setShowThanks}></CreateLeadForm>
                     )}
                   </motion.div>
                 )}
-                {step === form.fields.length + 2 && showThanks && (
+                {showThanks && (
                   <motion.div
                     key="step5"
                     variants={slideVariants}
@@ -209,10 +212,9 @@ const SurveyForm: React.FC<SurveyFormProps> = ({ form }) => {
                     <p className="text-lg text-granny-smith-600">
                       We will be in touch with you shortly.
                     </p>
+                    <Button><Link href={routes.home}>Aceptar</Link></Button>
                   </motion.div>
                 )}
-              </AnimatePresence>
-            </form>
           </CardContent>
           <CardFooter className="px-8 pb-8 border-t border-turquoise-blue-100 mt-auto">
             <div className="w-full flex justify-between items-center gap-4">
@@ -246,15 +248,7 @@ const SurveyForm: React.FC<SurveyFormProps> = ({ form }) => {
                   ) : null}
                 </>
               )}
-              {step === form.fields.length + 1 && !showThanks && (
-                <Button
-                  className="w-full text-lg py-6 bg-salmon-600 hover:bg-salmon-700 transition-colors"
-                  onClick={handleFinalSubmit}
-                  disabled={!answers.name || !answers.email}
-                >
-                  Finish
-                </Button>
-              )}
+        
             </div>
           </CardFooter>
         </Card>
