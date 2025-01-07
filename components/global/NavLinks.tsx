@@ -18,9 +18,9 @@ const NavLinks = ({links}: {links:Links[]}) => {
           <li key={index}> <Link
           
           href={link.href}
-          className={cn('flex gap-2 items-center h-10 p-2  ps-3  hover:underline  transition-all text-white', (link.href === pathname || pathname.startsWith(link.href)) && 'border-l-2 border-rajah-500 text-rajah-500' )}
+          className={cn('flex gap-2 items-center h-10 p-2  ps-3  hover:underline  transition-all text-white', (link.href === pathname || pathname.startsWith(link.href)) && 'border-l-2 border-salmon-600 text-salmon-600' )}
         >
-            {link.href === pathname || pathname.startsWith(link.href) ? <LinkIcon color={'#ed8422'}></LinkIcon>: 
+            {link.href === pathname || pathname.startsWith(link.href) ? <LinkIcon color={'#ed3e09'}></LinkIcon>: 
             <LinkIcon  color={'white'}></LinkIcon>}
           
           <span>{link.name}</span>

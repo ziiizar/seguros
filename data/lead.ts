@@ -1,10 +1,16 @@
-import { db } from "@/lib/db";
+'use server'
 
-export const getLeads = async () => {
+import { db } from "@/lib/db";
+import { Lead } from "@prisma/client";
+
+export const getLeads = async (): Promise<Lead[] | null> => {
     try {
-      const lead = await db.lead.findMany();
-      return lead;
+      const leads = await db.lead.findMany();
+      console.log("ssssssssssssssssss")
+      console.log(leads)
+      return leads;
     } catch (error) {
+      console.log(error)
       return null;
     }
   };

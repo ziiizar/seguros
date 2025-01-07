@@ -26,10 +26,10 @@ const stats  = [
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8, delay }}
-        className="space-y-2 border-b-[#ED3E09] border-b last:border-b-0"
+        className="space-y-2 border-b-[#ED3E09] border-b "
       >
-        <div className="text-8xl font-bold text-[#ED3E09]">{value}</div>
-        <div className="text-2xl text-muted-foreground leading-tight pb-6">
+        <div className="text-8xl font-bold text-[#ED3E09] max-md:text-center max-md:items-center">{value}</div>
+        <div className="text-2xl text-muted-foreground leading-tight pb-6 max-md:text-center max-md:items-center">
           {description}
         </div>
       </motion.div>
@@ -39,14 +39,14 @@ const stats  = [
 export default function Stats() {
   return (
     <section className="min-h-[120vh] w-screen  relative overflow-hidden flex">
-      <div className="relative w-1/2 mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
+      <div className="relative w-full md:w-1/2 px-4 sm:px-6 lg:px-8 h-full flex items-center max-md:place-content-center max-md:items-center">
         <div className="max-w-2xl">
           <div
             
           >
-            <h2 className="text-6xl font-bold mb-16 leading-tight">
+            <h2 className="text-6xl font-bold mb-16 leading-tight max-sm:text-4xl max-md:text-center max-md:items-center">
               Trust Indicators
-              <span className="block text-2xl font-normal mt-4 text-muted-foreground">
+              <span className="block text-2xl font-normal mt-4 text-muted-foreground max-md:text-center max-md:items-center">
                 Building confidence through proven results
               </span>
             </h2>
@@ -60,8 +60,8 @@ export default function Stats() {
         </div>
       </div>
 
-      <div className="w-1/2  relative">
-      <div className="absolute inset-0 z-10"><Image
+      <div className="w-1/2  relative  hidden md:block">
+      <div className="absolute inset-0 z-10 "><Image
           src={Lifeguard}
           alt="Trust and Security"
           layout="fill"

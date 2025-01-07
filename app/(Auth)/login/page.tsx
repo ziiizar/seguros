@@ -1,30 +1,26 @@
-"use client";
-
-import { ReactNode } from "react";
-// import SignInWithSocials from "@/components/auth/SignInWithSocials";
 import LoginForm from "@/components/auth/LoginForm";
-// import { signInWithSocials } from "@/actions/signInWithSocials/action";
-import Google from "@/Icons/Google";
+// import Google from "@/Icons/Google";
 import FamilyLogin from "@/public/login.png";
 import Image from "next/image";
+// import { signInWithSocials } from "@/actions/auth/signInWithSocials/action";
 
 
-export default function Login(): ReactNode {
+export default function LoginPage () {
 
 
   return (
-    <main className="flex gap-4 p-4 h-screen">
+    <main className="flex gap-4 p-4 h-screen bg-radial">
       <section className="w-2/5 flex flex-col place-content-center items-center gap-4 p-10">
         <h3 className="text-[36px] font-semibold">Welcome back!</h3>
 
-        <button
-          // onClick={async () => {
-          //   await signInWithSocials({ provider: "google" });
-          // }}
+        {/* <button
+          onClick={async () => {
+            await signInWithSocials({ provider: "google" });
+          }}
           className="w-full bg-turquoise-blue-50 p-2 focus:outline-none focus:ring-0 border-2 rounded-3xl border-granny-smith-900/70 flex place-content-center items-center gap-4"
         >
           <Google></Google> Log in with Google
-        </button>
+        </button> */}
 
         <div className="flex items-center">
           <hr className="flex-grow border-t-2 border-white/70" />

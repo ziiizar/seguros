@@ -1,7 +1,3 @@
-"use client";
-
-import { ReactNode } from "react";
-
 // import SignInWithSocials from "@/components/auth/SignInWithSocials";
 import RegisterForm from "@/components/auth/RegisterForm";
 import Image from "next/image";
@@ -10,10 +6,10 @@ import FamilyRegister from '@/public/register.png'
 import Google from "@/Icons/Google";
 
 
-export default function RegisterPage(): ReactNode {
+export default function RegisterPage ()  {
 
   return (
-    <main className="flex p-4">
+    <main className="flex p-4 bg-radial">
        <section className="flex flex-col w-3/5 items-center place-content-center rounded-2xl relative  ">
         <div className="absolute inset-0 rounded-2xl">
           {" "}

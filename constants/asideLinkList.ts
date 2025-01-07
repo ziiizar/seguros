@@ -14,12 +14,12 @@ import { Links } from "@/types/links";
       // coloredIcon: DashboardColor,
       
     },
-    {
-      name: "Notifications",
-      href: routes.adminNotifications,
-      icon: Notification,
+    // {
+    //   name: "Notifications",
+    //   href: routes.adminNotifications,
+    //   icon: Notification,
       
-    },
+    // },
     {
       name: "Leads",
       href: routes.adminLeads,

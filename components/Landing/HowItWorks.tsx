@@ -150,7 +150,7 @@ const HowItWorks = () => {
           <span className="text-salmon-600 text-5xl font-medium tracking-wider uppercase mb-4">
             HOW IT WORKS
           </span>
-          <h2 className="text-5xl font-bold mb-6">
+          <h2 className="text-5xl font-bold mb-6 max-sm:text-3xl">
             Simple Steps to Get Insured
           </h2>
           <p className="text-lg">

@@ -19,12 +19,12 @@ export const handler = async (values: TSLoginSchema): Promise<ReturnType> => {
 
   // * AGREGAR ESTO CUANDO SE PONGA EMAIL VARIFICATION
   if (!existingUser.emailVerified) {
-    const verificationToken = await generateVerificationToken(
-      existingUser.email
-    );
-    await sendVerificationEmail(verificationToken.email, verificationToken.token);
+    // const verificationToken = await generateVerificationToken(
+    //   existingUser.email
+    // );
+    // await sendVerificationEmail(verificationToken.email, verificationToken.token);
 
-    return { data: existingUser, message: "Bienvenido" };
+    return {  message: "Confirmation email sent" };
   }
 
   try {

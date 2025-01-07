@@ -3,9 +3,38 @@
 import Link from "next/link";
 import { routes } from "@/constants/routes";
 import {Button} from "../ui/Button";
+import { toast } from "sonner";
+import { useAction } from "@/hooks/use-action";
+import { signInWithCredentials } from "@/actions/auth/signInWithCredentials/action";
+import { useRouter } from "next/navigation";
+import { useForm } from "react-hook-form";
+import { TSLoginSchema } from "@/actions/auth/signInWithCredentials/schema";
 
 const LoginForm = () => {
  
+  const router = useRouter();
+
+  const { execute, isLoading } = useAction(signInWithCredentials, {
+    async onSuccess(data, message) {
+      toast.success(message);
+      router.push(routes.home);
+  },
+    onError(error) {
+      toast.error(error);
+    },
+  });
+
+  const { register, handleSubmit } = useForm<TSLoginSchema>({
+    defaultValues: {
+      email: "",
+      password: "",
+    },
+  });
+
+  const onSubmit = async (data: TSLoginSchema) => {
+    await execute(data);
+    console.log("eee")
+  };
 
   return (
     <>
@@ -15,6 +44,7 @@ const LoginForm = () => {
       >
       
         <input
+        {...register("email")}
           placeholder="Email"
           className={
             "w-full bg-turquoise-blue-50 p-2 focus:outline-none focus:ring-0 border-2 rounded-3xl border-granny-smith-900/70 "
@@ -22,6 +52,7 @@ const LoginForm = () => {
         />
 
         <input
+         {...register("password")}
           placeholder="Password"
           className={
             "w-full bg-turquoise-blue-50 p-2 focus:outline-none focus:ring-0 border-2 rounded-3xl border-granny-smith-900/70 "
@@ -39,8 +70,9 @@ const LoginForm = () => {
         <Link href={routes.reset}>Forgot password?</Link>
 
         <Button
+        disabled={isLoading}
         type="submit"
-          
+          onClick={handleSubmit(onSubmit)}
         >
           Log in
         </Button>

@@ -12,6 +12,7 @@ interface routes {
   newPassword: string
   services: string
   aboutUs:  string
+  
 
 }
 
@@ -24,7 +25,7 @@ export const routes: routes = {
   adminLeads:'/admin/leads',
   unauthorized: "/unauthorized",
   confirmEmail: '/confirm-email',
-  verifyEmail: '/auth/email-verification',
+  verifyEmail: '/email-verification',
   reset: '/reset',
   newPassword: '/auth/new-password',
   services: '/services',
@@ -34,9 +35,9 @@ export const routes: routes = {
 };
 
 
-const PUBLIC_ROUTES = [routes.home, routes.unauthorized, routes.services, routes.aboutUs,routes.admin,  routes.adminNotifications, routes.adminLeads];
+const PUBLIC_ROUTES = [routes.home, routes.unauthorized, routes.services, routes.aboutUs,routes.admin,  routes.adminNotifications, routes.adminLeads, routes.login, routes.register];
 // const PREFIX_PUBLIC_ROUTES = [];
 // const PRIVATE_ROUTES = [];
-const AUTH_ROUTES = [routes.login, routes.register, routes.verifyEmail, routes.confirmEmail, routes.reset, routes.newPassword];
+const AUTH_ROUTES = [, routes.verifyEmail, routes.confirmEmail, routes.reset, routes.newPassword];
 
 export { AUTH_ROUTES,  PUBLIC_ROUTES };

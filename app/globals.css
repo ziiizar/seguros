@@ -22,38 +22,45 @@
   }
 }
 
-.bg-radial{
-  background: radial-gradient(56.03% 64.91% at 50% 1.43%, rgba(9, 222, 237, 0.30) 0%, rgba(9, 222, 237, 0.00) 100%), #DFEEEF;
+.bg-radial {
+  background: radial-gradient(
+    56.03% 64.91% at 50% 1.43%,
+    rgba(9, 222, 237, 0.3) 0%,
+    rgba(9, 222, 237, 0) 100%
+  ),
+    #dfeeef;
 }
-
 
 .healthGradient {
   border-radius: 12px;
-background: linear-gradient(262deg, rgba(9, 222, 237, 0.00) 20.43%, #35E4F0 67.35%)
-
-
+  background: linear-gradient(
+    262deg,
+    rgba(9, 222, 237, 0) 20.43%,
+    #35e4f0 67.35%
+  );
 }
 
-.lifeGradient{
+.lifeGradient {
   border-radius: 12px;
-background: linear-gradient(266deg, rgba(244, 184, 100, 0.00) 1.17%, #F4B864 78.43%);
+  background: linear-gradient(
+    266deg,
+    rgba(244, 184, 100, 0) 1.17%,
+    #f4b864 78.43%
+  );
 }
 
 .shadowOrange {
-  box-shadow: 0px 0px 15px 0px #ED8E09;
+  box-shadow: 0px 0px 15px 0px #ed8e09;
 }
-
 
 .adminLayoutGrid {
   display: grid;
   grid-template-columns: 250px 1fr;
-  grid-template-rows: 1fr;
   min-height: 100vh;
-  max-height: 100vh;
+  grid-template-rows: 1fr;
   grid-template-areas: 
-  "aside main ";
+    "aside main";
 }
-
 
 @layer base {
   :root {
@@ -65,3 +72,8 @@ background: linear-gradient(266deg, rgba(244, 184, 100, 0.00) 1.17%, #F4B864 78.
   background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f97316' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

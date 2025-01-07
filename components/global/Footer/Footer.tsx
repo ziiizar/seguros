@@ -3,12 +3,12 @@ import Link from "next/link"
 import ContactForm from "./ContactForm"
 export default function Footer() {
   return (
-    <footer className="bg-zinc-800 text-white py-24 relative ">
+    <footer className="bg-zinc-800 text-white py-24 relative w-screen">
       {/* Get Insurance Button - Positioned above footer */}
-      <div className="absolute left-1/2 -translate-x-1/2 -top-8 z-[100]">
+      <div className="absolute left-1/2 -translate-x-1/2 -top-8 z-[100] ">
         <Link 
           href="/get-insurance" 
-          className="bg-salmon-600 hover:bg-salmon-700 transition-colors text-white px-8 py-4 rounded-full text-xl font-semibold flex items-center shadow-lg hover:shadow-xl"
+          className="bg-salmon-600 hover:bg-salmon-700 transition-colors text-white px-8 py-4 rounded-full text-xl font-semibold flex items-center shadow-lg hover:shadow-xl max-sm:w-72 max-sm:h-16"
         >
           Get your insurance
           <svg className="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -71,16 +71,16 @@ export default function Footer() {
           {/* Contact Form */}
           <div className="space-y-8">
             <ContactForm></ContactForm>
-            <h3 className="text-6xl">Contact Us</h3>
+            <h3 className="text-[clamp(2rem,2vw,1rem)]">Contact Us</h3>
           </div>
           {/* Company Info */}
           
         </div>
         {/* Bottom Bar */}
-        <div className="mt-16 pt-8 border-t border-white/10 text-center text-gray-400 flex  place-content-center items-center">
-          <h2 className="text-[180px] font-bold leading-none bg-gradient-to-r from-salmon-600 to-white bg-clip-text text-transparent flex ">
+        <div className="mt-16 pt-8 border-t border-white/10 text-center text-gray-400 flex  place-content-center items-center text-[clamp(0.75rem,2vw,1rem)]">
+          <h2 className="text-[clamp(3rem,2vw,1rem)] xl:text-[180px] font-bold leading-none bg-gradient-to-r from-salmon-600 to-white bg-clip-text text-transparent flex ">
             GPF
-            <span className="block text-[180px] text-white">SERVICE</span>
+            <span className=" xl:text-[180px] text-white text-[clamp(3rem,2vw,1rem)]">SERVICE</span>
           </h2>
         </div>
       </div>

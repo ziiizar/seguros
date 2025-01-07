@@ -1,12 +1,16 @@
 import Link from "next/link";
 import { routes } from "@/constants/routes";
 import { cn } from "@/lib/utils";
+import { auth } from "@/auth";
+import { Button } from "@/components/ui/Button";
 
 const Header = async ({className}: {className?:string}) => {
+
+  const session = await auth()
   return (
-    <header className={cn("justify-between flex place-content-center items-center py-4 px-8 h-[10dvh]  ", className)}>
+    <header className={cn("justify-between flex  items-center py-4 px-8 h-[10dvh]  ", className)}>
       <picture>
-        {/* Logo can go here */}
+        <div className="size-4"></div>
       </picture>
       
       <nav>
@@ -50,7 +54,8 @@ const Header = async ({className}: {className?:string}) => {
         </ul>
       </nav>
       {/* Right side space reserved for future components */}
-      <div className="w-[100px]" />
+      {session?.user.role === "ADMIN" && <Button><Link href={routes.admin}>Admin</Link></Button>}
+      
     </header>
   );
 };

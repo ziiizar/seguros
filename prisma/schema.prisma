@@ -84,7 +84,8 @@ model Lead {
   zipCode   Int?
   status    ClientStatus @default(NEW)
   insuranceRequested   InsuranceRequested @default(GENERAL)
-}
+  createdAt   DateTime  @default(now())
+} 
 
 enum UserRole {
   ADMIN

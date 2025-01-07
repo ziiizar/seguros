@@ -38,7 +38,7 @@ const features = [
         className="flex items-start space-x-4"
       >
         <div className="flex-shrink-0">
-          <div className="p-3 rounded-full text-[#ED3E09]">
+          <div className="py-3 rounded-full text-[#ED3E09]">
             <Icon className="w-12 h-12" />
           </div>
         </div>
