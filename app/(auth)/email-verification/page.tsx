@@ -1,12 +1,12 @@
 import { emailVerification } from "@/actions/auth/emailVerification/action/emailVerification";
-import Link from 'next/link';
+import Link from "next/link";
 
-const EmailVerificationPage = async ({
+export default async function EmailVerificationPage({
   searchParams,
 }: {
-  searchParams: { [key: string]: string | string[] | undefined }
-}) => {
-  const token = searchParams.token as string | undefined;
+  searchParams: Promise<{ token?: string }>;
+}) {
+  const { token } = await searchParams;
 
   if (!token) {
     return (
@@ -22,7 +22,7 @@ const EmailVerificationPage = async ({
 
   const result = await emailVerification(token);
 
-  if ('error' in result) {
+  if ("error" in result) {
     return (
       <div className="text-center p-4">
         <h1 className="text-2xl font-bold mb-4">Error de verificación</h1>
@@ -43,7 +43,4 @@ const EmailVerificationPage = async ({
       </Link>
     </div>
   );
-};
-
-export default EmailVerificationPage;
-
+}
