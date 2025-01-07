@@ -54,7 +54,7 @@ const Header = async ({className}: {className?:string}) => {
         </ul>
       </nav>
       {/* Right side space reserved for future components */}
-      {session?.user.role === "ADMIN" && <Button><Link href={routes.admin}>Admin</Link></Button>}
+      {session?.user.role && session?.user.role === "ADMIN" && <Button><Link href={routes.admin}>Admin</Link></Button>}
       
     </header>
   );
