@@ -7,7 +7,7 @@ const layout = ({
     children: React.ReactNode;
   }) => {
   return (
-    <div className=" adminLayoutGrid bg-radial overflow-y-auto overflow-x-hidden z-20 p-5 gap-5">
+    <div className=" adminLayoutGrid bg-black/90 overflow-y-auto overflow-x-hidden z-20 p-5 gap-5">
       
       
         <Aside ></Aside>

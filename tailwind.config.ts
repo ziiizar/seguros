@@ -127,8 +127,27 @@ const config: Config = {
         }
       
 		},
-  	}
+		animation: {
+			flip: "flip 6s infinite steps(2, end)",
+			rotate: "rotate 3s linear infinite both"
+		  },
+		  keyframes: {
+			flip: {
+			  "to": {
+				transform: "rotate(360deg)"
+			  }
+			},
+			rotate: {
+			  "to": {
+				transform: "rotate(90deg)"
+			  }
+			}
+		  }
+		
+  	},
+	
   },
+  
 
   // eslint-disable-next-line @typescript-eslint/no-require-imports
   plugins: [require("tailwind-scrollbar-hide"), require("tailwindcss-animate")],

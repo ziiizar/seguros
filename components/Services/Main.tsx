@@ -46,7 +46,7 @@ const Main = () => {
   const currentService = services[selectedService];
 
   return (
-    <main className="flex min-h-[90dvh] h-[90dvh] px-8 gap-16 pb-16 pt-4 overflow-hidden">
+    <main className="flex min-h-[90dvh] h-[90dvh] px-8 gap-16 pb-16 pt-4 overflow-hidden ">
       <AnimatePresence mode="wait">
         <motion.div
           key={selectedService}

@@ -47,8 +47,8 @@ const LeadsTable = ({ leads }: { leads: Lead[] }) => {
   };
 
   return (
-    <div>
-      <Table>
+    
+      <Table className="text-white">
         <TableHeader>
           <TableRow>
             <TableHead>Name</TableHead>
@@ -129,7 +129,7 @@ const LeadsTable = ({ leads }: { leads: Lead[] }) => {
           ))}
         </TableBody>
       </Table>
-    </div>
+    
   );
 };
 

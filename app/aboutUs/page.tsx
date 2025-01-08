@@ -10,7 +10,7 @@ import Image from "next/image";
 
 const page = () => {
   return (
-    <>
+    <div className="bg-radial">
       <Header></Header>
       <main className="px-8 pt-16 pb-16 flex flex-col gap-8 ">
         <section className="flex flex-col place-content-center items-center gap-8 px-48">
@@ -103,7 +103,7 @@ const page = () => {
         </section>
       </main>
       <Footer></Footer>
-    </>
+    </div>
   );
 };
 

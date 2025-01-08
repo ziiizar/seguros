@@ -9,11 +9,11 @@ const Page = () => {
   
 
   return (
-    <>
+    <div className="bg-radial">
       <Header />
       <Main></Main>
       <Footer />
-    </>
+    </div>
   );
 };
 

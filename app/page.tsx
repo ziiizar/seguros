@@ -8,6 +8,8 @@ import Stats from "@/components/Landing/Stats";
 import Testimonials from "@/components/Landing/Testimonials";
 
 export default async function Home() {
+
+
   return (
     <BackgroundController>
       <Header className="absolute inset-x-0 top-0 z-20" />

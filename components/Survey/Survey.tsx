@@ -125,7 +125,7 @@ const SurveyForm: React.FC<SurveyFormProps> = ({ form }) => {
   return (
     
       <div className="w-full h-full flex place-content-center items-center">
-        <Card className="lg:w-[500px] w-[350px] h-[450px]  shadow-lg bg-white/95 backdrop-blur border-turquoise-blue-100 transition-all duration-300 hover:shadow-xl">
+        <Card className="lg:w-[500px] w-[350px] h-[450px]  shadow-lg bg-white/95 backdrop-blur transition-all duration-300 hover:shadow-xl">
           <CardHeader className="text-center p-4  ">
             <CardTitle className="text-3xl font-bold  text-salmon-600">
               {form.title}
@@ -163,7 +163,7 @@ const SurveyForm: React.FC<SurveyFormProps> = ({ form }) => {
                     <h3 className="text-xl font-medium text-black">
                       {form.fields[step - 1].title}
                     </h3>
-                    <div className="transition-all duration-300 hover:translate-y-[-2px]">
+                    <div className="transition-all duration-300 ">
                       {renderField(form.fields[step - 1])}
                     </div>
                   </motion.div>
@@ -216,7 +216,7 @@ const SurveyForm: React.FC<SurveyFormProps> = ({ form }) => {
                   </motion.div>
                 )}
           </CardContent>
-          <CardFooter className="px-8 pb-8 border-t border-turquoise-blue-100 mt-auto">
+          <CardFooter className="px-8 pb-8   mt-auto">
             <div className="w-full flex justify-between items-center gap-4">
               {step < form.fields.length + 2 && (
                 <>
@@ -224,7 +224,7 @@ const SurveyForm: React.FC<SurveyFormProps> = ({ form }) => {
                     <Button
                       variant="outline"
                       onClick={() => paginate(-1)}
-                      className="text-lg px-8 py-6 border-turquoise-blue-200 hover:bg-turquoise-blue-50 hover:text-turquoise-blue-700 transition-colors"
+                      className="text-lg px-8 py-6  hover:bg-salmon-200  transition-colors"
                     >
                       Back
                     </Button>
