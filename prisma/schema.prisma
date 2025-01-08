@@ -96,6 +96,7 @@ enum ClientStatus {
   NEW
   CONTACTED
   REJECTED
+  ENROLLED
 }
 
 enum InsuranceRequested {

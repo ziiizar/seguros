@@ -1,6 +1,6 @@
 "use client";
 
-import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
+import { Bar, BarChart, CartesianGrid } from "recharts";
 
 import {
   ChartConfig,
@@ -23,15 +23,15 @@ const chartConfig = {
 
 export default function GeneralChart({ data }: { data: ProcessedLeadData }) {
   return (
-    <ChartContainer config={chartConfig} className="h-auto w-full">
+    <ChartContainer config={chartConfig} className="h-auto w-full xl:pb-6">
       <BarChart data={data}>
         <CartesianGrid vertical={false} />
-        <XAxis
+        {/* <XAxis
           dataKey="month"
           tickLine={false}
           tickMargin={10}
           axisLine={false}
-        />
+        /> */}
         <ChartTooltip content={<ChartTooltipContent />} />
         <Bar dataKey="total" fill="#ed3e09" radius={4} />
         <Bar dataKey="rejected" fill="#fabaa7" radius={4} />

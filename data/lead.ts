@@ -3,16 +3,24 @@
 import { db } from "@/lib/db";
 import { Lead } from "@prisma/client";
 
-export const getLeads = async (status?: Lead["status"]): Promise<Lead[] | null> => {
+export const getLeads = async (
+  status?: Lead["status"],
+  createdAt?: Date
+): Promise<Lead[] | null> => {
   try {
     const leads = await db.lead.findMany({
       where: {
         ...(status !== undefined && { status }),
+        ...(createdAt !== undefined && {
+          createdAt: {
+            gte: createdAt, // Filtra desde `createdAt` hacia adelante
+          },
+        }),
       },
     });
     return leads;
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return null;
   }
 };

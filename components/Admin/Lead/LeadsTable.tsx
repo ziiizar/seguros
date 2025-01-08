@@ -47,88 +47,88 @@ const LeadsTable = ({ leads }: { leads: Lead[] }) => {
   };
 
   return (
-    
-      <Table className="text-white">
-        <TableHeader>
-          <TableRow>
-            <TableHead>Name</TableHead>
-            <TableHead>Email</TableHead>
-            <TableHead>Request Date</TableHead>
-            <TableHead>Status</TableHead>
-            <TableHead>Action</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {leads?.map((lead) => (
-            <TableRow key={lead.id}>
-              <TableCell>{lead.name}</TableCell>
-              <TableCell>{lead.email}</TableCell>
-              <TableCell>
-                {new Date(lead.createdAt).toLocaleDateString()}
-              </TableCell>
+    <div className="w-full overflow-y-auto scrollbar-hide text-white "><Table className=" ">
+    <TableHeader>
+      <TableRow>
+        <TableHead>Name</TableHead>
+        <TableHead>Email</TableHead>
+        <TableHead>Request Date</TableHead>
+        <TableHead>Status</TableHead>
+        <TableHead>Action</TableHead>
+      </TableRow>
+    </TableHeader>
+    <TableBody>
+      {leads?.map((lead) => (
+        <TableRow key={lead.id}>
+          <TableCell>{lead.name}</TableCell>
+          <TableCell>{lead.email}</TableCell>
+          <TableCell>
+            {new Date(lead.createdAt).toLocaleDateString()}
+          </TableCell>
 
-              <TableCell>{lead.status}</TableCell>
-              <TableCell>
-                <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-                  <DialogTrigger asChild>
-                    <Button onClick={() => {
-                      setSelectedLead(lead);
-                      setSelectedStatus(lead.status);
-                    }}>
-                      Edit
-                    </Button>
-                  </DialogTrigger>
+          <TableCell>{lead.status}</TableCell>
+          <TableCell>
+            <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+              <DialogTrigger asChild>
+                <Button onClick={() => {
+                  setSelectedLead(lead);
+                  setSelectedStatus(lead.status);
+                }}>
+                  Edit
+                </Button>
+              </DialogTrigger>
 
-                  <DialogContent>
-                    <DialogHeader>
-                      <DialogTitle>Edit status</DialogTitle>
-                      <DialogDescription>
-                        Change the status of the lead.
-                      </DialogDescription>
-                    </DialogHeader>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Edit status</DialogTitle>
+                  <DialogDescription>
+                    Change the status of the lead.
+                  </DialogDescription>
+                </DialogHeader>
 
-                    <Select
-                      value={selectedStatus}
-                      onValueChange={(value) => setSelectedStatus(value as ClientStatus)}
+                <Select
+                  value={selectedStatus}
+                  onValueChange={(value) => setSelectedStatus(value as ClientStatus)}
+                >
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select status" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {Object.values(ClientStatus).map((status) => (
+                      <SelectItem key={status} value={status}>
+                        {status}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+
+                <DialogFooter>
+                  <Button
+                    variant="ghost"
+                    onClick={() => {
+                      setSelectedLead(null);
+                      setIsDialogOpen(false);
+                    }}
+                  >
+                    Cancel
+                  </Button>
+                  {selectedLead && (
+                    <Button
+                      onClick={onSubmit}
+                      disabled={isLoading || !selectedStatus}
                     >
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select status" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {Object.values(ClientStatus).map((status) => (
-                          <SelectItem key={status} value={status}>
-                            {status}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-
-                    <DialogFooter>
-                      <Button
-                        variant="ghost"
-                        onClick={() => {
-                          setSelectedLead(null);
-                          setIsDialogOpen(false);
-                        }}
-                      >
-                        Cancel
-                      </Button>
-                      {selectedLead && (
-                        <Button
-                          onClick={onSubmit}
-                          disabled={isLoading || !selectedStatus}
-                        >
-                          Accept
-                        </Button>
-                      )}
-                    </DialogFooter>
-                  </DialogContent>
-                </Dialog>
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+                      Accept
+                    </Button>
+                  )}
+                </DialogFooter>
+              </DialogContent>
+            </Dialog>
+          </TableCell>
+        </TableRow>
+      ))}
+    </TableBody>
+  </Table></div>
+      
     
   );
 };

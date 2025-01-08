@@ -11,7 +11,8 @@ const layout = ({
       
       
         <Aside ></Aside>
-        {children}
+        <div className="[grid-area:main] h-full overflow-auto"> {children}</div>
+       
       </div>
   )
 }
