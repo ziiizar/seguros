@@ -3,13 +3,22 @@
 import { db } from "@/lib/db";
 import { Lead } from "@prisma/client";
 
+
+export const getAllLeads = async(): Promise<Lead[] | null> => {
+  try {
+    return await db.lead.findMany()
+  } catch (error) {
+    return null
+  }
+}
+
 export const getLeads = async (
   status?: Lead["status"],
   createdAt?: Date
 ): Promise<Lead[] | null> => {
   try {
     const leads = await db.lead.findMany({
-      where: {
+      where: { active: true,
         ...(status !== undefined && { status }),
         ...(createdAt !== undefined && {
           createdAt: {

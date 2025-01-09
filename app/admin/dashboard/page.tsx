@@ -71,7 +71,7 @@ const Page = async () => {
                 </div>
                 <div className="mt-4 space-y-2">
                   <h3 className="text-lg font-semibold text-white">
-                    {newLeads ? newLeads.length + 1 : 0}
+                    {newLeads ? newLeads.length  : 0}
                   </h3>
                   <p className="text-sm text-zinc-400">
                     Explore recently added leads. Focus your efforts on these fresh opportunities to maximize potential conversions.
@@ -108,7 +108,7 @@ const Page = async () => {
                 <div>
                   <h3 className="text-sm font-medium text-white">Rejected Leads</h3>
                   <p className="text-xs text-zinc-400 mt-1">
-                    <span className="font-semibold">{rejecteds ? rejecteds.length + 1 : 0}</span> leads have been marked as rejected. Analyze reasons to refine your processes.
+                    <span className="font-semibold">{rejecteds ? rejecteds.length : 0}</span> leads have been marked as rejected. Analyze reasons to refine your processes.
                   </p>
                 </div>
               </div>

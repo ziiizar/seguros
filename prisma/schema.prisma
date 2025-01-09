@@ -85,6 +85,8 @@ model Lead {
   status    ClientStatus @default(NEW)
   insuranceRequested   InsuranceRequested @default(GENERAL)
   createdAt   DateTime  @default(now())
+  updatedAt DateTime?
+  active    Boolean     @default(true)
 } 
 
 enum UserRole {
