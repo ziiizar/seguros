@@ -33,7 +33,7 @@ export default function RegisterPage ()  {
               </div>
             </div> */}
           <h3 className="text-[30px] font-semibold text-white text-right text-pretty">
-          Join us today and discover the easiest way to find the perfect insurance for you and your family.
+          Join us today.
           </h3>
           <div className="flex gap-2">
             <button className="border-white border rounded-full px-3 py-2 backdrop-blur-md bg-white/20">Easy</button>

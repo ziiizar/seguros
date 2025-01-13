@@ -7,7 +7,7 @@ export const LoginSchema = z.object({
   email: z.string().email({
     message: "Enter a valid email",
   }),
-  password: passwordSchema,
+  password: z.string(),
   // rememberMe: z.boolean(),
 });
 

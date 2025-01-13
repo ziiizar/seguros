@@ -12,21 +12,21 @@ export default function LoginPage () {
     <main className="flex gap-4 p-4 h-screen bg-radial">
       <section className="w-2/5 flex flex-col place-content-center items-center gap-4 p-10">
         <h3 className="text-[36px] font-semibold">Welcome back!</h3>
-
-        {/* <button
+{/* 
+        <button
           onClick={async () => {
             await signInWithSocials({ provider: "google" });
           }}
           className="w-full bg-turquoise-blue-50 p-2 focus:outline-none focus:ring-0 border-2 rounded-3xl border-granny-smith-900/70 flex place-content-center items-center gap-4"
         >
           <Google></Google> Log in with Google
-        </button> */}
+        </button>
 
         <div className="flex items-center">
           <hr className="flex-grow border-t-2 border-white/70" />
           <span className="px-3">Or </span>
           <hr className="flex-grow border-t-2 border-white/70" />
-        </div>
+        </div> */}
 
         <LoginForm></LoginForm>
       </section>
@@ -53,8 +53,7 @@ export default function LoginPage () {
               </div>
             </div> */}
           <h3 className="text-[30px] font-semibold text-white">
-            Secure your future by accessing your personalized insurance
-            dashboard.
+          Empower your work with our insurance management tools
           </h3>
           <div className="flex gap-2">
             <button className="border-white border rounded-full px-3 py-2 backdrop-blur-md bg-white/20">Support</button>

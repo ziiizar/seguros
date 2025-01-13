@@ -13,7 +13,7 @@ export default async function Page() {
   }
 
   return (
-    <main className="w-screen h-screen flex justify-center items-center">
+    <main className="w-screen h-screen flex justify-center items-center bg-gradient-to-tr from-salmon-50 to-salmon-100">
       {/* <div className="w-[40%] h-full relative">
         <Image
           src={Lifeguard}
@@ -23,7 +23,7 @@ export default async function Page() {
           priority
         />
       </div> */}
-      <div className="w-[60%] flex place-content-center items-center p-16 h-screen">
+      <div className="w-screen flex place-content-center items-center p-16 h-screen">
         <SurveyForm form={form} />
       </div>
     </main>

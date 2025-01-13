@@ -10,7 +10,7 @@ const NavLinks = ({links}: {links:Links[]}) => {
   const pathname = usePathname();
 
   return (
-    <ul className="flex flex-col gap-8 ps-2">
+    <ul className="flex flex-col gap-8 ps-2 flex-1">
       {links.map((link, index) => {
         const LinkIcon = link.icon;
         // const ColoredIcon = link.coloredIcon;

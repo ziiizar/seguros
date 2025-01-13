@@ -3,6 +3,7 @@ import { routes } from "@/constants/routes";
 import { cn } from "@/lib/utils";
 import { auth } from "@/auth";
 import { Button } from "@/components/ui/Button";
+// import {Logo} from "@/Icons/Logo"
 
 const Header = async ({className}: {className?:string}) => {
 
@@ -10,6 +11,7 @@ const Header = async ({className}: {className?:string}) => {
   return (
     <header className={cn("justify-between flex  items-center py-4 px-8 h-[10dvh]  ", className)}>
       <picture>
+        {/* <Logo></Logo> */}
         <div className="size-4"></div>
       </picture>
       

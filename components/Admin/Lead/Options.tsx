@@ -99,7 +99,7 @@ const Options = ({ lead }: { lead: Lead }) => {
       <DialogHeader>
         <DialogTitle>Delete Lead</DialogTitle>
         <DialogDescription>
-          Are you sure to delete <span>{lead.name}</span>?
+          Are you sure you want to delete <span>{lead.name}</span>?
         </DialogDescription>
       </DialogHeader>
       <DialogFooter>

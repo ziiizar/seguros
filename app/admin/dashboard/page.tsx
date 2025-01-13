@@ -2,18 +2,33 @@ import GeneralChart from "@/components/Admin/Dashboard/GeneralChart";
 import { CardAnimated } from "@/components/ui/AnimatedCard";
 import { routes } from "@/constants/routes";
 import { getLeads } from "@/data/lead";
-import { processLeadsData } from "@/lib/processLeadsData";
+// import { processLeadsData } from "@/lib/processLeadsData";
 import {  Users2, Settings } from "lucide-react";
 import Link from "next/link";
 
 const Page = async () => {
   const newLeads = await getLeads("NEW");
-  const leads = await getLeads();
+  // const leads = await getLeads();
   const rejecteds = await getLeads("REJECTED");
   const contacted = await getLeads("CONTACTED");
   // const enrolled = await getLeads("ENROLLED");
 
-  const monthlyLeadsData = processLeadsData(leads);
+  // const monthlyLeadsData = processLeadsData(leads);
+  const monthlyLeadsData = [
+  { month: "January", total: 150, rejected: 20 },
+  { month: "February", total: 200, rejected: 30 },
+  { month: "March", total: 180, rejected: 25 },
+  { month: "April", total: 220, rejected: 40 },
+  { month: "May", total: 190, rejected: 35 },
+  { month: "June", total: 210, rejected: 50 },
+  { month: "July", total: 230, rejected: 45 },
+  { month: "August", total: 250, rejected: 60 },
+  { month: "September", total: 240, rejected: 55 },
+  { month: "October", total: 260, rejected: 70 },
+  { month: "November", total: 270, rejected: 65 },
+  { month: "December", total: 300, rejected: 80 },
+];
+
 
   return (
     <div className="h-full">

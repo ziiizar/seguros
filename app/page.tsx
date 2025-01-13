@@ -6,6 +6,7 @@ import ValueProposition from "@/components/Landing/ValueProposition";
 import HowItWorks from "@/components/Landing/HowItWorks";
 import Stats from "@/components/Landing/Stats";
 import Testimonials from "@/components/Landing/Testimonials";
+// import ValuePropositionOption2 from "@/components/Landing/ValuePropositionOption2";
 
 export default async function Home() {
 
@@ -17,6 +18,7 @@ export default async function Home() {
         <Hero />
         <HowItWorks />
         <ValueProposition />
+        {/* <ValuePropositionOption2></ValuePropositionOption2> */}
         <Stats />
         <Testimonials />
       </main>

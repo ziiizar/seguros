@@ -3,7 +3,7 @@ import Link from "next/link"
 import ContactForm from "./ContactForm"
 export default function Footer() {
   return (
-    <footer className="bg-zinc-800 text-white py-24 relative w-screen">
+    <footer className="bg-zinc-800 text-white py-24 relative w-screen ">
       {/* Get Insurance Button - Positioned above footer */}
       <div className="absolute left-1/2 -translate-x-1/2 -top-8 z-[100] ">
         <Link 
@@ -69,7 +69,7 @@ export default function Footer() {
             </div>
           </div>
           {/* Contact Form */}
-          <div className="space-y-8">
+          <div id="contact-me" className="space-y-8">
             <ContactForm></ContactForm>
             <h3 className="text-[clamp(2rem,2vw,1rem)]">Contact Us</h3>
           </div>

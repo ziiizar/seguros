@@ -12,7 +12,7 @@ interface routes {
   newPassword: string
   services: string
   aboutUs:  string
-  
+  survey: string
 
 }
 
@@ -29,7 +29,8 @@ export const routes: routes = {
   reset: '/reset',
   newPassword: '/auth/new-password',
   services: '/services',
-  aboutUs: '/aboutUs'
+  aboutUs: '/aboutUs',
+  survey: '/services/survey'
 
 
 };

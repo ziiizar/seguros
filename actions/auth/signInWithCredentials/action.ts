@@ -14,15 +14,15 @@ export const handler = async (values: TSLoginSchema): Promise<ReturnType> => {
   const existingUser = await getUserByEmail(email);
 
   if (!existingUser || !existingUser.email || !existingUser.password) {
-    return { error: "El usuario no existe" };
+    return { error: "Not user found" };
   }
 
   // * AGREGAR ESTO CUANDO SE PONGA EMAIL VARIFICATION
   if (!existingUser.emailVerified) {
-    // const verificationToken = await generateVerificationToken(
-    //   existingUser.email
-    // );
-    // await sendVerificationEmail(verificationToken.email, verificationToken.token);
+    const verificationToken = await generateVerificationToken(
+      existingUser.email
+    );
+    await sendVerificationEmail(verificationToken.email, verificationToken.token);
 
     return {  message: "Confirmation email sent" };
   }
@@ -34,12 +34,15 @@ export const handler = async (values: TSLoginSchema): Promise<ReturnType> => {
       redirect: false,
     });
 
-    return { data: existingUser, message: "Bienvenido" };
+    return { data: existingUser, message: "Welcome" };
   } catch (error) {
-    if (error instanceof AuthError && error.type === "CredentialsSignin") {
-      return { error: "Credenciales incorrectas" };
+    if (error instanceof AuthError) {
+      if (error.type === "CredentialsSignin")
+        return { error: "Incorrect credentials" };
+
+      if (error.type === "AccessDenied") return { error: "Access denied" };
     }
-    throw error;
+    return { error: "Error during login" };
   }
 };
 

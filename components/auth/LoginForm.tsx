@@ -20,6 +20,7 @@ const LoginForm = () => {
       router.push(routes.home);
   },
     onError(error) {
+      console.log("Error capturado en onError:", error);
       toast.error(error);
     },
   });
@@ -33,7 +34,6 @@ const LoginForm = () => {
 
   const onSubmit = async (data: TSLoginSchema) => {
     await execute(data);
-    console.log("eee")
   };
 
   return (
@@ -76,12 +76,12 @@ const LoginForm = () => {
         >
           Log in
         </Button>
-        <div className="flex gap-2">
-          <h3 className="">Don´t you have an Account? </h3>
+        {/* <div className="flex gap-2">
+          <h3 className="">Need help? </h3>
           <Link href={routes.register} className=" text-salmon-600">
-            Sign up
+          Contact Support
           </Link>
-        </div>
+        </div> */}
       </form>
 
       {/* <div>{JSON.stringify(watch(), null, 2)}</div> */}
