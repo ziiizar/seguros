@@ -3,13 +3,13 @@ import RegisterForm from "@/components/auth/RegisterForm";
 import Image from "next/image";
 // import { signInWithSocials } from "@/actions/signInWithSocials/action";
 import FamilyRegister from '@/public/register.png'
-import Google from "@/Icons/Google";
+// import Google from "@/Icons/Google";
 
 
 export default function RegisterPage ()  {
 
   return (
-    <main className="flex p-4 bg-radial">
+    <main className="flex p-4 bg-radial h-screen">
        <section className="flex flex-col w-3/5 items-center place-content-center rounded-2xl relative  ">
         <div className="absolute inset-0 rounded-2xl">
           {" "}
@@ -51,17 +51,18 @@ export default function RegisterPage ()  {
             <h3 className="text-[36px] font-semibold">Welcome to our family.</h3>
             {/* <button type="button" onClick={() => router.back()}>
             </button> */}
-            <button 
+            {/* <button 
         //     onClick={async () => {
         //   await signInWithSocials({ provider: "google" });
         // }} 
-        className="w-full bg-turquoise-blue-50 p-2 focus:outline-none focus:ring-0 border-2 rounded-3xl border-granny-smith-900/70 flex place-content-center items-center gap-4"><Google></Google> Sign up with Google </button>
+        className="w-full bg-turquoise-blue-50 p-2 focus:outline-none focus:ring-0 border-2 rounded-3xl border-granny-smith-900/70 flex place-content-center items-center gap-4">
+          <Google></Google> Sign up with Google </button>
           
           <div className="flex items-center w-full">
             <hr className="flex-grow border-t-2 border-black/50" />
             <span className="px-3">Or </span>
             <hr className="flex-grow border-t-2 border-black/50" />
-          </div>
+          </div> */}
 
           </div>
 
