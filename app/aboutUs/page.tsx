@@ -78,7 +78,7 @@ const page = () => {
           </div>
         </section>
 
-        <section className="flex flex-col gap-4">
+        {/* <section className="flex flex-col gap-4">
           <div className="flex flex-col place-content-center items-end">
             <h4 className="text-3xl font-semibold">Contact Us</h4>
             <p className={cn("", literata.className)}>
@@ -100,7 +100,7 @@ const page = () => {
               <form action=""></form>
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
       <Footer></Footer>
     </div>

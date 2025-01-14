@@ -14,7 +14,7 @@ import { Progress } from "@/components/ui/progress";
 import { FormFields } from "@/types/form";
 import CreateLeadForm from "@/components/Lead/CreateLeadForm";
 import { cn } from "@/lib/utils";
-import { inter } from "@/styles/fonts";
+import {  literata } from "@/styles/fonts";
 import renderField from "@/services/RenderFormField";
 import SurveyCard from "./SurveyCard";
 import ThankYouCard from "./ThankYouCard";
@@ -59,7 +59,7 @@ const SurveyForm: React.FC<SurveyFormProps> = ({ form }) => {
   const [progress, setProgress] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
 
-  const [stepTypeToRender, setStepTypeToRender] = useState(STEPTYPES.survey)
+  const [stepTypeToRender, setStepTypeToRender] = useState(STEPTYPES.thanks)
 
   console.log(form);
   useEffect(() => {
@@ -101,7 +101,7 @@ const SurveyForm: React.FC<SurveyFormProps> = ({ form }) => {
     <div
       className={cn(
         "w-full h-full flex place-content-center items-center",
-        inter.className
+        literata.className
       )}
     >
       <AnimatePresence mode="wait">

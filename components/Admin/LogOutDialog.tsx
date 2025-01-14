@@ -16,11 +16,8 @@ const LogOutDialog = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   return (
     <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-      <DialogTrigger>
-        {" "}
-        <Button className="text-white flex  gap-2 self-start " variant={"link"}>
-          <LogOut></LogOut> <span>Log out</span>
-        </Button>
+      <DialogTrigger className="text-white flex  gap-2 self-start underline-offset-4 hover:underline dark:text-neutral-50">
+        <LogOut></LogOut> <span>Log out</span>
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>Log out</DialogHeader>

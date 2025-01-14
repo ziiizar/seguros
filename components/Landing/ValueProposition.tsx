@@ -1,85 +1,101 @@
-'use client'
 
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { Headset, Smile, User, Zap } from "lucide-react";
-import { type LucideIcon } from 'lucide-react'
-import SectionImage from "@/public/Deal.avif";
-const features = [
-    {
-      Icon: User,
-      title: "Personalized Recommendations",
-      description: "We use advanced algorithms to match you with the best insurance plans.",
-    },
-    {
-      Icon: Headset,
-      title: "Expert Support 24/7",
-      description: "Our team is available around the clock to assist you.",
-    },
-    {
-      Icon: Smile,
-      title: "Seamless Application Process",
-      description: "Apply for insurance easily in just a few minutes.",
-    },
-    {
-      Icon: Zap,
-      title: "Fast and Accurate Quotes",
-      description: "Get instant, accurate insurance quotes.",
-    },
-  ]
+import { User, Headset, Smile, Zap } from 'lucide-react'; 
+import Image from 'next/image';
+import HandShake from "@/public/handshake.jpg"
 
-  function FeatureItem({ Icon, title, description, index }:{Icon: LucideIcon, title: string, description: string, index: number}) {
-    return (
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: index * 0.1 + 0.5 }}
-        className="flex items-start space-x-4"
-      >
-        <div className="flex-shrink-0">
-          <div className="py-3 rounded-full text-[#ED3E09]">
-            <Icon className="w-12 h-12" />
-          </div>
-        </div>
-        <div>
-          <h3 className="text-xl font-semibold mb-2">{title}</h3>
-          <p className="text-muted-foreground">{description}</p>
-        </div>
-      </motion.div>
-    )
-  }
-  
-  
-
-export default function ValueProposition() {
+const ValueProposition = () => {
   return (
-    <section className="py-12 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div
+    <section
+      id="valueProposition"
+      className=" h-[130vh] w-screen"
+    >
+      <div className="w-full py-8 h-full">
+        <div className="text-center animate__animated animate__fadeIn">
+          <h2 className="text-4xl font-bold text-zinc-800 mb-4">
+            Exceptional Value Through Personalized Solutions
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Unwavering Commitment to Our Clients Financial Security
+          </p>
+        </div>
+
+        {/* Feature Circle Layout */}
+        <div className="relative h-[80%]  flex items-center justify-center">
+          {/* Central Circle */}
+          <div className="absolute h-5/6 w-2/5 bg-white rounded-md shadow-xl flex items-center justify-center z-10 transform hover:scale-105 transition duration-300">
            
-            className="relative drop-shadow-md"
-          >
-            <div className="aspect-square rounded-full overflow-hidden">
               <Image
-                src={SectionImage}
-                alt="Happy family"
-                width={800}
-                height={800}
-                className="w-full h-full object-cover"
+                src={HandShake}
+                alt="Insurance Partnership"
+                className="w-full h-full object-cover rounded-md shadow-lg transition-all duration-300 opacity-100 hover:opacity-90 relative z-10"
               />
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#ED3E09]/20 to-transparent rounded-full" />
+            {/* </div> */}
           </div>
 
-          <div className="space-y-12">
-      {features.map((feature, index) => (
-        <FeatureItem key={index} {...feature} index={index} />
-      ))}
-    </div>
+          {/* Dynamic Features */}
+          <div className="absolute top-[10%] left-[3%] -rotate-12">
+            <div className="bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg w-64 transform hover:scale-[1.02] transition-all duration-300 hover:shadow-orange-500/20">
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <User className="text-white" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-zinc-800">Personalized Recommendations</h3>
+                  <p className="text-gray-600 text-xs mt-1">We use advanced algorithms to match you with the best insurance plans.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="absolute top-[20%] right-[3%] rotate-6">
+            <div className="bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg w-64 transform hover:scale-[1.02] transition-all duration-300 hover:shadow-orange-500/20">
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <Headset className="text-white" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-zinc-800">Expert Support 24/7</h3>
+                  <p className="text-gray-600 text-xs mt-1">Our team is available around the clock to assist you.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="absolute bottom-[12%] left-[2%] rotate-3">
+            <div className="bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg w-64 transform hover:scale-[1.02] transition-all duration-300 hover:shadow-orange-500/20">
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <Smile className="text-white" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-zinc-800">Seamless Application Process</h3>
+                  <p className="text-gray-600 text-xs mt-1">Apply for insurance easily in just a few minutes.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="absolute bottom-[10%] right-[3%] -rotate-6">
+            <div className="bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg w-64 transform hover:scale-[1.02] transition-all duration-300 hover:shadow-orange-500/20">
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <Zap className="text-white" size={24} />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-zinc-800">Fast and Accurate Quotes</h3>
+                  <p className="text-gray-600 text-xs mt-1">Get instant, accurate insurance quotes.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+        </div>
+
+   
+        
+      
     </section>
   );
-}
+};
+
+export default ValueProposition;

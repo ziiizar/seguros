@@ -51,7 +51,7 @@ const ThankYouCard = () => {
   }, [])
 
   return (
-    <div className="min-h-screen bg-orange-50/50 flex items-center justify-center p-4">
+    <div className="min-h-screen  flex items-center justify-center p-4">
       <Card className="relative border-none shadow-xl w-full max-w-lg mx-auto overflow-visible">
         <Confetti
           ref={confettiRef}
@@ -101,14 +101,9 @@ const ThankYouCard = () => {
                 Need more info?
               </p>
               <div className="flex flex-col gap-2">
+               
                 <Link 
-                  href={routes.home}
-                  className="text-orange-600 hover:text-orange-700 transition-colors inline-flex items-center justify-center font-medium"
-                >
-                  Visit our Help Center
-                </Link>
-                <Link 
-                  href="/faq"
+                  href={`${routes.aboutUs}#FAQ`}
                   className="text-orange-600 hover:text-orange-700 transition-colors inline-flex items-center justify-center font-medium"
                 >
                   Read our FAQ

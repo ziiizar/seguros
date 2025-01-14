@@ -15,7 +15,7 @@ const HeaderLinks = () => {
   ];
 
   return (
-    <ul className="flex gap-8">
+    <ul className="flex gap-12">
       {links.map(({ label, href }) => (
         <li key={label}>
           <Link

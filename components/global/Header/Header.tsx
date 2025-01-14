@@ -25,7 +25,7 @@ const Header = async ({ className }: { className?: string }) => {
 
       <div className="">
         {session?.user.role && session?.user.role === "ADMIN" && (
-          <Button>
+          <Button className="w-32">
             <a href={routes.admin}>Admin</a>
           </Button>
         )}

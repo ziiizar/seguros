@@ -1,100 +1,90 @@
-'use client'
+import HandShake from "@/public/handshake.jpg"
+import {CheckCircle, Headset, Shield, Smile, User, Lock } from "lucide-react";
+import Image from 'next/image';
 
-import { motion } from "framer-motion"
-import Image from "next/image"
 
-export default function ValuePropositionOption2() {
+const ValuePropositionOption2 = () => {
   return (
-    <section className="w-full py-12 md:py-24 ">
-      <div className="container px-4 md:px-6">
-        <div className="grid grid-cols-12  gap-4 max-w-7xl mx-auto h-full grid-rows-[repeat(12,minmax(100px,1fr))]">
-          {/* Large Header Card */}
-          <motion.div 
-            className="col-span-12 row-span-4  relative overflow-hidden rounded-xl bg-gradient-to-br from-purple-500 to-pink-500"
-            whileHover={{ scale: 1.02 }}
-          >
-            <div className="absolute inset-0 p-8 flex flex-col justify-end text-white bg-black/20">
-              <h2 className="text-4xl font-bold mb-2">Peace of mind starts here</h2>
-              <p className="text-xl">Secure your future with us</p>
+    <div className="min-h-screen">
+      <section className="container px-6 py-12 mx-auto">
+        {/* Hero Section */}
+        <div className="grid lg:grid-cols-2 gap-8 items-center">
+          <div className="space-y-6 text-wrap">
+            <h3 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+              Exceptional Value Through Personalized Solutions.
+            </h3>
+            <p className="text-gray-600 text-lg">
+              Unwavering Commitment to Our Clients Financial Security
+            </p>
+          </div>
+          <div className="relative">
+            {/* Decorative elements */}
+            <div className="absolute top-3 left-[20%] bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl p-3 shadow-lg z-20 animate-bounce">
+              <Shield className="w-6 h-6 text-white" />
             </div>
-            <Image
-              src="https://images.unsplash.com/photo-1560518883-ce09059eeffa"
-              alt="Modern office building"
-              fill
-              className="object-cover z-[-1]"
-            />
-          </motion.div>
-
-          {/* Family Protection Card */}
-          <motion.div 
-            className="relative overflow-hidden rounded-xl col-span-7 row-span-5  bg-gradient-to-br from-orange-300 to-rose-300"
-            whileHover={{ scale: 1.02 }}
-          >
-            <div className="absolute inset-0 p-6 flex flex-col justify-end text-white bg-black/20">
-              <h3 className="text-2xl font-bold mb-2">Family Protection</h3>
-              <p>Comprehensive coverage for your loved ones</p>
+            <div className="absolute top-[20%] -right-4 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl p-3 shadow-lg z-20 animate-pulse">
+              <Lock className="w-6 h-6 text-white" />
             </div>
-            <Image
-              src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70"
-              alt="Happy family"
-              fill
-              className="object-cover z-[-1]"
-            />
-          </motion.div>
-
-          {/* Claims Process Card */}
-          <motion.div 
-            className="relative overflow-hidden rounded-xl col-span-5 row-span-5  bg-gradient-to-br from-cyan-500 to-blue-500"
-            whileHover={{ scale: 1.02 }}
-          >
-            <div className="absolute inset-0 p-6 flex flex-col justify-end text-white bg-black/20">
-              <h3 className="text-2xl font-bold mb-2">Easy Claims</h3>
-              <p>Simple and fast claims processing</p>
+            <div className="absolute bottom-[20%] -left-4 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl p-3 shadow-lg z-20 animate-pulse">
+              <CheckCircle className="w-6 h-6 text-white" />
             </div>
-            <Image
-              src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c"
-              alt="Digital interface"
-              fill
-              className="object-cover z-[-1]"
-            />
-          </motion.div>
-
-          {/* Support Card */}
-          <motion.div 
-            className="relative overflow-hidden rounded-xl col-span-6 row-span-4  bg-gradient-to-br from-violet-500 to-purple-500"
-            whileHover={{ scale: 1.02 }}
-          >
-            <div className="absolute inset-0 p-6 flex flex-col justify-end text-white bg-black/20">
-              <h3 className="text-2xl font-bold mb-2">24/7 Support</h3>
-              <p>Always here when you need us</p>
+            {/* <div className="absolute -bottom-8 right-[15%] bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl p-3 shadow-lg z-20 animate-bounce">
+              <Award className="w-6 h-6 text-white" />
+            </div> */}
+            
+            {/* Background decorative circles */}
+            <div className="absolute right-0 top-0 w-72 h-72 bg-gradient-to-br from-orange-100 to-orange-200 rounded-full opacity-50" />
+            <div className="absolute left-0 bottom-0 w-48 h-48 bg-gradient-to-br from-orange-100 to-orange-200 rounded-full opacity-50" />
+            
+            <div className="relative">
+              <Image
+                src={HandShake}
+                alt="Done Deal"
+                width={400}
+                height={400}
+                className="relative z-10 size-80 object-cover rounded-full mx-auto shadow-xl"
+              />
             </div>
-            <Image
-              src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
-              alt="Customer service"
-              fill
-              className="object-cover z-[-1]"
-            />
-          </motion.div>
-
-          {/* Digital Solutions Card */}
-          <motion.div 
-            className=" relative overflow-hidden rounded-xl col-span-6 row-span-4  bg-gradient-to-br from-emerald-500 to-teal-500"
-            whileHover={{ scale: 1.02 }}
-          >
-            <div className="absolute inset-0 p-6 flex flex-col justify-end text-white bg-black/20">
-              <h3 className="text-2xl font-bold mb-2">Digital Solutions</h3>
-              <p>Manage your insurance online, anytime</p>
-            </div>
-            <Image
-              src="https://images.unsplash.com/photo-1519389950473-47ba0277781c"
-              alt="Digital technology"
-              fill
-              className="object-cover z-[-1]"
-            />
-          </motion.div>
+          </div>
         </div>
-      </div>
-    </section>
+
+        {/* Features Section */}
+        <div className="grid md:grid-cols-3 gap-8 mt-24">
+          <div className="space-y-4">
+            <div className="flex space-x-2">
+              <div className="size-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center flex-shrink-0 shadow-lg">
+                <User className="text-white" size={24} />
+              </div>
+            </div>
+            <h3 className="text-xl font-semibold">Personalized Recommendations</h3>
+            <p className="text-gray-600">
+              We use advanced algorithms to match you with the best insurance plans.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center flex-shrink-0 shadow-lg">
+              <Headset className="text-white" size={24} />
+            </div>
+            <h3 className="text-xl font-semibold">Expert Support 24/7</h3>
+            <p className="text-gray-600">
+              Our team is available around the clock to assist you.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center flex-shrink-0 shadow-lg">
+              <Smile className="text-white" size={24} />
+            </div>
+            <h3 className="text-xl font-semibold">Seamless Application Process</h3>
+            <p className="text-gray-600">
+              Apply for insurance easily in just a few minutes.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
   )
 }
 
+export default ValuePropositionOption2

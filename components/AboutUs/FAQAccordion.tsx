@@ -42,7 +42,7 @@ export default function FAQAccordion() {
   };
 
   return (
-    <div className="max-w-3xl mx-auto p-4 ">
+    <div id='FAQ' className="max-w-3xl mx-auto p-4 ">
       <div className="space-y-4">
         {faqItems.map((item, index) => (
           <div key={index} className="border-b border-gray-200 pb-4">

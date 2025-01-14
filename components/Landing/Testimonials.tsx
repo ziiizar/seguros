@@ -61,16 +61,16 @@ export default function Testimonials() {
   return (
     <section className="py-20 ">
       <div className="container mx-auto px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <h2
             
-            className="text-4xl font-bold text-white mb-4"
+            className="text-4xl font-bold text-white"
           >
             Our customers focus on life, no matter what
           </h2>
          
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {testimonials.map((testimonial, index) => (
             <TestimonialCard key={index} testimonial={testimonial} />
           ))}

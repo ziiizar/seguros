@@ -9,7 +9,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
     >
       <p className="text-white text-lg mb-4">
         {testimonial.content}{" "}
-        <span className="bg-salmon-600/90 text-black px-1 rounded">
+        <span className="bg-salmon-600 text-black px-1 rounded">
           {testimonial.highlightedText}
         </span>
         .

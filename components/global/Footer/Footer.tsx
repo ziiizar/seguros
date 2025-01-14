@@ -1,13 +1,14 @@
 import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin } from 'lucide-react'
 import Link from "next/link"
 import ContactForm from "./ContactForm"
+import { routes } from '@/constants/routes'
 export default function Footer() {
   return (
     <footer className="bg-zinc-800 text-white py-24 relative w-screen ">
       {/* Get Insurance Button - Positioned above footer */}
       <div className="absolute left-1/2 -translate-x-1/2 -top-8 z-[100] ">
         <Link 
-          href="/get-insurance" 
+          href={routes.services} 
           className="bg-salmon-600 hover:bg-salmon-700 transition-colors text-white px-8 py-4 rounded-full text-xl font-semibold flex items-center shadow-lg hover:shadow-xl max-sm:w-72 max-sm:h-16"
         >
           Get your insurance

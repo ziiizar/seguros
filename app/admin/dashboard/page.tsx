@@ -1,4 +1,4 @@
-import GeneralChart from "@/components/Admin/Dashboard/GeneralChart";
+import LeadsAnalytics from "@/components/Admin/Dashboard/LeadsAnalytics";
 import { CardAnimated } from "@/components/ui/AnimatedCard";
 import { routes } from "@/constants/routes";
 import { getLeads } from "@/data/lead";
@@ -8,26 +8,10 @@ import Link from "next/link";
 
 const Page = async () => {
   const newLeads = await getLeads("NEW");
-  // const leads = await getLeads();
+  const leads = await getLeads();
   const rejecteds = await getLeads("REJECTED");
   const contacted = await getLeads("CONTACTED");
   // const enrolled = await getLeads("ENROLLED");
-
-  // const monthlyLeadsData = processLeadsData(leads);
-  const monthlyLeadsData = [
-  { month: "January", total: 150, rejected: 20 },
-  { month: "February", total: 200, rejected: 30 },
-  { month: "March", total: 180, rejected: 25 },
-  { month: "April", total: 220, rejected: 40 },
-  { month: "May", total: 190, rejected: 35 },
-  { month: "June", total: 210, rejected: 50 },
-  { month: "July", total: 230, rejected: 45 },
-  { month: "August", total: 250, rejected: 60 },
-  { month: "September", total: 240, rejected: 55 },
-  { month: "October", total: 260, rejected: 70 },
-  { month: "November", total: 270, rejected: 65 },
-  { month: "December", total: 300, rejected: 80 },
-];
 
 
   return (
@@ -35,24 +19,12 @@ const Page = async () => {
       <div className="h-full flex flex-col [grid-area:main]">
         <div className="grid grid-cols-3 gap-2 flex-grow">
           {/* Main Feature Card */}
-          <Link className="row-span-2 col-span-2" href={`${routes.adminLeads}`}>
-            <CardAnimated className="h-full w-full">
-              <div className="px-8 h-full relative">
-                <div className="space-y-3">
-                  <h2 className="text-2xl font-semibold text-white">
-                    Monthly Leads Overview
-                  </h2>
-                  <p className="text-zinc-400 text-sm">
-                    View the historic distribution of leads over the past months. This chart helps you track trends and identify peak activity periods.
-                  </p>
-                </div>
-                <div className="flex-grow h-[150px] flex items-center justify-center mt-4 mb-6">
-                  <GeneralChart data={monthlyLeadsData} />
-                </div>
-                <div className="absolute bottom-20 left-20 w-24 h-24 bg-salmon-600/10 rounded-full blur-2xl"></div>
-              </div>
+          {/* <Link className="row-span-2 col-span-2" href={`${routes.adminLeads}`}> */}
+            <CardAnimated className="h-full w-full row-span-2 col-span-2 text-white">
+          
+              {leads && <LeadsAnalytics leads={leads}></LeadsAnalytics>}
             </CardAnimated>
-          </Link>
+          {/* </Link> */}
 
           {/* Stats Card - Contacted */}
           <Link className="" href={`${routes.adminLeads}?status=CONTACTED`}>
@@ -65,7 +37,7 @@ const Page = async () => {
                 {/* <div className="w-12 h-12 rounded-full bg-salmon-500/10 flex items-center justify-center">
                   <BarChart3 className="w-6 h-6 text-salmon-500" />
                 </div> */}
-                <h3 className="text-white font-semibold">{contacted ? contacted.length +1 : 0} leads</h3>
+                <h3 className="text-white font-semibold ">{contacted ? contacted.length +1 : 0} leads</h3>
                 <div className="mt-4">
                   {/* <div className="h-2 w-full bg-zinc-800 rounded-full overflow-hidden">
                     <div className="h-full w-3/4 bg-gradient-to-r from-salmon-600 to-salmon-500 rounded-full" />
