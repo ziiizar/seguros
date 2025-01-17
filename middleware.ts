@@ -2,18 +2,23 @@ import { auth } from "./auth";
 import {
   AUTH_ROUTES,
   PUBLIC_ROUTES,
+  ADMIN_ROUTES,
   routes,
 } from "./constants/routes";
 
 export default auth(async (req) => {
   const { nextUrl } = req;
-
+  
   const isLoggedIn = !!req.auth;
   const isAuthRoute =
-    AUTH_ROUTES.includes(nextUrl.pathname)
+    AUTH_ROUTES.includes(nextUrl.pathname) ||
+    AUTH_ROUTES.some((route) => nextUrl.pathname.startsWith(route));
 
   const isPublicRoute =
     PUBLIC_ROUTES.includes(nextUrl.pathname) 
+
+  const isAdminRoute =
+    ADMIN_ROUTES.includes(nextUrl.pathname) 
 
   if (isAuthRoute) {
     if (isLoggedIn) {
@@ -25,6 +30,9 @@ export default auth(async (req) => {
   if (!isLoggedIn && !isPublicRoute) {
     return Response.redirect(new URL(routes.login, nextUrl));
   }
+
+  if(isAdminRoute && req.auth?.user.role !== "ADMIN")
+  {return Response.redirect(new URL(routes.unauthorized, nextUrl));}
 
   return;
 });

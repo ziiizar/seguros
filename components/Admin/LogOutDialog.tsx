@@ -5,6 +5,7 @@ import {
   DialogContent,
   DialogFooter,
   DialogHeader,
+  DialogTitle,
 } from "../ui/dialog";
 import { DialogTrigger } from "@radix-ui/react-dialog";
 import { Button } from "../ui/Button";
@@ -20,7 +21,9 @@ const LogOutDialog = () => {
         <LogOut></LogOut> <span>Log out</span>
       </DialogTrigger>
       <DialogContent>
-        <DialogHeader>Log out</DialogHeader>
+        <DialogHeader>
+        <DialogTitle>Log out</DialogTitle>
+          </DialogHeader>
         <div className="flex flex-col gap-4">
           <h1>Are you sure you want to log out?</h1>
         </div>

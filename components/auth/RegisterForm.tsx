@@ -25,7 +25,7 @@ const RegisterForm = () => {
   const { execute, isLoading } = useAction(signUp, {
     async onSuccess(data, message) {
       toast.success(message);
-      router.push(routes.home);
+      router.push(routes.confirmEmail);
     },
     onError(error) {
       toast.error(error);

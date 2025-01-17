@@ -3,7 +3,7 @@ interface routes {
   login: string;
   register: string;
   admin: string;
-  adminNotifications: string
+  // adminNotifications: string
   adminLeads: string
   unauthorized: string;
   confirmEmail:string
@@ -21,13 +21,13 @@ export const routes: routes = {
   login: "/login",
   register: "/register",
   admin: "/admin/dashboard",
-  adminNotifications:'/admin/notifications',
+  // adminNotifications:'/admin/notifications',
   adminLeads:'/admin/leads',
   unauthorized: "/unauthorized",
   confirmEmail: '/confirm-email',
   verifyEmail: '/email-verification',
   reset: '/reset',
-  newPassword: '/auth/new-password',
+  newPassword: '/new-password',
   services: '/services',
   aboutUs: '/aboutUs',
   survey: '/services/survey'
@@ -36,9 +36,9 @@ export const routes: routes = {
 };
 
 
-const PUBLIC_ROUTES = [routes.home, routes.unauthorized, routes.services, routes.aboutUs,routes.admin,  routes.adminNotifications, routes.adminLeads, routes.login, routes.register];
+const PUBLIC_ROUTES = [routes.home, routes.unauthorized, routes.services, routes.aboutUs,  routes.survey];
 // const PREFIX_PUBLIC_ROUTES = [];
-// const PRIVATE_ROUTES = [];
-const AUTH_ROUTES = [, routes.verifyEmail, routes.confirmEmail, routes.reset, routes.newPassword];
+const ADMIN_ROUTES = [routes.admin, routes.adminLeads];
+const AUTH_ROUTES = [routes.login, routes.register, routes.verifyEmail, routes.confirmEmail, routes.reset, routes.newPassword];
 
-export { AUTH_ROUTES,  PUBLIC_ROUTES };
+export { AUTH_ROUTES,  PUBLIC_ROUTES, ADMIN_ROUTES };
