@@ -59,7 +59,7 @@ const SurveyForm: React.FC<SurveyFormProps> = ({ form }) => {
   const [progress, setProgress] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
 
-  const [stepTypeToRender, setStepTypeToRender] = useState(STEPTYPES.thanks)
+  const [stepTypeToRender, setStepTypeToRender] = useState(STEPTYPES.survey)
 
   console.log(form);
   useEffect(() => {
