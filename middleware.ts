@@ -22,7 +22,7 @@ export default auth(async (req) => {
 
   if (isAuthRoute) {
     if (isLoggedIn) {
-      return Response.redirect(routes.home);
+      return Response.redirect(new URL(routes.home));
     }
     return;
   }
