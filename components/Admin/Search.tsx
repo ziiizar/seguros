@@ -7,13 +7,20 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../ui/select";
+} from "@/components/ui/select";
+import { useState } from "react";
 import { ClientStatus } from "@prisma/client";
 
 export default function Search() {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();
+
+  // Obtener valores iniciales de los parámetros de la URL
+  const statusFromUrl = searchParams.get("status") || "All";
+
+  // Estados locales para valores visibles en el select
+  const [dateVisibleValue, setDateVisibleValue] = useState("Anytime");
 
   const handleStatusChange = (term: string) => {
     const params = new URLSearchParams(searchParams);
@@ -24,13 +31,29 @@ export default function Search() {
     replace(`${pathname}?${params.toString()}`);
   };
 
-  const handleDateChange = (term: string) => {
+  const handleDateChange = (visibleValue: string) => {
     const params = new URLSearchParams(searchParams);
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-    term ? params.set("createdAt", term) : params.delete("createdAt");
+    // Mapear texto visible a valores reales
+    const relativeDates: Record<string, string> = {
+      "1 Day ago": getRelativeDate(1),
+      "1 Week ago": getRelativeDate(7),
+      "2 Weeks ago": getRelativeDate(14),
+      "1 Month ago": getRelativeDate(30),
+      "Anytime": "Anytime",
+    };
+
+    const actualValue = relativeDates[visibleValue];
+
+    // Actualizar URL con el valor real
+    if (actualValue && actualValue !== "Anytime") {
+      params.set("createdAt", actualValue);
+    } else {
+      params.delete("createdAt");
+    }
 
     replace(`${pathname}?${params.toString()}`);
+    setDateVisibleValue(visibleValue); // Actualizar el texto visible del Select
   };
 
   // Calcular fechas relativas
@@ -42,12 +65,12 @@ export default function Search() {
 
   return (
     <div className="relative flex flex-shrink-0 place-content-end gap-4 mb-2">
-      <Select onValueChange={handleStatusChange}>
-        <SelectTrigger className="w-40">
-          <SelectValue placeholder={"Select Status"}></SelectValue>
+      <Select value={statusFromUrl} onValueChange={handleStatusChange}>
+        <SelectTrigger className="w-32">
+          <SelectValue placeholder="Select Status" />
         </SelectTrigger>
         <SelectContent className="text-black">
-          <SelectItem className="flex" key={1} value={"All"}>
+          <SelectItem key={1} value="All">
             All Leads
           </SelectItem>
           <SelectItem key={2} value={ClientStatus.NEW}>
@@ -65,24 +88,24 @@ export default function Search() {
         </SelectContent>
       </Select>
 
-      <Select onValueChange={handleDateChange}>
-        <SelectTrigger className="w-40">
-          <SelectValue placeholder={"From:"}></SelectValue>
+      <Select value={dateVisibleValue} onValueChange={handleDateChange}>
+        <SelectTrigger className="w-32">
+          <SelectValue placeholder="From:" />
         </SelectTrigger>
         <SelectContent className="text-black">
-          <SelectItem key={1} value={"All"}>
+          <SelectItem key={1} value="Anytime">
             Anytime
           </SelectItem>
-          <SelectItem key={2} value={getRelativeDate(1)}>
+          <SelectItem key={2} value="1 Day ago">
             1 Day ago
           </SelectItem>
-          <SelectItem key={3} value={getRelativeDate(7)}>
+          <SelectItem key={3} value="1 Week ago">
             1 Week ago
           </SelectItem>
-          <SelectItem key={4} value={getRelativeDate(14)}>
+          <SelectItem key={4} value="2 Weeks ago">
             2 Weeks ago
           </SelectItem>
-          <SelectItem key={5} value={getRelativeDate(30)}>
+          <SelectItem key={5} value="1 Month ago">
             1 Month ago
           </SelectItem>
         </SelectContent>

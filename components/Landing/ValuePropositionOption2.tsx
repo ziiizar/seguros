@@ -3,10 +3,11 @@ import {CheckCircle, Headset, Shield, Smile, User, Lock } from "lucide-react";
 import Image from 'next/image';
 
 
+
 const ValuePropositionOption2 = () => {
   return (
     <div className="min-h-screen">
-      <section className="container px-6 py-12 mx-auto">
+      <section className="container px-6 py-12 mb-8  mx-auto">
         {/* Hero Section */}
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           <div className="space-y-6 text-wrap">
@@ -49,35 +50,35 @@ const ValuePropositionOption2 = () => {
         </div>
 
         {/* Features Section */}
-        <div className="grid md:grid-cols-3 gap-8 mt-24">
-          <div className="space-y-4">
+        <div className="flex justify-around mt-24 ">
+          <div className="space-y-4 w-96 pe-8">
             <div className="flex space-x-2">
               <div className="size-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center flex-shrink-0 shadow-lg">
                 <User className="text-white" size={24} />
               </div>
             </div>
             <h3 className="text-xl font-semibold">Personalized Recommendations</h3>
-            <p className="text-gray-600">
+            <p className="">
               We use advanced algorithms to match you with the best insurance plans.
             </p>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-4 w-96 px-8 border-l-[1.5px] border-salmon-600">
             <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center flex-shrink-0 shadow-lg">
               <Headset className="text-white" size={24} />
             </div>
             <h3 className="text-xl font-semibold">Expert Support 24/7</h3>
-            <p className="text-gray-600">
+            <p className="">
               Our team is available around the clock to assist you.
             </p>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-4 w-96 px-8 border-l-[1.5px] border-salmon-600">
             <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center flex-shrink-0 shadow-lg">
               <Smile className="text-white" size={24} />
             </div>
             <h3 className="text-xl font-semibold">Seamless Application Process</h3>
-            <p className="text-gray-600">
+            <p className="">
               Apply for insurance easily in just a few minutes.
             </p>
           </div>

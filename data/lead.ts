@@ -29,7 +29,6 @@ export const getLeads = async (
     });
     return leads;
   } catch (error) {
-    console.error(error);
     return null;
   }
 };

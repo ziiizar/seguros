@@ -30,10 +30,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import {
-  EditIcon,
-
-} from "lucide-react";
+import { EditIcon } from "lucide-react";
 import Options from "./Options";
 
 const LeadsTable = ({ leads }: { leads: Lead[] }) => {
@@ -58,99 +55,97 @@ const LeadsTable = ({ leads }: { leads: Lead[] }) => {
   };
 
   return (
-    <div className="w-full overflow-y-auto scrollbar-hide text-white ">
-      <Table className=" ">
-        <TableHeader>
-          <TableRow>
-            <TableHead>Name</TableHead>
-            <TableHead>Email</TableHead>
-            <TableHead>Request Date</TableHead>
-            <TableHead>Status</TableHead>
-            <TableHead>Action</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody className="table-auto">
-          {leads?.map((lead) => (
-            <TableRow key={lead.id}>
-              <TableCell>{lead.name}</TableCell>
-              <TableCell>{lead.email}</TableCell>
-              <TableCell>
-                {new Date(lead.createdAt).toLocaleDateString()}
-              </TableCell>
-
-              <TableCell>{lead.status}</TableCell>
-              <TableCell className=" flex gap-2">
-                <Dialog  open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-                  <DialogTrigger asChild>
-                    <div className="flex gap-2">
-                      <Button
-                        className="rounded-sm
-                  p-1 size-8"
-                        onClick={() => {
-                          setSelectedLead(lead);
-                          setSelectedStatus(lead.status);
-                        }}
-                      >
-                        <EditIcon className=""></EditIcon>
-                      </Button>
-                    </div>
-                  </DialogTrigger>
-
-                  <DialogContent className="w-80">
-                    <DialogHeader>
-                      <DialogTitle>Edit status</DialogTitle>
-                      <DialogDescription>
-                        Change the status of the lead.
-                      </DialogDescription>
-                    </DialogHeader>
-
-                    <Select
-                      value={selectedStatus}
-                      onValueChange={(value) =>
-                        setSelectedStatus(value as ClientStatus)
-                      }
-                    >
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select status" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {Object.values(ClientStatus).map((status) => (
-                          <SelectItem key={status} value={status}>
-                            {status}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-
-                    <DialogFooter>
-                      <Button
-                        variant="ghost"
-                        onClick={() => {
-                          setSelectedLead(null);
-                          setIsDialogOpen(false);
-                        }}
-                      >
-                        Cancel
-                      </Button>
-                      {selectedLead && (
-                        <Button
-                          onClick={onSubmit}
-                          disabled={isLoading || !selectedStatus}
-                        >
-                          Accept
-                        </Button>
-                      )}
-                    </DialogFooter>
-                  </DialogContent>
-                </Dialog>
-
-                <Options lead={lead}></Options>
-              </TableCell>
+    
+    <div className="flex-1 h-full"> 
+      
+        <Table className="border-separate border-spacing-0 [&_td]:border-border [&_tfoot_td]:border-t  [&_th]:border-border [&_tr:not(:last-child)_td]:border-b [&_tr]:border-none text-white">
+          <TableHeader className="sticky top-0 z-10 bg-zinc-900 backdrop-blur-sm ">
+            <TableRow className="hover:bg-transparent">
+              <TableHead>Name</TableHead>
+              <TableHead>Email</TableHead>
+              <TableHead>Request Date</TableHead>
+              <TableHead>Status</TableHead>
+              <TableHead>Action</TableHead>
             </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </div>
+          </TableHeader>
+          <TableBody className="table-auto ">
+            {leads?.map((lead) => (
+              <TableRow key={lead.id}>
+                <TableCell>{lead.name}</TableCell>
+                <TableCell>{lead.email}</TableCell>
+                <TableCell>
+                  {new Date(lead.createdAt).toLocaleDateString()}
+                </TableCell>
+                <TableCell>{lead.status}</TableCell>
+                <TableCell className="flex gap-2">
+                  <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+                    <DialogTrigger asChild>
+                      <div className="flex gap-2">
+                        <Button
+                          className="rounded-sm p-1 size-8"
+                          onClick={() => {
+                            setSelectedLead(lead);
+                            setSelectedStatus(lead.status);
+                          }}
+                        >
+                          <EditIcon />
+                        </Button>
+                      </div>
+                    </DialogTrigger>
+                    <DialogContent className="w-80">
+                      <DialogHeader>
+                        <DialogTitle>Edit status</DialogTitle>
+                        <DialogDescription>
+                          Change the status of the lead.
+                        </DialogDescription>
+                      </DialogHeader>
+                      <Select
+                        value={selectedStatus}
+                        onValueChange={(value) =>
+                          setSelectedStatus(value as ClientStatus)
+                        }
+                      >
+                        <SelectTrigger>
+                          <SelectValue placeholder="Select status" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {Object.values(ClientStatus).map((status) => (
+                            <SelectItem key={status} value={status}>
+                              {status}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                      <DialogFooter>
+                        <Button
+                          variant="ghost"
+                          onClick={() => {
+                            setSelectedLead(null);
+                            setIsDialogOpen(false);
+                          }}
+                        >
+                          Cancel
+                        </Button>
+                        {selectedLead && (
+                          <Button
+                            onClick={onSubmit}
+                            disabled={isLoading || !selectedStatus}
+                          >
+                            Accept
+                          </Button>
+                        )}
+                      </DialogFooter>
+                    </DialogContent>
+                  </Dialog>
+                  <Options lead={lead} />
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </div>
+    
+    
   );
 };
 

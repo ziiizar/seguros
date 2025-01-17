@@ -8,7 +8,7 @@ import LogOutDialog from './LogOutDialog'
 
 const Aside = () => {
   return (
-    <div className='bg-zinc-800 rounded-2xl p-6 [grid-area:aside]  gap-8 flex flex-col justify-between' >
+    <div className='bg-zinc-800 rounded-2xl p-6   gap-8 flex flex-col flex-1 justify-between h-full'  >
         
         <Link href={routes.home}><Logo></Logo></Link>
         <NavLinks links={AdminLinks}></NavLinks>

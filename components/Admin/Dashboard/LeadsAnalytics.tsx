@@ -57,7 +57,7 @@ export default function LeadsInsuranceDistribution({ leads }: LeadsInsuranceDist
       </div>
       <ChartContainer
         config={chartConfig}
-        className="mx-auto aspect-square max-h-[220px]"
+        className="mx-auto aspect-square max-h-[240px]"
       >
         <PieChart>
           <ChartTooltip
@@ -110,11 +110,11 @@ export default function LeadsInsuranceDistribution({ leads }: LeadsInsuranceDist
           />
         </PieChart>
       </ChartContainer>
-      <div className="mt-4 text-center text-sm text-gray-400">
+      {/* <div className="mt-4 text-center text-sm text-gray-400">
         <p>
           Data is based on {totalLeads} leads and their requested insurance types.
         </p>
-      </div>
+      </div> */}
     </>
   )
 }
