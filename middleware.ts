@@ -11,9 +11,7 @@ export default auth(async (req) => {
   
   const isLoggedIn = !!req.auth;
   const isAuthRoute =
-    AUTH_ROUTES.includes(nextUrl.pathname) ||
-    AUTH_ROUTES.some((route) => nextUrl.pathname.startsWith(route));
-
+    AUTH_ROUTES.includes(nextUrl.pathname) 
   const isPublicRoute =
     PUBLIC_ROUTES.includes(nextUrl.pathname) 
 
@@ -22,7 +20,7 @@ export default auth(async (req) => {
 
   if (isAuthRoute) {
     if (isLoggedIn) {
-      return Response.redirect(new URL(routes.home));
+      return Response.redirect(new URL(routes.home, nextUrl));
     }
     return;
   }
@@ -31,7 +29,7 @@ export default auth(async (req) => {
     return Response.redirect(new URL(routes.login, nextUrl));
   }
 
-  if(isAdminRoute && req.auth?.user.role !== "ADMIN")
+  if(isAdminRoute && req.auth?.user?.role !== "ADMIN")
   {return Response.redirect(new URL(routes.unauthorized, nextUrl));}
 
   return;
