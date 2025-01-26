@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Card,
@@ -18,6 +18,7 @@ import {  literata } from "@/styles/fonts";
 import renderField from "@/services/RenderFormField";
 import SurveyCard from "./SurveyCard";
 import ThankYouCard from "./ThankYouCard";
+import Confetti, { ConfettiRef } from "../ui/confetti";
 
 interface SurveyFormProps {
   form: FormFields;
@@ -28,7 +29,7 @@ const STEPTYPES = {
   survey : "SURVEY",
   loading: "LOADING",
   potentialFit: "POTENTIALFIT",
-  contact: "CONTACT",
+  // contact: "CONTACT",
   thanks: "THANKS",
 }
 
@@ -39,17 +40,51 @@ interface PotentialFitCardProps {
 const PotentialFitCard : React.FC<PotentialFitCardProps>= ({
   callback: action
 }) => {
+
+   const confettiRef = useRef<ConfettiRef>(null)
+  
+    useEffect(() => {
+      const duration = 3000
+      const colors = ["#FF4405", "#FF7F57", "#FFB8A1", "#FFE7DE"]
+      const end = Date.now() + duration
+  
+      const frame = () => {
+        if (Date.now() > end) return
+  
+        confettiRef.current?.fire({
+          particleCount: 2,
+          angle: 60,
+          spread: 55,
+          startVelocity: 60,
+          origin: { x: 0, y: 0.5 },
+          colors,
+        })
+        confettiRef.current?.fire({
+          particleCount: 2,
+          angle: 120,
+          spread: 55,
+          startVelocity: 60,
+          origin: { x: 1, y: 0.5 },
+          colors,
+        })
+  
+        requestAnimationFrame(frame)
+      }
+  
+      frame()
+    }, [])
+
   return (
-    <SurveyCard className="min-h-[300px] "
-      title="Great! You are a potential fit."
-      description="Just one final step"
-      onCancel={() => console.log("Cancelled")}
-      onAccept={action}
-    >
-      <h3>
-        Please provide your contact information so we can get in touch with you.
-      </h3>
-    </SurveyCard>
+     <SurveyCard className="min-h-[300px] h-[300px]" 
+              title="Great! You are a potential fit."
+              description="Please fill out your contact details."
+            >
+                <Confetti
+                        ref={confettiRef}
+                        className="absolute inset-0 pointer-events-none w-full h-full"
+                      />
+              <CreateLeadForm callback={action}/>
+            </SurveyCard>
   );
 };
 
@@ -203,19 +238,19 @@ const SurveyForm: React.FC<SurveyFormProps> = ({ form }) => {
                 </div>)
  } 
  {stepTypeToRender === STEPTYPES.potentialFit && <PotentialFitCard
-                  
-                  callback={()=>setStepTypeToRender(STEPTYPES.contact)}
+                   
+                  callback={()=>setStepTypeToRender(STEPTYPES.thanks)}
                 ></PotentialFitCard>}
 
                 
-{stepTypeToRender === STEPTYPES.contact && (
+{/* {stepTypeToRender === STEPTYPES.contact && (
             <SurveyCard className="min-h-[300px] h-[300px]" 
               title="Contact Information"
               description="Please fill out your contact details."
             >
               <CreateLeadForm callback={()=>setStepTypeToRender(STEPTYPES.thanks)}/>
             </SurveyCard>
-          )}
+          )} */}
               
        
           {stepTypeToRender === STEPTYPES.thanks && (

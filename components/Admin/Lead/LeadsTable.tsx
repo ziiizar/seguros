@@ -63,6 +63,7 @@ const LeadsTable = ({ leads }: { leads: Lead[] }) => {
             <TableRow className="hover:bg-transparent">
               <TableHead>Name</TableHead>
               <TableHead>Email</TableHead>
+              <TableHead>Phone</TableHead>
               <TableHead>Request Date</TableHead>
               <TableHead>Status</TableHead>
               <TableHead>Action</TableHead>
@@ -73,6 +74,7 @@ const LeadsTable = ({ leads }: { leads: Lead[] }) => {
               <TableRow key={lead.id}>
                 <TableCell>{lead.name}</TableCell>
                 <TableCell>{lead.email}</TableCell>
+                <TableCell>{lead.phone}</TableCell>
                 <TableCell>
                   {new Date(lead.createdAt).toLocaleDateString()}
                 </TableCell>

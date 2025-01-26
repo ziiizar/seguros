@@ -118,7 +118,7 @@ const ThankYouCard = () => {
             <Button 
               className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-2 rounded-lg text-lg font-medium transition-colors"
             >
-              Aceptar
+              Accept
             </Button>
           </Link>
         </CardFooter>

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Lifeguard from "@/public/Lifeguard Overlooking Beach.jpeg";
 const stats  = [
     {
-      value: "4+",
+      value: "3+",
       description: "Years serving our community with trusted insurance solutions",
     },
     {

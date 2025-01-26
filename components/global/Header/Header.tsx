@@ -3,23 +3,21 @@ import { cn } from "@/lib/utils";
 import { auth } from "@/auth";
 import { Button } from "@/components/ui/Button";
 import HeaderLinks from "./HeaderLinks"; 
-
+import Logo from "@/Icons/Logo";
 const Header = async ({ className }: { className?: string }) => {
   const session = await auth();
 
   return (
     <header
       className={cn(
-        "justify-between flex items-center py-4 px-8 h-[10dvh]",
+        " flex items-center place-content-center py-8 px-20 h-[10dvh] -ms-8", session?.user?.role === "ADMIN" && " justify-between",
         className
       )}
     >
-      <picture>
-        {/* <Logo></Logo> */}
-        <div className="size-4"></div>
-      </picture>
+      {session?.user?.role === "ADMIN" && <Logo className="fill-salmon-600"></Logo>}
 
-      <nav>
+      <nav className="flex gap-12">
+        {!session && <Logo className="fill-salmon-600"></Logo>}
         <HeaderLinks />
       </nav>
 

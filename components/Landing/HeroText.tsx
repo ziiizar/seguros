@@ -23,7 +23,7 @@ export const HeroText = () => {
       {/* <h5 className={cn("text-sm sm:text-base md:text-lg mt-2 sm:mt-3 md:mt-4", literata.className)}>
         Explore our comprehensive insurance solutions and secure your future.
       </h5> */}
-      <Link href={routes.services}>
+      <Link href={routes.survey}>
       <Button className="w-40 sm:w-80 md:w-60 mt-4 sm:mt-6 md:mt-8 text-base sm:text-lg py-2 sm:py-3">Start today</Button></Link>
     </div>
   );

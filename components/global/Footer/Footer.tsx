@@ -1,14 +1,15 @@
-import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin } from 'lucide-react'
+import { Mail, Phone,  Facebook, Twitter, Linkedin } from 'lucide-react'
 import Link from "next/link"
 import ContactForm from "./ContactForm"
 import { routes } from '@/constants/routes'
+
 export default function Footer() {
   return (
     <footer className="bg-zinc-800 text-white py-24 relative w-screen ">
       {/* Get Insurance Button - Positioned above footer */}
       <div className="absolute left-1/2 -translate-x-1/2 -top-8 z-[100] ">
         <Link 
-          href={routes.services} 
+          href={routes.survey} 
           className="bg-salmon-600 hover:bg-salmon-700 transition-colors text-white px-8 py-4 rounded-full text-xl font-semibold flex items-center shadow-lg hover:shadow-xl max-sm:w-72 max-sm:h-16"
         >
           Get your insurance
@@ -46,10 +47,10 @@ export default function Footer() {
                   <Mail className="w-5 h-5 text-salmon-600" />
                   <span>contact@gpfservice.com</span>
                 </div>
-                <div className="flex items-center space-x-3 text-gray-300">
+                {/* <div className="flex items-center space-x-3 text-gray-300">
                   <MapPin className="w-5 h-5 text-salmon-600" />
                   <span>123 Insurance Ave, New York, NY 10001</span>
-                </div>
+                </div> */}
               </div>
             </div>
             {/* Social Links */}
@@ -79,9 +80,10 @@ export default function Footer() {
         </div>
         {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-white/10 text-center text-gray-400 flex  place-content-center items-center text-[clamp(0.75rem,2vw,1rem)]">
-          <h2 className="text-[clamp(3rem,2vw,1rem)] xl:text-[180px] font-bold leading-none bg-gradient-to-r from-salmon-600 to-white bg-clip-text text-transparent flex ">
+          <h2 className="uppercase text-[clamp(3rem,2vw,1rem)] xl:text-[170px] font-bold leading-none bg-gradient-to-r from-salmon-600 to-white bg-clip-text text-transparent flex ">
             GPF
-            <span className=" xl:text-[180px] text-white text-[clamp(3rem,2vw,1rem)]">SERVICE</span>
+            {/* <Logo className='bg-gradient-to-r from-salmon-600 to-white bg-clip-text text-transparent flex size-44'></Logo> */}
+            <span className="uppercase xl:text-[180px] text-white text-[clamp(3rem,2vw,1rem)]">SERVICES</span>
           </h2>
         </div>
       </div>

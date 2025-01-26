@@ -104,7 +104,7 @@ const NewPasswordForm = ({ token }: { token: string }) => {
         </div>
 
         <Button type="submit" disabled={isLoading}>
-          Aceptar
+          Accept
         </Button>
       </form>
     </>

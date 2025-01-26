@@ -44,9 +44,9 @@ const CreateLeadForm: React.FC<CreateLeadFormProps> = ({ callback }) => {
           className="text-lg py-6 border border-gray-300 transition-colors"
         />
         <Input
-          type="email"
-          placeholder="Your Email"
-          {...register("email")}
+          type="text"
+          placeholder="Your Phone Number"
+          {...register("phone")}
           className="text-lg py-6 border border-gray-300 transition-colors"
         />
       </div>
