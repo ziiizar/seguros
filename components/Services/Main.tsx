@@ -1,11 +1,11 @@
 'use client'
 
 import { useState } from "react";
-import Doctor from "@/public/Doctor.png";
-import Dad from "@/public/Dad.png";
+import Doctor from "@/public/Doctor.webp";
+import Dad from "@/public/Dad.webp";
 import ServiceHero from "./ServiceHero";
-import Hospital from '@/public/Hospital.png';
-import House from '@/public/House.png';
+import Hospital from '@/public/Hospital.webp';
+import House from '@/public/House.webp';
 import ServiceAside from "./ServiceAside";
 import { AnimatePresence, motion } from "framer-motion";
 import { forms } from '../../constants/forms';

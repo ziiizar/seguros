@@ -1,4 +1,4 @@
-import HandShake from "@/public/handshake.jpg"
+import HandShake from "@/public/handshake.webp"
 import {CheckCircle, Headset, Shield, Smile, User, Lock } from "lucide-react";
 import Image from 'next/image';
 

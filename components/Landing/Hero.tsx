@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import HeroBG from '@/public/HeroBG.avif'
+import HeroBG from '@/public/HeroBG.webp'
 import { HeroText } from "./HeroText";
 
 const Hero = () => {

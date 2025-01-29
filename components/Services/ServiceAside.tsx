@@ -2,7 +2,7 @@
 
 import ServiceCard from "@/components/Services/ServiceCard";
 import HealthInsurance from "@/public/Health Insurance.webp";
-import LifeInsurance from "@/public/Life Insurance.png";
+import LifeInsurance from "@/public/Life Insurance.webp";
 import { Dispatch, SetStateAction } from "react";
 
 const ServiceAside = ({

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import Lifeguard from "@/public/Lifeguard Overlooking Beach.jpeg";
+import Lifeguard from "@/public/Lifeguard Overlooking Beach.webp";
 const stats  = [
     {
       value: "3+",

@@ -1,7 +1,7 @@
 
 import { User, Headset, Smile, Zap } from 'lucide-react'; 
 import Image from 'next/image';
-import HandShake from "@/public/handshake.jpg"
+import HandShake from "@/public/handshake.webp"
 
 const ValueProposition = () => {
   return (
