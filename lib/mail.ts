@@ -12,7 +12,7 @@ export const sendVerificationEmail = async (email: string, token: string) => {
   await resend.emails.send({
     from: "onboarding@resend.dev",
     // to: email,
-    to: "cesarfpna@gmail.com",
+    to: "toyospablo@gpfservices.com",
     subject: "Confirm your email",
     html: `<p>Click<a href="${confirmLink}"> here </a>to confirm your email </p>`,
   });
