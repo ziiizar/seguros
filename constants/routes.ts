@@ -1,7 +1,7 @@
 interface routes {
   home: string;
   login: string;
-  register: string;
+  // register: string;
   admin: string;
   // adminNotifications: string
   adminLeads: string
@@ -19,7 +19,7 @@ interface routes {
 export const routes: routes = {
   home: "/",
   login: "/login",
-  register: "/register",
+  // register: "/register",
   admin: "/admin/dashboard",
   // adminNotifications:'/admin/notifications',
   adminLeads:'/admin/leads',
@@ -39,6 +39,6 @@ export const routes: routes = {
 const PUBLIC_ROUTES = [routes.home, routes.unauthorized, routes.services, routes.aboutUs,  routes.survey];
 // const PREFIX_PUBLIC_ROUTES = [];
 const ADMIN_ROUTES = [routes.admin, routes.adminLeads];
-const AUTH_ROUTES = [routes.login, routes.register, routes.verifyEmail, routes.confirmEmail, routes.reset, routes.newPassword];
+const AUTH_ROUTES = [routes.login, routes.verifyEmail, routes.confirmEmail, routes.reset, routes.newPassword];
 
 export { AUTH_ROUTES,  PUBLIC_ROUTES, ADMIN_ROUTES };
