@@ -8,12 +8,18 @@ import { useAction } from "@/hooks/use-action";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/Button";
 import { Shield } from "lucide-react";
+import { FormFields } from "@/types/form";
 
 interface CreateLeadFormProps {
   callback: () => void;
+  answers: Record<string, string>;
+  surveyCompletedAt: Date;
+  formFields: FormFields['fields'];
 }
 
-const CreateLeadForm: React.FC<CreateLeadFormProps> = ({ callback }) => {
+const CreateLeadForm: React.FC<CreateLeadFormProps> = ({ callback,  answers,
+  surveyCompletedAt,
+  formFields }) => {
 
   const { execute, isLoading } = useAction(createLead, {
     onSuccess: (data, message) => {
@@ -26,7 +32,19 @@ const CreateLeadForm: React.FC<CreateLeadFormProps> = ({ callback }) => {
   });
 
   const onSubmit = async (data: TSCreateLeadSchema) => {
-    await execute(data);
+    const surveyAnswersData = Object.entries(answers).map(([ref, answer]) => {
+      const field = formFields.find(f => f.ref === ref);
+      return {
+        question: field?.title || '',
+        answer: answer,
+        createdAt: surveyCompletedAt,
+      };
+    });
+
+    await execute({
+      ...data,
+      surveyAnswers: surveyAnswersData,
+    });
   };
 
   const { register, handleSubmit, setValue } = useForm<TSCreateLeadSchema>();

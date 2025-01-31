@@ -35,10 +35,16 @@ const STEPTYPES = {
 
 interface PotentialFitCardProps {
   callback: ()=> void;
+  surveyCompletedAt: Date;
+  formFields: FormFields['fields'];
+  answers: Record<string, string>;
 }
 
 const PotentialFitCard : React.FC<PotentialFitCardProps>= ({
-  callback: action
+  callback: action,
+  surveyCompletedAt,
+  formFields,
+  answers,
 }) => {
 
    const confettiRef = useRef<ConfettiRef>(null)
@@ -83,7 +89,10 @@ const PotentialFitCard : React.FC<PotentialFitCardProps>= ({
                         ref={confettiRef}
                         className="absolute inset-0 pointer-events-none w-full h-full"
                       />
-              <CreateLeadForm callback={action}/>
+              <CreateLeadForm callback={action}
+        answers={answers}
+        surveyCompletedAt={surveyCompletedAt}
+        formFields={formFields}/>
             </SurveyCard>
   );
 };
@@ -93,6 +102,7 @@ const SurveyForm: React.FC<SurveyFormProps> = ({ form }) => {
   const [step, setStep] = useState(1);
   const [progress, setProgress] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
+  const [surveyCompletedAt, setSurveyCompletedAt] = useState<Date | null>(null);
 
   const [stepTypeToRender, setStepTypeToRender] = useState(STEPTYPES.survey)
 
@@ -124,6 +134,7 @@ const SurveyForm: React.FC<SurveyFormProps> = ({ form }) => {
       return setStep(step + newDirection);
     }
     if (step + newDirection > form.fields.length) {
+      setSurveyCompletedAt(new Date());
       setStepTypeToRender(STEPTYPES.loading);
       setTimeout(() => {
         setStepTypeToRender(STEPTYPES.potentialFit);
@@ -238,8 +249,10 @@ const SurveyForm: React.FC<SurveyFormProps> = ({ form }) => {
                 </div>)
  } 
  {stepTypeToRender === STEPTYPES.potentialFit && <PotentialFitCard
-                   
-                  callback={()=>setStepTypeToRender(STEPTYPES.thanks)}
+                   callback={() => setStepTypeToRender(STEPTYPES.thanks)}
+                   answers={answers}
+                   surveyCompletedAt={surveyCompletedAt!}
+                   formFields={form.fields}
                 ></PotentialFitCard>}
 
                 
