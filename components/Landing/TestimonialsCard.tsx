@@ -7,7 +7,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: Testimonial }) => (
      
       className="bg-zinc-700/40 rounded-2xl p-8 shadow-sm "
     >
-      <p className="text-white text-lg mb-4">
+      <p className=" text-lg mb-4">
         {testimonial.content}{" "}
         <span className="bg-salmon-600 text-black px-1 rounded">
           {testimonial.highlightedText}

@@ -1,16 +1,16 @@
-"use client";
+"use client"
 
-import TestimonialCard from "./TestimonialsCard";
+import TestimonialCard from "./TestimonialsCard"
 
 export interface Testimonial {
-  content: string;
-  highlightedText: string;
+  content: string
+  highlightedText: string
   author: {
-    name: string;
-    role: string;
-    company: string;
-    image: string;
-  };
+    name: string
+    role: string
+    company: string
+    image: string
+  }
 }
 
 const testimonials: Testimonial[] = [
@@ -54,28 +54,24 @@ const testimonials: Testimonial[] = [
       image: "",
     },
   },
-];
-
+]
 
 export default function Testimonials() {
   return (
-    <section className="py-20 ">
-      <div className="container mx-auto px-8">
-        <div className="text-center mb-12">
-          <h2
-            
-            className="text-4xl font-bold text-white"
-          >
+    <section className="py-20 sm:py-24 md:py-28 lg:py-32 xl:py-36 2xl:py-40">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 max-w-7xl">
+        <div className="text-center mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-28 2xl:mb-32">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold">
             Our customers focus on life, no matter what
           </h2>
-         
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 xl:gap-12 2xl:gap-16">
           {testimonials.map((testimonial, index) => (
             <TestimonialCard key={index} testimonial={testimonial} />
           ))}
         </div>
       </div>
     </section>
-  );
+  )
 }
+
