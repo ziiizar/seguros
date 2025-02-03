@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-export function Mission({className}: {className: string}) {
+export function Mission({className}: {className?: string}) {
   return (
     <svg
     className={cn('', className)}
