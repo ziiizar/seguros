@@ -38,7 +38,7 @@ export const sendNewLeadEmail = async (lead: Lead) => {
 
   await resend.emails.send({
     from: "toyospablo@gpfservices.com",
-    to: ['pabloetoyos0526@gmail.com'],
+    to: ['cesarfpna@gmail.com'],
     subject: "New Lead",
     html: `<ul>
     <li>Name: <h4>${lead.name} </h4> </li>
