@@ -12,9 +12,10 @@ interface MobileCarouselProps {
     <Carousel className="w-full h-full" index={currentIndex}>
       <CarouselContent>
         {services.map((service) => (
-          <CarouselItem key={service.id} className="h-full">
-            <ServiceHero currentService={service} />
-          </CarouselItem>
+         <CarouselItem key={service.id} className="h-full ">
+         <ServiceHero currentService={service} />
+       </CarouselItem>
+       
         ))}
       </CarouselContent>
     </Carousel>

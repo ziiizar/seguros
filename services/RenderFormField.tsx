@@ -96,7 +96,7 @@ export default function renderField  ({field,answers,setAnswers}:{field: Field, 
                 className="flex space-x-3 p-4 border-[0.5px] border-gray-400/35 rounded-lg hover:bg-gray-100 cursor-pointer h-12 place-content-start items-center first:mt-2 "
               >
                 <RadioGroupItem className="" value={choice.label} />
-                <span className="text-lg">{choice.label}</span>
+                <span className="lg:text-lg text-sm">{choice.label}</span>
               </Label>
             ))}
           </RadioGroup>

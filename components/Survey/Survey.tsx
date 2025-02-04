@@ -81,7 +81,7 @@ const PotentialFitCard : React.FC<PotentialFitCardProps>= ({
     }, [])
 
   return (
-     <SurveyCard className="min-h-[300px] h-[300px]" 
+     <SurveyCard className="min-h-[300px] " 
               title="Great! You are a potential fit."
               description="Please fill out your contact details."
             >
