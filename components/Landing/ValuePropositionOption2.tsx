@@ -4,16 +4,16 @@ import HandShake from "@/public/handshake.webp"
 import { CheckCircle, Headset, Shield, Smile, User, Lock } from "lucide-react"
 import Image from "next/image"
 
-const ValuePropositionOption2 = () => {
+const ValuePropositionOption2: React.FC = () => {
   return (
-    <div className="">
+    <div>
       <section className="container px-4 sm:px-6 py-8 sm:py-12 md:py-16 mb-8 mx-auto">
         <div className="grid lg:grid-cols-2 gap-8 items-center">
-        <div className="space-y-4 sm:space-y-6 text-center lg:text-left ">
+          <div className="space-y-4 sm:space-y-6 text-center lg:text-left">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
               Exceptional Value Through Personalized Solutions.
             </h1>
-            <p className="text-lg sm:text-xl  max-w-2xl mx-auto lg:mx-0">
+            <p className="text-lg sm:text-xl max-w-2xl mx-auto lg:mx-0">
               Unwavering Commitment to Our Clients Financial Security
             </p>
           </div>
@@ -66,17 +66,23 @@ const ValuePropositionOption2 = () => {
   )
 }
 
-const FeatureCard = ({ icon, title, description, className = "" }) => (
-  <div className={`space-y-4 max-w-sm  lg:w-80  lg:px-4  ${className}`}>
-    <div className="flex ">
+interface FeatureCardProps {
+  icon: React.ReactNode
+  title: string
+  description: string
+  className?: string
+}
+
+const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, className = "" }) => (
+  <div className={`space-y-4 max-w-sm lg:w-80 lg:px-4 ${className}`}>
+    <div className="flex">
       <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center flex-shrink-0 shadow-lg">
         {icon}
       </div>
     </div>
     <h3 className="text-xl font-semibold feature-card-title">{title}</h3>
-    <p className="text-sm sm:text-base feature-card-description ">{description}</p>
+    <p className="text-sm sm:text-base feature-card-description">{description}</p>
   </div>
 )
 
 export default ValuePropositionOption2
-
