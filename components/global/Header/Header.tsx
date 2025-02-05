@@ -11,7 +11,7 @@ const Header = async ({ className }: { className?: string }) => {
   return (
     <header
       className={cn(
-        " flex items-center place-content-center py-8 px-20 h-[10dvh] -ms-8", session?.user?.role === "ADMIN" && " justify-between",
+        " flex items-center place-content-center py-8 px-8 md:px-20 h-[10dvh] -ms-8", session?.user?.role === "ADMIN" && " justify-between",
         className
       )}
     >
