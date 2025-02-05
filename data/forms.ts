@@ -1,3 +1,5 @@
+'use server'
+
 import { axiosInstance } from "@/lib/utils"
 
 export const fetchFormById = async (form_id: string) => {

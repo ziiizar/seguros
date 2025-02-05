@@ -1,0 +1,155 @@
+{
+  "Hero": {
+    "title": "Peace of mind starts ",
+    "span": "here",
+    "subtitle": "Secure your future ",
+    "sub_span": "with us",
+    "button": "Start today"
+  },
+  "HowItWorks": {
+    "title": "HOW IT WORKS",
+    "subtitle": "Simple Steps to Get Insured",
+    "description": "We have streamlined the insurance process to make it quick and easy",
+    "step_1": {
+      "title": "Tell Us About Your Needs",
+      "description": "Answer a few questions about your insurance requirements"
+    },
+    "step_2": {
+      "title": "Get Instant Quotes",
+      "description": "Our experts analyze multiple providers to find your best matches"
+    },
+
+    "step_3": {
+      "title": "Secure Your Coverage",
+      "description": "Complete your application and get insured in minutes"
+    }
+  },
+
+  "ValueProposition": {
+    "title": "Exceptional Value Through Personalized Solutions.",
+    "description": "Unwavering Commitment to Our Clients Financial Security",
+
+    "feature_1": {
+      "title": "Personalized Recommendations",
+      "description": "We use advanced algorithms to match you with the best insurance plans."
+    },
+    "feature_2": {
+      "title": "Expert Support 24/7",
+      "description": "Our team is available around the clock to assist you."
+    },
+    "feature_3": {
+      "title": "Seamless Application Process",
+      "description": "Apply for insurance easily in just a few minutes."
+    }
+  },
+
+  "Stats": {
+    "title": "Trust Indicators",
+    "subtitle": "Building confidence through proven results",
+    "years": "Years serving our community with trusted insurance solutions",
+    "satisfaction": "Client satisfaction rate with our personalized coverage solutions",
+    "families_protected": "Families protected with comprehensive insurance coverage"
+  },
+
+  "Testimonials": {
+    "title": "Our customers focus on life, no matter what",
+    "client_1": {
+      "content": "With GPF Services, I finally found an insurance provider that truly cares. Their process is",
+      "highlightedText": "simple, fast, and stress-free",
+      "name": "Maria Rodriguez",
+      "role": "Mother of two"
+    },
+    "client_2": {
+      "content": "GPF Services gave me peace of mind knowing that my family is",
+      "highlightedText": "protected no matter what happens",
+      "name": "Carlos Mendoza",
+      "role": "Small business owner"
+    },
+    "client_3": {
+      "content": "Their friendly team made it so easy to understand my options. GPF Services is",
+      "highlightedText": "the best choice for personal insurance",
+      "name": "Ana Martinez",
+      "role": "Freelancer"
+    },
+    "client_4": {
+      "content": "Thanks to GPF Services, I finally feel",
+      "highlightedText": "secure about my future and my loved ones",
+      "name": "Roberto Sanchez",
+      "role": "New Homeowner"
+    }
+  },
+  "Footer": {
+    "button": "Get Your Insurance",
+    "contactUs": "Contact Us",
+    "phone": "(555) 123-4567",
+    "email": "contact@gpfservice.com",
+    "facebook": "Facebook",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn"
+  },
+  "AboutUs": {
+    "title": "ABOUT US",
+    "description": "We founded GPF Services LLC in 2023 with the goal of transforming the insurance market through advanced technology and exceptional customer service. We specialize in health and life insurance, using our innovative web platform to simplify the acquisition process and offer personalized recommendations. We are committed to providing personalized and efficient attention, ensuring that each client receives the best possible support.",
+
+    "Mission": {
+      "title": "Mission",
+      "description": "Our mission is to revolutionize the insurance market by providing personalized and accessible solutions through advanced technology and simplified customer service."
+    },
+
+    "Vision": {
+      "title": "Vision",
+      "description": "Our vision is to become a leader in the market, recognized for our innovation, commitment to customer satisfaction, and ability to provide peace of mind and security to our clients."
+    }
+  },
+  "FAQs": {
+    "title": "General FAQs",
+    "description": "Find answers to the most common questions about our services, policies, and processes.",
+    "questions": {
+      "question_1": {
+        "question": "What types of insurance do you offer?",
+        "answer": "We specialize in Health and Life Insurance. Our health insurance plans cover medical expenses, prescriptions, and preventive care, while our life insurance policies provide financial protection for your loved ones."
+      },
+      "question_2": {
+        "question": "How do I know which insurance plan is right for me?",
+        "answer": "Our expert advisors will help you evaluate your needs, budget, and circumstances to recommend the most suitable insurance plan. We consider factors like your health status, family situation, and financial goals to provide personalized recommendations."
+      },
+      "question_3": {
+        "question": "How quickly can my insurance coverage begin?",
+        "answer": "Once your application is approved, health insurance coverage typically begins on the first day of the following month. Life insurance coverage starts immediately after policy approval and first premium payment."
+      },
+      "question_4": {
+        "question": "Can I modify my insurance plan after enrollment?",
+        "answer": "Yes, you can modify your coverage during annual enrollment periods or if you experience qualifying life events (marriage, birth, job change, etc.). Contact us to discuss your options."
+      },
+      "question_5": {
+        "question": "How do I file a claim?",
+        "answer": "Filing a claim is simple. Contact our claims department directly at claims@gpfservices.com or call 1-800-XXX-XXXX. Our team will guide you through the process and required documentation."
+      },
+      "question_6": {
+        "question": "What payment methods do you accept for premiums?",
+        "answer": "We accept various payment methods including credit/debit cards, ACH bank transfers, and electronic funds transfer (EFT). You can set up automatic monthly payments for your convenience."
+      },
+      "question_7": {
+        "question": "Are there any waiting periods for coverage?",
+        "answer": "Waiting periods vary by plan type and condition. Most preventive services are covered immediately, while some specific treatments may have waiting periods. We'll clearly explain any waiting periods before you enroll."
+      }
+    }
+  },
+
+  "ServicesMain": {
+    "services": {
+      "health": {
+        "title": "Health Insurance",
+        "description": "Comprehensive coverage designed to protect your health and well-being, ensuring access to quality medical care when you need it most."
+      },
+      "life": {
+        "title": "Life Insurance",
+        "description": "Secure your family's future with comprehensive life insurance, providing financial protection and peace of mind in times of uncertainty."
+      }
+    },
+    "button": "Get Service",
+    "lifeCard": "Life Insurance",
+    "healthCard": "Health Insurance"
+    
+  }
+}

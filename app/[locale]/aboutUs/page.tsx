@@ -6,8 +6,12 @@ import { cn } from "@/lib/utils";
 import { literata } from "@/styles/fonts";
 import AboooutUs from "@/public/AboooutUs.png";
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 
-const page = () => {
+const page = async () => {
+  const t = await getTranslations("AboutUs"); // Obtén las traducciones según el idioma
+  const f = await getTranslations("FAQs"); // Obtén las traducciones según el idioma
+
   return (
     <div className="bg-radial">
       <Header />
@@ -15,11 +19,11 @@ const page = () => {
         {/* Sección "About Us" */}
         <section className="flex flex-col items-center gap-8 px-4 sm:px-8 lg:px-24">
           <h3 className="max-md:text-3xl text-5xl font-semibold flex">
-            AB{" "}
+          {t('title').split(" ")[0]}
             <div className="w-40 relative overflow-hidden border-4 border-black rounded-3xl">
               <Image className=" rounded absolute -top-[40%]" src={AboooutUs} alt="" />
             </div>
-            UT US.
+            {t('title').split(" ")[1]}
           </h3>
 
           {/* Descripción */}
@@ -29,13 +33,7 @@ const page = () => {
               literata.className
             )}
           >
-            We founded GPF Services LLC in 2023 with the goal of transforming
-            the insurance market through advanced technology and exceptional
-            customer service. We specialize in health and life insurance, using
-            our innovative web platform to simplify the acquisition process and
-            offer personalized recommendations. We are committed to providing
-            personalized and efficient attention, ensuring that each client
-            receives the best possible support.
+           {t('description')}
           </p>
 
           {/* Misión y Visión */}
@@ -46,7 +44,7 @@ const page = () => {
                   <Mission className={""}></Mission>
                 </div>
                 <h4 className="text-[clamp(0.75rem,2vw,1rem)] font-semibold">
-                  Mission
+                {t('Mission.title')}
                 </h4>
                 <p
                   className={cn(
@@ -54,9 +52,7 @@ const page = () => {
                     literata.className
                   )}
                 >
-                  Our mission is to revolutionize the insurance market by
-                  providing personalized and accessible solutions through
-                  advanced technology and simplified customer service.
+                  {t('Mission.description')}
                 </p>
               </article>
             </div>
@@ -70,7 +66,7 @@ const page = () => {
                   <Vision></Vision>
                 </div>
                 <h4 className="text-[clamp(0.75rem,2vw,1rem)] font-semibold">
-                  Vision
+                {t('Vision.title')}
                 </h4>
                 <p
                   className={cn(
@@ -78,9 +74,7 @@ const page = () => {
                     literata.className
                   )}
                 >
-                  Our vision is to become a leader in the market, recognized for
-                  our innovation, commitment to customer satisfaction, and
-                  ability to provide peace of mind and security to our clients.
+                  {t('Vision.description')}
                 </p>
               </article>
             </div>
@@ -92,11 +86,10 @@ const page = () => {
           {/* Texto de introducción a las FAQs */}
           <div className="w-full lg:w-1/2 flex flex-col gap-4 order-2 max-lg:order-1">
             <h4 className="text-2xl sm:text-3xl lg:text-4xl font-semibold">
-              General FAQs
+            {f('title')}
             </h4>
             <p className={cn("text-sm sm:text-base", literata.className)}>
-              Find answers to the most common questions about our services,
-              policies, and processes.
+            {f('description')}
             </p>
           </div>
 

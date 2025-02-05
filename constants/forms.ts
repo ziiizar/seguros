@@ -1,4 +1,4 @@
 export const forms = {
-    HEALTH: "s1dgK7eI",
-    LIFE: "erwfcef"
+    EN: "s1dgK7eI",
+    ES: "qCnv5Fvf"
 }

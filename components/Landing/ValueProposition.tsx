@@ -1,101 +1,78 @@
 
-import { User, Headset, Smile, Zap } from 'lucide-react'; 
-import Image from 'next/image';
 import HandShake from "@/public/handshake.webp"
+import { CheckCircle, Headset, Shield, Smile, User, Lock } from "lucide-react"
+import Image from "next/image"
+import { getTranslations } from "next-intl/server";
+import ValueCard from "@/components/Landing/ValueCard";
 
-const ValueProposition = () => {
+
+
+
+
+ const ValueProposition: React.FC = async () => {
+  const t = await getTranslations('ValueProposition');  // Obtén las traducciones para esta sección
+
   return (
-    <section
-      id="valueProposition"
-      className=" h-[130vh] w-screen"
-    >
-      <div className="w-full py-8 h-full">
-        <div className="text-center animate__animated animate__fadeIn">
-          <h2 className="text-4xl font-bold text-zinc-800 mb-4">
-            Exceptional Value Through Personalized Solutions
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Unwavering Commitment to Our Clients Financial Security
-          </p>
-        </div>
+    <div>
+      <section className="container px-4 sm:px-6 py-8 sm:py-12 md:py-16 mb-8 mx-auto">
+        <div className="grid lg:grid-cols-2 gap-8 items-center">
+          <div className="space-y-4 sm:space-y-6 text-center lg:text-left">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
+              {t("title")}
+            </h1>
+            <p className="text-lg sm:text-xl max-w-2xl mx-auto lg:mx-0">
+              {t("description")}
+            </p>
+          </div>
+          <div className="relative mt-8 lg:mt-0">
+            <div className="absolute top-3 left-[20%] bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl p-2 sm:p-3 shadow-lg z-20 animate-bounce">
+              <Shield className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
+            </div>
+            <div className="absolute top-[20%] -right-2 sm:-right-4 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl p-2 sm:p-3 shadow-lg z-20 animate-pulse">
+              <Lock className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
+            </div>
+            <div className="absolute bottom-[20%] -left-2 sm:-left-4 md:-left-10 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl p-2 sm:p-3 shadow-lg z-20 animate-pulse">
+              <CheckCircle className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
+            </div>
 
-        {/* Feature Circle Layout */}
-        <div className="relative h-[80%]  flex items-center justify-center">
-          {/* Central Circle */}
-          <div className="absolute h-5/6 w-2/5 bg-white rounded-md shadow-xl flex items-center justify-center z-10 transform hover:scale-105 transition duration-300">
-           
+            <div className="absolute right-0 top-0 w-48 h-48 sm:w-72 sm:h-72 bg-gradient-to-br from-orange-100 to-orange-200 rounded-full opacity-50" />
+            <div className="absolute left-0 bottom-0 w-32 h-32 sm:w-48 sm:h-48 bg-gradient-to-br from-orange-100 to-orange-200 rounded-full opacity-50" />
+
+            <div className="relative">
               <Image
-                src={HandShake}
-                alt="Insurance Partnership"
-                className="w-full h-full object-cover rounded-md shadow-lg transition-all duration-300 opacity-100 hover:opacity-90 relative z-10"
+                src={HandShake || "/placeholder.svg"}
+                alt="Done Deal"
+                width={400}
+                height={400}
+                className="relative z-10 w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 object-cover rounded-full mx-auto shadow-xl"
               />
-            {/* </div> */}
-          </div>
-
-          {/* Dynamic Features */}
-          <div className="absolute top-[10%] left-[3%] -rotate-12">
-            <div className="bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg w-64 transform hover:scale-[1.02] transition-all duration-300 hover:shadow-orange-500/20">
-              <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center flex-shrink-0 shadow-lg">
-                  <User className="text-white" size={24} />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-zinc-800">Personalized Recommendations</h3>
-                  <p className="text-gray-600 text-xs mt-1">We use advanced algorithms to match you with the best insurance plans.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="absolute top-[20%] right-[3%] rotate-6">
-            <div className="bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg w-64 transform hover:scale-[1.02] transition-all duration-300 hover:shadow-orange-500/20">
-              <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center flex-shrink-0 shadow-lg">
-                  <Headset className="text-white" size={24} />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-zinc-800">Expert Support 24/7</h3>
-                  <p className="text-gray-600 text-xs mt-1">Our team is available around the clock to assist you.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="absolute bottom-[12%] left-[2%] rotate-3">
-            <div className="bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg w-64 transform hover:scale-[1.02] transition-all duration-300 hover:shadow-orange-500/20">
-              <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center flex-shrink-0 shadow-lg">
-                  <Smile className="text-white" size={24} />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-zinc-800">Seamless Application Process</h3>
-                  <p className="text-gray-600 text-xs mt-1">Apply for insurance easily in just a few minutes.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="absolute bottom-[10%] right-[3%] -rotate-6">
-            <div className="bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg w-64 transform hover:scale-[1.02] transition-all duration-300 hover:shadow-orange-500/20">
-              <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center flex-shrink-0 shadow-lg">
-                  <Zap className="text-white" size={24} />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-zinc-800">Fast and Accurate Quotes</h3>
-                  <p className="text-gray-600 text-xs mt-1">Get instant, accurate insurance quotes.</p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
-        </div>
 
-   
-        
-      
-    </section>
-  );
-};
+        <div className="mt-12 sm:mt-16 md:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <ValueCard
+            icon={<User className="text-white" size={24} />}
+            title={t("feature_1.title")}
+            description={t("feature_1.description")}
+          />
+          <ValueCard
+            icon={<Headset className="text-white" size={24} />}
+            title={t("feature_2.title")}
+            description={t("feature_2.description")}
+          />
+          <ValueCard
+            icon={<Smile className="text-white" size={24} />}
+            title={t("feature_3.title")}
+            description={t("feature_3.description")}
+            className="sm:col-span-2 lg:col-span-1 sm:max-w-md sm:mx-auto lg:max-w-none"
+          />
+        </div>
+      </section>
+    </div>
+  )
+}
+
+
 
 export default ValueProposition;

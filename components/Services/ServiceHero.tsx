@@ -7,11 +7,13 @@ import Image from "next/image";
 import { ServiceCardType } from "./Main";
 import { routes } from "@/constants/routes";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 const ServiceHero = ({ currentService }: { currentService: ServiceCardType }) => {
   const gradientColor =
     currentService.color === "blue" ? "bg-turquoise-blue-500" : "bg-rajah-300";
 
+     const t = useTranslations('ServicesMain');
   return (
     <section className="w-full relative overflow-hidden rounded-br-3xl rounded-tl-3xl rounded-bl-lg rounded-tr-lg place-content-end h-full">
       <div className="absolute inset-0">
@@ -38,7 +40,7 @@ const ServiceHero = ({ currentService }: { currentService: ServiceCardType }) =>
           </p>
           <Link className="w-full sm:w-40 flex" href={`${routes.survey}`}>
             <Button className="hover:scale-105 w-full transition-transform duration-300 ease-in-out">
-              Get Service
+              {t("button")}
             </Button>
           </Link>
         </div>

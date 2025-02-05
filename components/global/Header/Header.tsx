@@ -4,6 +4,7 @@ import { auth } from "@/auth";
 import { Button } from "@/components/ui/Button";
 import HeaderLinks from "./HeaderLinks"; 
 import Logo from "@/Icons/Logo";
+
 const Header = async ({ className }: { className?: string }) => {
   const session = await auth();
 

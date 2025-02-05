@@ -8,10 +8,11 @@ import House from "@/public/House.webp";
 import ServiceHero from "./ServiceHero";
 import ServiceAside from "./ServiceAside";
 import { AnimatePresence, motion } from "framer-motion";
-import { forms } from "../../constants/forms";
+import { forms } from "@/constants/forms";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Button } from "../ui/Button";
+import { Button } from "@/components/ui/Button";
 import MobileCarousel from "./MobileCarousel";
+import { useTranslations } from "next-intl";
 
 export type ServiceCardType = {
   title: string;
@@ -24,33 +25,32 @@ export type ServiceCardType = {
 
 type ServiceKey = "health" | "life";
 
-const services: Record<ServiceKey, ServiceCardType> = {
-  health: {
-    title: "Health Insurance",
-    description:
-      "Comprehensive coverage designed to protect your health and well-being, ensuring access to quality medical care when you need it most.",
-    image: Doctor.src,
-    bgImage: Hospital.src,
-    color: "blue",
-    id: forms.HEALTH,
-  },
-  life: {
-    title: "Life Insurance",
-    description:
-      "Secure your family's future with comprehensive life insurance, providing financial protection and peace of mind in times of uncertainty.",
-    image: Dad.src,
-    bgImage: House.src,
-    color: "orange",
-    id: forms.LIFE,
-  },
-};
-
-const serviceList: ServiceCardType[] = Object.values(services);
-
 const Main = () => {
   const [selectedService, setSelectedService] = useState<ServiceKey>("health");
   const [carouselIndex, setCarouselIndex] = useState(0);
-  
+  const t = useTranslations('ServicesMain');
+
+  const services: Record<ServiceKey, ServiceCardType> = {
+    health: {
+      title: t("services.health.title"),
+      description: t("services.health.description"),
+      image: Doctor.src,
+      bgImage: Hospital.src,
+      color: "blue",
+      id: forms.EN,
+    },
+    life: {
+      title: t("services.life.title"),
+      description: t("services.life.description"),
+      image: Dad.src,
+      bgImage: House.src,
+      color: "orange",
+      id: forms.ES,
+    },
+  };
+
+  const serviceList: ServiceCardType[] = Object.values(services);
+
   const handlePrevious = () => {
     setCarouselIndex((prev) => (prev === 0 ? serviceList.length - 1 : prev - 1));
   };

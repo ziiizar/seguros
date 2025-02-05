@@ -1,0 +1,155 @@
+{
+  "Hero": {
+    "title": "La tranquilidad comienza ",
+    "span": "aquí",
+    "subtitle": "Asegura tu futuro ",
+    "sub_span": "con nosotros",
+
+    "button": "Comienza hoy"
+  },
+  "HowItWorks": {
+    "title": "CÓMO FUNCIONA",
+    "subtitle": "Pasos simples para asegurarte",
+    "description": "Hemos optimizado el proceso de seguro para hacerlo rápido y fácil",
+
+    "step_1": {
+      "title": "Cuéntanos sobre tus necesidades",
+      "description": "Responde algunas preguntas sobre tus requisitos de seguro"
+    },
+    "step_2": {
+      "title": "Obtén cotizaciones instantáneas",
+      "description": "Responde algunas preguntas sobre tus requisitos de seguro"
+    },
+
+    "step_3": {
+      "title": "Asegura tu cobertura",
+      "description": "Completa tu solicitud y obtén tu seguro en minutos"
+    }
+  },
+
+  "ValueProposition": {
+    "title": "Valor Excepcional a Través de Soluciones Personalizadas.",
+    "description": "Compromiso inquebrantable con la seguridad financiera de nuestros clientes",
+    "feature_1": {
+      "title": "Recomendaciones Personalizadas",
+      "description": "Utilizamos algoritmos avanzados para encontrar el mejor plan de seguro para ti."
+    },
+    "feature_2": {
+      "title": "Soporte Experto 24/7",
+      "description": "Nuestro equipo está disponible las 24 horas para asistirte."
+    },
+    "feature_3": {
+      "title": "Proceso de Aplicación Sencillo",
+      "description": "Solicita tu seguro fácilmente en solo unos minutos."
+    }
+  },
+
+  "Stats": {
+    "title": "Indicadores de confianza",
+    "subtitle": "Construyendo confianza a través de resultados comprobados",
+    "years": "Años sirviendo a nuestra comunidad con soluciones de seguro confiables",
+    "satisfaction": "Índice de satisfacción del cliente con nuestras soluciones de cobertura personalizada",
+    "families_protected": "Familias protegidas con cobertura de seguro integral"
+  },
+
+  "Testimonials": {
+    "title": "Nuestros clientes se enfocan en la vida, sin importar qué",
+    "client_1": {
+      "content": "Con GPF Services, finalmente encontré un proveedor de seguros que realmente se preocupa. Su proceso es",
+      "highlightedText": "simple, rápido y sin estrés",
+      "name": "Maria Rodriguez",
+      "role": "Madre de dos"
+    },
+    "client_2": {
+      "content": "GPF Services me dio tranquilidad al saber que mi familia está",
+      "highlightedText": "protegida sin importar lo que pase",
+      "name": "Carlos Mendoza",
+      "role": "Propietario de pequeña empresa"
+    },
+    "client_3": {
+      "content": "Su equipo amable hizo que fuera muy fácil entender mis opciones. GPF Services es",
+      "highlightedText": "la mejor opción para seguros personales",
+      "name": "Ana Martínez",
+      "role": "Freelancer"
+    },
+    "client_4": {
+      "content": "Gracias a GPF Services, finalmente me siento",
+      "highlightedText": "seguro sobre mi futuro y mis seres queridos",
+      "name": "Roberto Sánchez",
+      "role": "Nuevo propietario"
+    }
+  },
+
+  "Footer": {
+    "button": "Obtén tu seguro",
+    "contactUs": "Contáctanos",
+    "phone": "(555) 123-4567",
+    "email": "contact@gpfservice.com",
+    "facebook": "Facebook",
+    "twitter": "Twitter",
+    "linkedin": "LinkedIn"
+  },
+
+  "AboutUs": {
+    "title": "SOBRE NOSOTROS",
+    "description": "Fundamos GPF Services LLC en 2023 con el objetivo de transformar el mercado de seguros a través de tecnología avanzada y un servicio al cliente excepcional. Nos especializamos en seguros de salud y vida, utilizando nuestra innovadora plataforma web para simplificar el proceso de adquisición y ofrecer recomendaciones personalizadas. Estamos comprometidos a brindar una atención personalizada y eficiente, asegurando que cada cliente reciba el mejor soporte posible.",
+    "Mission": {
+      "title": "Misión",
+      "description": "Nuestra misión es revolucionar el mercado de seguros proporcionando soluciones personalizadas y accesibles a través de tecnología avanzada y un servicio al cliente simplificado."
+    },
+    "Vision": {
+      "title": "Visión",
+      "description": "Nuestra visión es convertirnos en líderes en el mercado, reconocidos por nuestra innovación, compromiso con la satisfacción del cliente y capacidad para brindar tranquilidad y seguridad a nuestros clientes."
+    }
+  },
+  "FAQs": {
+    "title": "Preguntas Frecuentes",
+    "description": "Encuentra respuestas a las preguntas más comunes sobre nuestros servicios, políticas y procesos.",
+    "questions": {
+      "question_1": {
+        "question": "¿Qué tipos de seguros ofrecen?",
+        "answer": "Nos especializamos en Seguros de Salud y Vida. Nuestros planes de seguro de salud cubren gastos médicos, recetas y atención preventiva, mientras que nuestras pólizas de seguro de vida brindan protección financiera para sus seres queridos."
+      },
+      "question_2": {
+        "question": "¿Cómo sé qué plan de seguro es el adecuado para mí?",
+        "answer": "Nuestros asesores expertos lo ayudarán a evaluar sus necesidades, presupuesto y circunstancias para recomendar el plan de seguro más adecuado. Consideramos factores como su estado de salud, situación familiar y objetivos financieros para brindar recomendaciones personalizadas."
+      },
+      "question_3": {
+        "question": "¿Qué tan rápido puede comenzar mi cobertura de seguro?",
+        "answer": "Una vez que su solicitud sea aprobada, la cobertura de seguro de salud generalmente comienza el primer día del mes siguiente. La cobertura de seguro de vida comienza inmediatamente después de la aprobación de la póliza y el pago de la primera prima."
+      },
+      "question_4": {
+        "question": "¿Puedo modificar mi plan de seguro después de la inscripción?",
+        "answer": "Sí, puede modificar su cobertura durante los períodos de inscripción anual o si experimenta eventos calificados de vida (matrimonio, nacimiento, cambio de trabajo, etc.). Contáctenos para discutir sus opciones."
+      },
+      "question_5": {
+        "question": "¿Cómo presento un reclamo?",
+        "answer": "Presentar un reclamo es simple. Comuníquese directamente con nuestro departamento de reclamos en claims@gpfservices.com o llame al 1-800-XXX-XXXX. Nuestro equipo lo guiará a través del proceso y la documentación requerida."
+      },
+      "question_6": {
+        "question": "¿Qué métodos de pago aceptan para las primas?",
+        "answer": "Aceptamos varios métodos de pago, incluyendo tarjetas de crédito/débito, transferencias bancarias ACH y transferencias electrónicas de fondos (EFT). Puede configurar pagos mensuales automáticos para su conveniencia."
+      },
+      "question_7": {
+        "question": "¿Hay períodos de espera para la cobertura?",
+        "answer": "Los períodos de espera varían según el tipo de plan y la condición. La mayoría de los servicios preventivos están cubiertos de inmediato, mientras que algunos tratamientos específicos pueden tener períodos de espera. Explicaremos claramente cualquier período de espera antes de que se inscriba."
+      }
+    }
+  },
+
+  "ServicesMain": {
+    "services": {
+      "health": {
+        "title": "Seguro de Salud",
+        "description": "Cobertura integral diseñada para proteger su salud y bienestar, asegurando el acceso a atención médica de calidad cuando más la necesita."
+      },
+      "life": {
+        "title": "Seguro de Vida",
+        "description": "Asegure el futuro de su familia con un seguro de vida integral, que brinda protección financiera y tranquilidad en momentos de incertidumbre."
+      }
+    },
+    "button": "Obtener servicio",
+    "lifeCard": "Seguro de vida",
+    "healthCard": "Seguro de salud"
+  }
+}

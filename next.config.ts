@@ -1,13 +1,9 @@
-import type { NextConfig } from "next";
+import type { NextConfig} from 'next';
 
-const nextConfig: NextConfig = {
-  images: {
-    domains: ["images.unsplash.com"], // Agrega el dominio permitido
-  },
-  // i18n: {
-  //   locales: ['en', 'es'], // Add your supported locales
-  //   defaultLocale: 'en', // Set the default locale
-  // },
-};
-
-export default nextConfig;
+import createNextIntlPlugin from 'next-intl/plugin';
+ 
+const withNextIntl = createNextIntlPlugin();
+ 
+const nextConfig : NextConfig = {};
+ 
+export default withNextIntl(nextConfig);
