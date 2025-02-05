@@ -23,9 +23,7 @@ const handler = async (data: TSCreateLeadSchema): Promise<ReturnType> => {
               },
             },
           });
-          console.log("arriba")
         sendNewLeadEmail(newLead)
-        console.log("abajo")
 
         return { data: newLead, message: "Lead creado" }
     } catch (error) {
