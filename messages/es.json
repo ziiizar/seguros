@@ -151,5 +151,20 @@
     "button": "Obtener servicio",
     "lifeCard": "Seguro de vida",
     "healthCard": "Seguro de salud"
-  }
+  },
+  
+    "ThankYouSection": {
+      "title": "¡Gracias!",
+      "description": "Tu formulario ha sido enviado con éxito.",
+      "message": "Nos pondremos en contacto contigo pronto.",
+      "supportMessage": "Si tienes alguna pregunta, no dudes en contactar a nuestro equipo de soporte.",
+      "faqTitle": "¿Necesitas más información?",
+      "faqLink": "Lee nuestras preguntas frecuentes",
+      "acceptButton": "Aceptar"
+    },
+    "Survey":{
+      "yes":"Sí",
+      "no":"No"
+    }
+  
 }

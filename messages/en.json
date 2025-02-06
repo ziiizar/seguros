@@ -151,5 +151,20 @@
     "lifeCard": "Life Insurance",
     "healthCard": "Health Insurance"
     
-  }
+  },
+  
+    "ThankYouSection": {
+      "title": "Thank you!",
+      "description": "Your form has been submitted successfully.",
+      "message": "We will get back to you shortly.",
+      "supportMessage": "If you have any questions, feel free to reach out to our support team.",
+      "faqTitle": "Need more info?",
+      "faqLink": "Read our FAQ",
+      "acceptButton": "Accept"
+    },
+    "Survey":{
+      "yes":"Yes",
+      "no":"No"
+    }
+  
 }

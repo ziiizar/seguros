@@ -38,9 +38,9 @@ const ContactForm = () => {
         className="bg-white/10 border-0 text-white placeholder:text-gray-400"
       />
       <Input
-       {...register("email")}
-        type="email"
-        placeholder="Email"
+       {...register("phone")}
+        type="text"
+        placeholder="Phone"
         className="bg-white/10 border-0 text-white placeholder:text-gray-400"
       />
     </div>

@@ -31,7 +31,7 @@ const HowItWorks = async() => {
   return (
     <section className="relative py-8 mt-5 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-        <div className="flex flex-col items-center max-w-2xl mb-10 mx-auto">
+        <div className="flex flex-col items-center max-w-2xl mb-8 mx-auto">
           <span className="text-salmon-600 text-5xl font-medium tracking-wider uppercase mb-4">
             {t("title")}
           </span>

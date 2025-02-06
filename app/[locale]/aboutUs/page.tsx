@@ -18,10 +18,10 @@ const page = async () => {
       <main className="px-4 sm:px-8 lg:px-16 pt-8 pb-16 flex flex-col gap-8">
         {/* Sección "About Us" */}
         <section className="flex flex-col items-center gap-8 px-4 sm:px-8 lg:px-24">
-          <h3 className="max-md:text-3xl text-5xl font-semibold flex">
+          <h3 className="max-md:text-xl text-5xl font-semibold flex">
           {t('title').split(" ")[0]}
-            <div className="w-40 relative overflow-hidden border-4 border-black rounded-3xl">
-              <Image className=" rounded absolute -top-[40%]" src={AboooutUs} alt="" />
+            <div className="sm:w-40 w-24 relative overflow-hidden border-4 border-black rounded-3xl">
+              <Image className=" rounded absolute -top-[40%] " src={AboooutUs} alt="" />
             </div>
             {t('title').split(" ")[1]}
           </h3>
