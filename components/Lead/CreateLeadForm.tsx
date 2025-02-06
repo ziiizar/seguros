@@ -19,7 +19,7 @@ interface CreateLeadFormProps {
 
 const CreateLeadForm: React.FC<CreateLeadFormProps> = ({ callback, answers, surveyCompletedAt, formFields }) => {
   const { execute, isLoading } = useAction(createLead, {
-    onSuccess: (data, message) => {
+    onSuccess: () => {
       callback();
     },
     onError: (error) => {
