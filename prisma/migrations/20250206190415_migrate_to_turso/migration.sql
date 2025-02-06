@@ -1,15 +1,6 @@
--- CreateEnum
-CREATE TYPE "UserRole" AS ENUM ('ADMIN', 'AGENT');
-
--- CreateEnum
-CREATE TYPE "ClientStatus" AS ENUM ('NEW', 'CONTACTED', 'REJECTED');
-
--- CreateEnum
-CREATE TYPE "InsuranceRequested" AS ENUM ('HEALTH', 'LIFE', 'GENERAL');
-
 -- CreateTable
 CREATE TABLE "accounts" (
-    "id" TEXT NOT NULL,
+    "id" TEXT NOT NULL PRIMARY KEY,
     "user_id" TEXT NOT NULL,
     "type" TEXT NOT NULL,
     "provider" TEXT NOT NULL,
@@ -21,65 +12,68 @@ CREATE TABLE "accounts" (
     "scope" TEXT,
     "id_token" TEXT,
     "session_state" TEXT,
-
-    CONSTRAINT "accounts_pkey" PRIMARY KEY ("id")
+    CONSTRAINT "accounts_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "users" ("id") ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 -- CreateTable
 CREATE TABLE "sessions" (
-    "id" TEXT NOT NULL,
+    "id" TEXT NOT NULL PRIMARY KEY,
     "session_token" TEXT NOT NULL,
     "user_id" TEXT NOT NULL,
-    "expires" TIMESTAMP(3) NOT NULL,
-
-    CONSTRAINT "sessions_pkey" PRIMARY KEY ("id")
+    "expires" DATETIME NOT NULL,
+    CONSTRAINT "sessions_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "users" ("id") ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 -- CreateTable
 CREATE TABLE "users" (
-    "id" TEXT NOT NULL,
+    "id" TEXT NOT NULL PRIMARY KEY,
     "name" TEXT,
     "email" TEXT NOT NULL,
-    "email_verified" TIMESTAMP(3),
+    "email_verified" DATETIME,
     "image" TEXT,
     "password" TEXT,
-    "role" "UserRole" NOT NULL DEFAULT 'AGENT',
-
-    CONSTRAINT "users_pkey" PRIMARY KEY ("id")
+    "role" TEXT NOT NULL DEFAULT 'AGENT'
 );
 
 -- CreateTable
 CREATE TABLE "verificationToken" (
-    "id" TEXT NOT NULL,
+    "id" TEXT NOT NULL PRIMARY KEY,
     "email" TEXT NOT NULL,
     "token" TEXT NOT NULL,
-    "expires" TIMESTAMP(3) NOT NULL,
-
-    CONSTRAINT "verificationToken_pkey" PRIMARY KEY ("id")
+    "expires" DATETIME NOT NULL
 );
 
 -- CreateTable
 CREATE TABLE "resetPasswordToken" (
-    "id" TEXT NOT NULL,
+    "id" TEXT NOT NULL PRIMARY KEY,
     "email" TEXT NOT NULL,
     "token" TEXT NOT NULL,
-    "expires" TIMESTAMP(3) NOT NULL,
-
-    CONSTRAINT "resetPasswordToken_pkey" PRIMARY KEY ("id")
+    "expires" DATETIME NOT NULL
 );
 
 -- CreateTable
 CREATE TABLE "Lead" (
-    "id" TEXT NOT NULL,
+    "id" TEXT NOT NULL PRIMARY KEY,
     "name" TEXT NOT NULL,
     "phone" TEXT,
     "email" TEXT,
     "age" INTEGER,
     "zipCode" INTEGER,
-    "status" "ClientStatus" NOT NULL DEFAULT 'NEW',
-    "insuranceRequested" "InsuranceRequested" NOT NULL DEFAULT 'GENERAL',
+    "status" TEXT NOT NULL DEFAULT 'NEW',
+    "insuranceRequested" TEXT NOT NULL DEFAULT 'GENERAL',
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" DATETIME,
+    "active" BOOLEAN NOT NULL DEFAULT true
+);
 
-    CONSTRAINT "Lead_pkey" PRIMARY KEY ("id")
+-- CreateTable
+CREATE TABLE "surveyAnswers" (
+    "id" TEXT NOT NULL PRIMARY KEY,
+    "leadId" TEXT NOT NULL,
+    "question" TEXT NOT NULL,
+    "answer" TEXT NOT NULL,
+    "createdAt" DATETIME NOT NULL,
+    CONSTRAINT "surveyAnswers_leadId_fkey" FOREIGN KEY ("leadId") REFERENCES "Lead" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 -- CreateIndex
@@ -102,9 +96,3 @@ CREATE UNIQUE INDEX "resetPasswordToken_token_key" ON "resetPasswordToken"("toke
 
 -- CreateIndex
 CREATE UNIQUE INDEX "resetPasswordToken_email_token_key" ON "resetPasswordToken"("email", "token");
-
--- AddForeignKey
-ALTER TABLE "accounts" ADD CONSTRAINT "accounts_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "users"("id") ON DELETE CASCADE ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "sessions" ADD CONSTRAINT "sessions_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "users"("id") ON DELETE CASCADE ON UPDATE CASCADE;
