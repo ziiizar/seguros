@@ -46,9 +46,8 @@ export default auth(async (req) => {
 
 export const config = {
   matcher: [
-    // Matcher para internacionalización
-    '/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
-    // Matcher para rutas internacionalizadas
+    // Excluir explícitamente las rutas de NextAuth
+    '/((?!api/auth|_next|favicon.ico|logo.svg|fonts|images|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
     '/(es|en)/:path*'
   ],
 };
