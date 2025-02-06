@@ -5,7 +5,11 @@ import { z } from "zod";
 
 export const createLeadSchema = z.object({
   name: z.string().min(1),
-  phone: z.string().min(1),
+  phone: z
+    .string()
+    .min(6, "Phone number must be at least 6 digits")
+    .max(15, "Phone number must be at most 18 digits")
+    .regex(/^\+?[0-9]{10,15}$/, "Invalid phone number"),
   email: z.string().email().optional(),
   insuranceRequested: z.nativeEnum(InsuranceRequested).default("GENERAL").optional(),
   surveyAnswers: z.array(

@@ -141,7 +141,17 @@ const SurveyForm: React.FC<SurveyFormProps> = ({ form }) => {
       }, 2000);
     }
   };
-  console.log(step);
+  
+
+
+  const isCurrentStepInvalid = () => {
+    const currentField = form.fields[step - 1]; // Obtener el campo actual
+    if (currentField.type === "number") {
+      return !/^\d*$/.test(answers[currentField.ref] || ""); // Devuelve true si el campo contiene caracteres no numéricos
+    }
+    return false;
+  };
+  
 
   return (
     <div
@@ -221,7 +231,7 @@ const SurveyForm: React.FC<SurveyFormProps> = ({ form }) => {
                         <Button
                           className="text-lg px-4 py-4 bg-salmon-600 hover:bg-salmon-700 transition-colors ml-auto rounded-md h-10 w-28 flex justify-between"
                           onClick={() => paginate(1)}
-                          disabled={!answers[form.fields[step - 1].ref]}
+                          disabled={!answers[form.fields[step - 1].ref] || isCurrentStepInvalid()}
                         >
                           <span className="text-sm">Next</span>
                           <ChevronRightIcon></ChevronRightIcon>

@@ -17,19 +17,24 @@ interface CreateLeadFormProps {
   formFields: FormFields['fields'];
 }
 
-const CreateLeadForm: React.FC<CreateLeadFormProps> = ({ callback,  answers,
-  surveyCompletedAt,
-  formFields }) => {
-
+const CreateLeadForm: React.FC<CreateLeadFormProps> = ({ callback, answers, surveyCompletedAt, formFields }) => {
   const { execute, isLoading } = useAction(createLead, {
     onSuccess: (data, message) => {
-      toast.success(message);
       callback();
     },
     onError: (error) => {
       toast.error(error);
     },
   });
+
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    formState: { errors, isSubmitted }
+  } = useForm<TSCreateLeadSchema>();
+
+  setValue("insuranceRequested", "HEALTH");
 
   const onSubmit = async (data: TSCreateLeadSchema) => {
     const surveyAnswersData = Object.entries(answers).map(([ref, answer]) => {
@@ -47,26 +52,35 @@ const CreateLeadForm: React.FC<CreateLeadFormProps> = ({ callback,  answers,
     });
   };
 
-  const { register, handleSubmit, setValue } = useForm<TSCreateLeadSchema>();
-
-  setValue("insuranceRequested", "HEALTH");
-
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
       <div className="space-y-4">
-        {" "}
         <Input
           type="text"
           placeholder="Your Name"
-          {...register("name")}
+          {...register("name", { required: "Name is required" })}
           className="text-lg py-6 border border-gray-300 transition-colors"
         />
-        <Input
-          type="text"
-          placeholder="Your Phone Number"
-          {...register("phone")}
-          className="text-lg py-6 border border-gray-300 transition-colors"
-        />
+
+        <div>
+          <Input
+            type="text"
+            placeholder="Your Phone Number"
+            {...register("phone", {
+              required: "Phone number is required",
+              pattern: {
+                value: /^\+?[0-9]{6,18}$/, 
+                message: "Invalid phone number"
+              }
+            })}
+            className={`text-lg py-6 border transition-colors ${
+              errors.phone ? "border-red-500" : "border-gray-300"
+            }`}
+          />
+          {isSubmitted && errors.phone && (
+            <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>
+          )}
+        </div>
       </div>
 
       <Button
@@ -75,7 +89,7 @@ const CreateLeadForm: React.FC<CreateLeadFormProps> = ({ callback,  answers,
         type="submit"
       >
         Finish
-        <Shield className=""></Shield>
+        <Shield />
       </Button>
     </form>
   );

@@ -25,11 +25,11 @@ const handler = async (data: TSCreateLeadSchema): Promise<ReturnType> => {
           });
         sendNewLeadEmail(newLead)
 
-        return { data: newLead, message: "Lead creado" }
+        return { data: newLead, message: "Gracias por contactarnos" }
     } catch (error) {
         if (error instanceof Error && error.name === "Error")
             return { error: error.message };
-          return { error: "Error al crear el lead" };
+          return { error: "Error al enviar los datos" };
     }
 
 }
