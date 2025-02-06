@@ -1,11 +1,8 @@
 import bcrypt from "bcryptjs";
 import { NextAuthConfig } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
-import Google from "next-auth/providers/google";
-import Facebook from "next-auth/providers/facebook";
 import { LoginSchema } from "./actions/auth/signInWithCredentials/schema";
 import { getUserByEmail } from "./data/user";
-import { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } from '@/lib/env.config'
 
 export default {
   providers: [
@@ -29,10 +26,6 @@ export default {
         return null;
       },
     }),
-    Google({
-      clientId: GOOGLE_CLIENT_ID,
-      clientSecret: GOOGLE_CLIENT_SECRET,
-    }),
-    Facebook,
+    
   ],
 } satisfies NextAuthConfig;
