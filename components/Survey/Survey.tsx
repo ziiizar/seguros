@@ -106,7 +106,6 @@ const SurveyForm: React.FC<SurveyFormProps> = ({ form }) => {
 
   const [stepTypeToRender, setStepTypeToRender] = useState(STEPTYPES.survey)
 
-  console.log(form);
   useEffect(() => {
     setProgress(((step - 1) / form.fields.length) * 100);
   }, [step, form.fields.length]);

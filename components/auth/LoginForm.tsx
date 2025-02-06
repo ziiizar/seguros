@@ -20,7 +20,6 @@ const LoginForm = () => {
       router.push(routes.home);
   },
     onError(error) {
-      console.log("Error capturado en onError:", error);
       toast.error(error);
     },
   });
