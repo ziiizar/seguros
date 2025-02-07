@@ -13,18 +13,25 @@ const intlMiddleware = createMiddleware(routing);
 
 // Middleware de autenticación combinado con internacionalización
 export default auth(async (req) => {
-  // Aplica el middleware de internacionalización primero
+  const { nextUrl } = req;
+  const pathname = nextUrl.pathname;
+
+  // Excluir rutas API del middleware
+  if (pathname.startsWith('/api')) {
+    return;
+  }
+
+  // Aplicar middleware de internacionalización a rutas no API
   const intlResponse = intlMiddleware(req);
   if (intlResponse) {
     return intlResponse;
   }
 
-  const { nextUrl } = req;
-  
+  // Lógica de autenticación
   const isLoggedIn = !!req.auth;
-  const isAuthRoute = AUTH_ROUTES.includes(nextUrl.pathname);
-  const isPublicRoute = PUBLIC_ROUTES.includes(nextUrl.pathname);
-  const isAdminRoute = ADMIN_ROUTES.includes(nextUrl.pathname);
+  const isAuthRoute = AUTH_ROUTES.includes(pathname);
+  const isPublicRoute = PUBLIC_ROUTES.includes(pathname);
+  const isAdminRoute = ADMIN_ROUTES.includes(pathname);
 
   if (isAuthRoute) {
     if (isLoggedIn) {
@@ -46,8 +53,8 @@ export default auth(async (req) => {
 
 export const config = {
   matcher: [
-    // Excluir explícitamente las rutas de NextAuth
-    '/((?!api/auth|_next|favicon.ico|logo.svg|fonts|images|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
+    // Excluir rutas API y archivos estáticos
+    '/((?!api|_next|favicon.ico|logo.svg|fonts|images|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
     '/(es|en)/:path*'
   ],
 };
