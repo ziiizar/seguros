@@ -56,7 +56,8 @@ export const sendNewLeadEmail = async (lead: Lead) => {
     console.log(resp)
   console.log("abajooooooo")
   } catch (error) {
-    console.log("error")
+
+    console.log("error", error)
     
   }
  
