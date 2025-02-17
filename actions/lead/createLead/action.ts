@@ -29,8 +29,10 @@ const handler = async (data: TSCreateLeadSchema): Promise<ReturnType> => {
             },
             body: JSON.stringify(newLead),
           });
-      
-          console.log(emailResponse);
+          const emailData = await emailResponse.json(); // <- Añade esta línea
+
+          console.log('Email response:', emailData); // <- Mejor logging
+          
           if (!emailResponse.ok) {
             throw new Error('Error al enviar el correo de notificación');
           }
