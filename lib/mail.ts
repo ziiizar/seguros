@@ -2,7 +2,8 @@
 
 import { Resend } from "resend";
 import {RESEND_API_KEY} from "@/lib/env.config"
-
+import { Lead } from "@prisma/client";
+import EmailTemplate from "@/components/Survey/EmailTemplate";
 const resend = new Resend(RESEND_API_KEY);
 
 
@@ -32,3 +33,22 @@ export const sendResetPasswordEmail = async (email: string, token: string) => {
   });
 };
 
+
+export async function POST(lead: Lead) {
+  try {
+    const { data, error } = await resend.emails.send({
+      from: "onboarding@resend.dev",
+      to: ['cesarfpna@gmail.com'],
+      subject: "New Lead",
+      react: EmailTemplate({ lead:lead }),
+    });
+
+    if (error) {
+      return Response.json({ error }, { status: 500 });
+    }
+
+    return Response.json(data);
+  } catch (error) {
+    return Response.json({ error }, { status: 500 });
+  }
+}
