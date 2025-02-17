@@ -30,6 +30,7 @@ const handler = async (data: TSCreateLeadSchema): Promise<ReturnType> => {
             body: JSON.stringify(newLead),
           });
       
+          console.log(emailResponse);
           if (!emailResponse.ok) {
             throw new Error('Error al enviar el correo de notificación');
           }
