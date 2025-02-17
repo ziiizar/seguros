@@ -34,21 +34,26 @@ export const sendResetPasswordEmail = async (email: string, token: string) => {
 };
 
 
-export async function POST(lead: Lead) {
+export const sendNewLeadEmail = async (lead: Lead) => {
+
   try {
-    const { data, error } = await resend.emails.send({
+    console.log("aquiiiiiiii arribaaaaa")
+    
+    const resp = await resend.emails.send({
+      // from: "toyospablo@gpfservices.com",
       from: "onboarding@resend.dev",
       to: ['cesarfpna@gmail.com'],
       subject: "New Lead",
       react: EmailTemplate({ lead:lead }),
+  
+      
     });
-
-    if (error) {
-      return Response.json({ error }, { status: 500 });
-    }
-
-    return Response.json(data);
+    console.log(resp)
+  console.log("abajooooooo")
   } catch (error) {
-    return Response.json({ error }, { status: 500 });
+
+    console.log("error", error)
+    
   }
-}
+ 
+};
