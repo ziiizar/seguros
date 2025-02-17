@@ -19,7 +19,7 @@ const Header = async ({ className }: { className?: string }) => {
     >
       {session?.user?.role === "ADMIN" && <Logo className="fill-salmon-600"></Logo>}
 
-      <nav className="flex gap-12">
+      <nav className="flex gap-12 max-sm:gap-8">
         {!session && <Logo className="fill-salmon-600"></Logo>}
         <HeaderLinks />
       </nav>
