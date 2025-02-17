@@ -35,8 +35,8 @@ export const sendResetPasswordEmail = async (email: string, token: string) => {
 
 export const sendNewLeadEmail = async (lead: Lead) => {
  
-
-  await resend.emails.send({
+console.log("aquiiiiiiii arribaaaaa")
+ const resp = await resend.emails.send({
     // from: "toyospablo@gpfservices.com",
     from: "onboarding@resend.dev",
     to: ['pabloetoyos0526@gmail.com'],
@@ -48,5 +48,10 @@ export const sendNewLeadEmail = async (lead: Lead) => {
     <li>Age: <h4>${lead.age} </h4> </li>
     <li>Insurance Rrequested <h4>${lead.insuranceRequested} </h4> </li>
     </ul>`,
+
+    
   });
+  console.log(resp)
+console.log("abajooooooo")
+
 };
