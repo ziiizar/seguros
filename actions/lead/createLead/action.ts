@@ -3,7 +3,6 @@
 import { db } from "@/lib/db";
 import { TSCreateLeadSchema, ReturnType, createLeadSchema } from "./schema";
 import { createSafeAction } from "@/lib/create-safe-action";
-import { sendNewLeadEmail } from "@/lib/mail";
 
 const handler = async (data: TSCreateLeadSchema): Promise<ReturnType> => {
 
@@ -23,7 +22,17 @@ const handler = async (data: TSCreateLeadSchema): Promise<ReturnType> => {
               },
             },
           });
-        sendNewLeadEmail(newLead)
+          const emailResponse = await fetch(`${process.env.NEXT_PUBLIC_APP_URL}/api/mailto`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(newLead),
+          });
+      
+          if (!emailResponse.ok) {
+            throw new Error('Error al enviar el correo de notificación');
+          }
 
         return { data: newLead, message: "Gracias por contactarnos" }
     } catch (error) {
