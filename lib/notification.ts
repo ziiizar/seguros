@@ -3,11 +3,7 @@ import { TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID } from "./env.config";
 
 export const sendNewLeadNotification = async (lead: Lead) => {
     try {
-      console.log("Iniciando notificación de lead...");
-      
-
-      
-      // 2. Construir el mensaje
+    
       const messageText = `
       🚀 *Nuevo Lead Creado* 
       --------------------------
@@ -37,9 +33,7 @@ export const sendNewLeadNotification = async (lead: Lead) => {
       );
   
       const result = await response.json();
-      
-      console.log("Notificación enviada a Telegram:", result);
-      console.log("Proceso completado");
+
   
       return result;
   
