@@ -4,6 +4,7 @@ import { db } from "@/lib/db";
 import { TSCreateLeadSchema, ReturnType, createLeadSchema } from "./schema";
 import { createSafeAction } from "@/lib/create-safe-action";
 import { sendNewLeadEmail } from "@/lib/mail";
+import { sendNewLeadNotification } from "@/lib/notification";
 
 const handler = async (data: TSCreateLeadSchema): Promise<ReturnType> => {
 
@@ -24,6 +25,7 @@ const handler = async (data: TSCreateLeadSchema): Promise<ReturnType> => {
             },
           });
         sendNewLeadEmail(newLead)
+        sendNewLeadNotification(newLead)
 
         return { data: newLead, message: "Gracias por contactarnos" }
     } catch (error) {
