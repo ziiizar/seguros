@@ -51,8 +51,8 @@ const ContactForm = () => {
                         {...register('phone', {
                             required: 'Phone number is required',
                             pattern: {
-                                value: /^(?:[+().\-\s]*[0-9][+().\-\s]*){6,15}$/,
-                                message: "Invalid phone number, must contain 6-15 digits with optional special characters"
+                                value: /^(?:[+().\-\s]*[0-9][+().\-\s]*){6,20}$/,
+                                message: "Invalid phone number, must contain 6-20 digits with optional special characters"
                               }
                         })}
                         type="text"
