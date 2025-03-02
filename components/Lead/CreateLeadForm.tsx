@@ -69,8 +69,8 @@ const CreateLeadForm: React.FC<CreateLeadFormProps> = ({ callback, answers, surv
             {...register("phone", {
               required: "Phone number is required",
               pattern: {
-                value: /^\+?[0-9]{6,18}$/, 
-                message: "Invalid phone number"
+                value: /^(?:[+().\-\s]*[0-9][+().\-\s]*){6,15}$/,
+                message: "Invalid phone number, must contain 6-15 digits with optional special characters"
               }
             })}
             className={`text-lg py-6 border transition-colors ${

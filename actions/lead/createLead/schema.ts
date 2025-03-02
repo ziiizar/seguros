@@ -9,7 +9,7 @@ export const createLeadSchema = z.object({
     .string()
     .min(6, "Phone number must be at least 6 digits")
     .max(15, "Phone number must be at most 18 digits")
-    .regex(/^\+?[0-9]{6,18}$/, "Invalid phone number"),
+    .regex(/^[^a-zA-Z]*$/, "Invalid phone number, must not contain letters"),
   email: z.string().email().optional(),
   insuranceRequested: z.nativeEnum(InsuranceRequested).default("GENERAL").optional(),
   surveyAnswers: z.array(
